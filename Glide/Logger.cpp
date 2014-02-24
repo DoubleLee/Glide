@@ -6,11 +6,11 @@
 namespace gl
 {
 
-Logger gLogger;
+Logger gLogger("Log.txt");
 
-Logger::Logger()
+Logger::Logger(const std::string & logFile)
 	{
-	this->open("Log.txt", std::ios_base::out);
+	this->open(logFile, std::ios_base::out);
 
 	if ( !is_open() )
 		throw std::runtime_error("Failed to open log file.");

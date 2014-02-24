@@ -8,7 +8,7 @@ namespace gl
 class Logger : public std::ofstream
 {
 public:
-	Logger();
+	Logger( const std::string & logFile );
 	~Logger();
 };
 
