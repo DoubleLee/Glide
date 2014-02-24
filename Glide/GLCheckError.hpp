@@ -53,7 +53,7 @@ class GLException : public std::exception
 * @brief GLCHECKERRORWARNING macro.
 *
 * Use this instead of GLCHECKERROR in dtors which should not throw exceptions,
-* and other cases where you can't throw an exception.
+* and other cases where you can't throw an exception. (noexcept)
 */
 #define GLCHECKERRORWARNING( callCode ) { callCode; GLenum errorCode = glGetError(); if ( errorCode != GL_NO_ERROR) { gLogger << "OpenGL error code: " << errorCode << '\n' << "File: " << __FILE__ << " Line: " << __LINE__ << '\n'; } }
 

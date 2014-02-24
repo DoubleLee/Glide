@@ -86,7 +86,7 @@ GraphicsManager::GraphicsManager()
 		GLCHECKERROR(glGetIntegerv(GL_MAJOR_VERSION, &Maj))
 		GLCHECKERROR(glGetIntegerv(GL_MINOR_VERSION, &Min))
 
-		gLogger << "OpenGL context version [" << Maj << '.' << Min << "] created.\n";
+		gLogger.LogTime() << "OpenGL context version [" << Maj << '.' << Min << "] created." << std::endl;
 		}
 
 	glGetError();

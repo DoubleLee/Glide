@@ -47,6 +47,8 @@ GLException::GLException(int code, int line, std::string filePath)
 	mErrorString += "GL error string: ";
 	mErrorString += glErrorStr;
 	mErrorString += '\n';
+
+	gl::gLogger.LogTime() << mErrorString << std::endl;
 	}
 
 const char * GLException::what() const NOEXCEPT

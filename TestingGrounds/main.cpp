@@ -56,6 +56,9 @@ int main()
 
 	gl::Scene scene("../Resources/scenes/testScene.dae");
 
+	// Intentional error, with thrown exception
+	//GLCHECKERROR(glBindTexture(GL_TEXTURE_2D, 900) )
+
 	while(graphics.WindowOpen())
 		{
 		graphics.Update();
