@@ -5,8 +5,6 @@
 #include "Scene.hpp"
 #include "Logger.hpp"
 
-#include <Windows.h>
-
 #include <string>
 
 const std::string gTextureFolder("../Resources/Textures/");
@@ -26,34 +24,28 @@ enum Texs
 	Rash
 	};
 
-int CALLBACK WinMain(
-	_In_  HINSTANCE hInstance,
-	_In_  HINSTANCE hPrevInstance,
-	_In_  LPSTR lpCmdLine,
-	_In_  int nCmdShow
-	)
+int main()
 	{
-	
 	std::string textureNameAndPath(gTextureFolder);
 	std::string textureName("smileyFace.png");
 	textureNameAndPath += textureName;
 
 	gl::GraphicsManager graphics;
-	
+
 	// Using enum class as key
 	// create manager
 	gl::ResourceManager< gl::RTexture, TexturesEnum > textureEnumManager;
 	// load a resource
 	textureEnumManager.ResourceAdd(gl::ResourceConfig(textureNameAndPath), TexturesEnum::Table);
 	// request a resource
-	gl::RTexture * pTex = textureEnumManager.ResourceGet( TexturesEnum::Table );
-	
+	gl::RTexture * pTex = textureEnumManager.ResourceGet(TexturesEnum::Table);
+
 	// Using std::string as key
 	gl::ResourceManager< gl::RTexture, std::string > textureManager;
 	// load a resource
 	textureManager.ResourceAdd(gl::ResourceConfig(textureNameAndPath), textureName);
 	// request a resource
-	gl::RTexture * pTex2 = textureManager.ResourceGet( textureName );
+	gl::RTexture * pTex2 = textureManager.ResourceGet(textureName);
 
 	// Using enum as key
 	gl::ResourceManager< gl::RTexture, Texs > enumManager;
@@ -64,10 +56,27 @@ int CALLBACK WinMain(
 
 	gl::Scene scene("../Resources/scenes/testScene.dae");
 
-	while( graphics.WindowOpen() )
+	while(graphics.WindowOpen())
 		{
 		graphics.Update();
 		}
 
 	return 0;
 	}
+
+#ifdef WIN32
+
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
+
+int CALLBACK WinMain(
+	_In_  HINSTANCE hInstance,
+	_In_  HINSTANCE hPrevInstance,
+	_In_  LPSTR lpCmdLine,
+	_In_  int nCmdShow
+	)
+	{
+	return main();
+	}
+
+#endif
