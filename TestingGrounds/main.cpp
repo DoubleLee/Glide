@@ -12,12 +12,18 @@
 const std::string gTextureFolder("../Resources/Textures/");
 
 
-
 enum class TexturesEnum
 	{
 	Wall,
 	Couch,
 	Table
+	};
+
+enum Texs
+	{
+	Trash,
+	Crash,
+	Rash
 	};
 
 int CALLBACK WinMain(
@@ -27,14 +33,7 @@ int CALLBACK WinMain(
 	_In_  int nCmdShow
 	)
 	{
-	enum Texs
-		{
-		Trash,
-		Crash,
-		Rash
-		};
-	Logger log;
-
+	
 	std::string textureNameAndPath(gTextureFolder);
 	std::string textureName("smileyFace.png");
 	textureNameAndPath += textureName;
@@ -43,7 +42,7 @@ int CALLBACK WinMain(
 	
 	// Using enum class as key
 	// create manager
-	gl::ResourceManager< gl::RTexture ,TexturesEnum > textureEnumManager;
+	gl::ResourceManager< gl::RTexture, TexturesEnum > textureEnumManager;
 	// load a resource
 	textureEnumManager.ResourceAdd(gl::ResourceConfig(textureNameAndPath), TexturesEnum::Table);
 	// request a resource

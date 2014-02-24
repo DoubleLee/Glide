@@ -1,16 +1,16 @@
 #pragma once
 
-#include <iosfwd>
-#include <memory>
+#include <fstream>
 
-class Logger
+namespace gl
+{
+
+class Logger : public std::ofstream
 {
 public:
 	Logger();
 	~Logger();
-
-
-private:
-	std::unique_ptr< std::ofstream > mpLogStream;
 };
 
+extern Logger gLogger;
+}

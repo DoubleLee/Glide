@@ -1,5 +1,6 @@
 #include "GraphicsManager.hpp"
 
+#include "Logger.hpp"
 #include "GLCheckError.hpp"
 
 #include "tinyxml2.hpp"
@@ -85,7 +86,7 @@ GraphicsManager::GraphicsManager()
 		GLCHECKERROR(glGetIntegerv(GL_MAJOR_VERSION, &Maj))
 		GLCHECKERROR(glGetIntegerv(GL_MINOR_VERSION, &Min))
 
-		std::cout << "OpenGL context version [" << Maj << '.' << Min << "] created.\n";
+		gLogger << "OpenGL context version [" << Maj << '.' << Min << "] created.\n";
 		}
 
 	glGetError();

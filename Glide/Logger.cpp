@@ -3,23 +3,23 @@
 #include <fstream>
 #include <iostream>
 
+namespace gl
+{
+
 Logger gLogger;
 
 Logger::Logger()
-	:
-	mpLogStream( std::make_unique<std::ofstream> ( "Log.txt", std::ios_base::out ) )
 	{
-	if ( !mpLogStream->is_open() )
-		{
-		throw std::runtime_error("Failed to create or open log file.");
-		}
+	this->open("Log.txt", std::ios_base::out);
 
-	(*mpLogStream) << "Opening file...\n";
+	if ( !is_open() )
+		throw std::runtime_error("Failed to open log file.");
 	}
-
 
 Logger::~Logger()
 	{
-	mpLogStream->flush();
-	mpLogStream->close();
+	flush();
+	close();
 	}
+
+}
