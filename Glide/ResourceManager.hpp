@@ -55,7 +55,7 @@ ResType * ResourceManager<ResType>::ResourceGet(const typename ResType::CompareT
 
 	if ( result != mResources.end() )
 		{
-		return result.second.get();
+		return (*result).second.get();
 		}
 
 	throw std::runtime_error("Failed to find resource.");
