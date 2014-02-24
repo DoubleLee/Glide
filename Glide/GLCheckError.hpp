@@ -2,8 +2,9 @@
 #ifndef GLCHECKERROR_HPP
 #define GLCHECKERROR_HPP
 
+#include "Logger.hpp"
+
 #include <stdexcept>
-#include <iostream>
 
 #ifndef _MSC_VER
 #define NOEXCEPT noexcept
@@ -54,6 +55,6 @@ class GLException : public std::exception
 * Use this instead of GLCHECKERROR in dtors which should not throw exceptions,
 * and other cases where you can't throw an exception.
 */
-#define GLCHECKERRORWARNING( callCode ) { callCode; GLenum errorCode = glGetError(); if ( errorCode != GL_NO_ERROR) { std::cerr << "OpenGL error code: " << errorCode << '\n' << "File: " << __FILE__ << " Line: " << __LINE__ << '\n'; } }
+#define GLCHECKERRORWARNING( callCode ) { callCode; GLenum errorCode = glGetError(); if ( errorCode != GL_NO_ERROR) { gLogger << "OpenGL error code: " << errorCode << '\n' << "File: " << __FILE__ << " Line: " << __LINE__ << '\n'; } }
 
 #endif // GLCHECKERROR_HPP
