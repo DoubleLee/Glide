@@ -142,7 +142,9 @@
     <ClInclude Include="GraphicsManager.hpp" />
     <ClInclude Include="Resource.hpp" />
     <ClInclude Include="ResourceManager.hpp" />
+    <ClInclude Include="RMesh.hpp" />
     <ClInclude Include="RTexture.hpp" />
+    <ClInclude Include="Scene.hpp" />
     <ClInclude Include="tinyxml2.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,7 +157,9 @@
     <ClCompile Include="GraphicsManager.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="RMesh.cpp" />
     <ClCompile Include="RTexture.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

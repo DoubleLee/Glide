@@ -2,41 +2,115 @@
 
 #include "BasicTypes.hpp"
 
+
 #include <string>
+
 
 namespace gl
 {
+std::string StripPath(const std::string & fileNamePath);
+
+template<class TypeID>
 class ResourceConfig;
 
+template< class Compare >
 class Resource
 {
 public:
-	Resource(const ResourceConfig & config);
-	Resource( Resource && other );
-	Resource( const Resource & other ) = delete;
-	Resource & operator = ( const Resource & other ) = delete;
+	typedef Compare CompareType;
+public:
+	Resource(const ResourceConfig<Compare> & config);
+	Resource( Resource<Compare> && other );
+	Resource( const Resource<Compare> & other ) = delete;
+	Resource<Compare> & operator = ( const Resource<Compare> & other ) = delete;
 	virtual ~Resource();
 
 	const std::string & GetFile() const;
-	UniqueID GetID() const;
+	Compare GetID() const;
 
 protected:
 	std::string mFile;
-	UniqueID mID;
+	Compare mID;
 };
 
+template< class Compare >
+Resource<Compare>::Resource(Resource<Compare> && other)
+	:
+	mFile(std::move(other.mFile)),
+	mID(std::move(other.mID))
+	{
+
+	}
+
+template< class Compare >
+Resource<Compare>::Resource(const ResourceConfig<Compare> & config)
+	:
+	mFile(config.GetFileNamePath()),
+	mID(config.GetID())
+	{
+
+	}
+
+template< class Compare >
+Resource<Compare>::~Resource()
+	{
+
+	}
+
+template< class Compare >
+const std::string & Resource<Compare>::GetFile() const
+	{
+	return mFile;
+	}
+
+template< class Compare >
+Compare Resource<Compare>::GetID() const
+	{
+	return mID;
+	}
+
+// RESOURCE CONFIG
+
+template< class Compare >
 class ResourceConfig
 {
 public:
-	ResourceConfig( const std::string & file, const UniqueID id );
+	ResourceConfig(const std::string & file, const Compare & id);
 	virtual ~ResourceConfig();
 
-	const std::string & GetFile() const;
-	UniqueID GetID() const;
+	const std::string & GetFileNamePath() const;
+	const Compare & GetID() const;
 
 protected:
-	std::string mFile;
-	UniqueID mID;
+	std::string mFileNamePath;
+	Compare mID;
 };
+
+template< class Compare>
+ResourceConfig<Compare>::ResourceConfig(const std::string & file, const Compare & id)
+	:
+	mFileNamePath(file),
+	mID(id)
+	{
+
+	}
+
+template< class Compare>
+ResourceConfig<Compare>::~ResourceConfig()
+	{
+
+	}
+
+template< class Compare>
+const std::string & ResourceConfig<Compare>::GetFileNamePath() const
+	{
+	return mFileNamePath;
+	}
+
+template< class Compare>
+const Compare & ResourceConfig<Compare>::GetID() const
+	{
+	return mID;
+	}
 
 }

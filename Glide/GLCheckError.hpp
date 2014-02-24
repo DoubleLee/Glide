@@ -3,6 +3,7 @@
 #define GLCHECKERROR_HPP
 
 #include <stdexcept>
+#include <iostream>
 
 #ifndef _MSC_VER
 #define NOEXCEPT noexcept

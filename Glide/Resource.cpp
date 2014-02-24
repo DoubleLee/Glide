@@ -3,57 +3,40 @@
 using namespace std;
 namespace gl
 {
-Resource::Resource(Resource && other)
-	:
-	mFile(std::move(other.mFile)),
-	mID(std::move(other.mID))
+std::string StripPath(const std::string & fileNamePath)
 	{
+	char windowsStylePath = '\\';
+	char linuxStylePath = '/';
+
+	string::size_type winLastSlash = fileNamePath.find_last_of(windowsStylePath);
+	string::size_type linLastSlash = fileNamePath.find_last_of(linuxStylePath);
+
+	string::size_type indexLastSlash;
+
+	if ( winLastSlash != string::npos )
+		{
+		indexLastSlash = winLastSlash;
+		}
+	else if ( linLastSlash != string::npos )
+		{
+		indexLastSlash = linLastSlash;
+		}
+	else
+		{
+		return fileNamePath;
+		}
+
+	
+	++indexLastSlash; // move past '\'
+	if(indexLastSlash < fileNamePath.size())
+		{
+		return fileNamePath.substr(indexLastSlash);
+		}
+	else
+		{
+		return fileNamePath.substr(--indexLastSlash);
+		}
 
 	}
 
-Resource::Resource(const ResourceConfig & config)
-	:
-	mFile(config.GetFile()),
-	mID(config.GetID())
-	{
-
-	}
-
-Resource::~Resource()
-	{
-
-	}
-
-const string & Resource::GetFile() const
-	{
-	return mFile;
-	}
-
-UniqueID Resource::GetID() const
-	{
-	return mID;
-	}
-
-ResourceConfig::ResourceConfig( const string & file, const UniqueID id )
-	:
-	mFile(file),
-	mID(id)
-	{
-
-	}
-
-ResourceConfig::~ResourceConfig()
-	{
-
-	}
-
-const string & ResourceConfig::GetFile() const
-	{
-	return mFile;
-	}
-
-UniqueID ResourceConfig::GetID() const
-	{
-	return mID;
-	}
 }

@@ -29,4 +29,6 @@ private:
 	ComponentMap mComponents;
 };
 
+typedef std::unique_ptr<GameObject> GameObjectPtr;
+
 }

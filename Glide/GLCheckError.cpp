@@ -4,7 +4,7 @@
 
 #include <string>
 
-std::string StripPath(const std::string & fileName)
+std::string StripPathForException(const std::string & fileName)
 	{
 	char lookFor;
 #ifdef WIN32
@@ -34,7 +34,7 @@ std::string StripPath(const std::string & fileName)
 
 GLException::GLException(int code, int line, std::string filePath)
 	{
-	std::string file = StripPath(filePath);
+	std::string file = StripPathForException(filePath);
 	std::string codeStr = std::to_string(code);
 	std::string glErrorStr = (char*) glewGetErrorString(static_cast<GLenum>(code));
 
