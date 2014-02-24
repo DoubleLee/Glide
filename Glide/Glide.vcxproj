@@ -142,6 +142,7 @@
     <ClInclude Include="GraphicsManager.hpp" />
     <ClInclude Include="Logger.hpp" />
     <ClInclude Include="Resource.hpp" />
+    <ClInclude Include="ResourceConfig.hpp" />
     <ClInclude Include="ResourceManager.hpp" />
     <ClInclude Include="RMesh.hpp" />
     <ClInclude Include="RTexture.hpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="GraphicsManager.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="ResourceConfig.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="RMesh.cpp" />
     <ClCompile Include="RTexture.cpp" />

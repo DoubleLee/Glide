@@ -1,5 +1,7 @@
 #include "Resource.hpp"
 
+#include "ResourceConfig.hpp"
+
 using namespace std;
 namespace gl
 {
@@ -37,6 +39,31 @@ std::string StripPath(const std::string & fileNamePath)
 		return fileNamePath.substr(--indexLastSlash);
 		}
 
+	}
+
+
+Resource::Resource(Resource && other)
+	:
+	mFile(std::move(other.mFile))
+	{
+
+	}
+
+Resource::Resource(const ResourceConfig & config)
+	:
+	mFile(config.GetFileNamePath())
+	{
+
+	}
+
+Resource::~Resource()
+	{
+
+	}
+
+const std::string & Resource::GetFile() const
+	{
+	return mFile;
 	}
 
 }

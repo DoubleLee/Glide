@@ -22,8 +22,8 @@ public:
 protected:
 	Void LoadMaterials( const aiScene * pScene );
 
-	ResourceManager< gl::RTexture<std::string> > mTextures;
-	ResourceManager< gl::RMesh<std::string> > mMesh;
+	ResourceManager< gl::RTexture, std::string > mTextures;
+	ResourceManager< gl::RMesh, std::string > mMeshs;
 
 	std::string mFile;
 };

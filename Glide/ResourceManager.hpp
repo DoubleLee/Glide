@@ -10,7 +10,7 @@
 namespace gl
 {
 
-template< class ResType >
+template< class ResType, class KeyType >
 class ResourceManager
 {
 public:
@@ -22,42 +22,42 @@ public:
 	The Key is the template paramter on ResourceConfig.  The manager will grab the key from the 
 	config.
 	*/
-	Void ResourceAdd( const ResourceConfig<typename ResType::CompareType> & config );
+	Void ResourceAdd( const ResourceConfig & config, const KeyType & key );
 
 	/*
 	ResourceGet returns a resource pointer by the map key, which is the Comparer template argument of the resource.
 	*/
-	ResType * ResourceGet(const typename ResType::CompareType & id);
+	ResType * ResourceGet(const KeyType & key);
 
 protected:
-	std::map< typename ResType::CompareType, std::unique_ptr< ResType > > mResources;
+	std::map< KeyType, std::unique_ptr< ResType > > mResources;
 };
 
-template< class ResType >
-ResourceManager< ResType >::ResourceManager()
+template< class ResType, class KeyType >
+ResourceManager< ResType, KeyType >::ResourceManager()
 	{
 
 	}
 
-template< class ResType >
-ResourceManager<ResType>::~ResourceManager()
+template< class ResType, class KeyType >
+ResourceManager<ResType, KeyType>::~ResourceManager()
 	{
 
 	}
 
-template< class ResType >
-Void ResourceManager<ResType>::ResourceAdd(const ResourceConfig<typename ResType::CompareType> & config)
+template< class ResType, class KeyType >
+Void ResourceManager<ResType, KeyType>::ResourceAdd(const ResourceConfig & config, const KeyType & key)
 	{
-	auto result = mResources.find(config.GetID());
+	auto result = mResources.find(key);
 
 	if ( result == mResources.end() )
 		{
-		mResources.emplace( std::make_pair( config.GetID(), std::make_unique<ResType>(config) ) );
+		mResources.emplace( std::make_pair( key, std::make_unique<ResType>(config) ) );
 		}
 	}
 
-template< class ResType >
-ResType * ResourceManager<ResType>::ResourceGet(const typename ResType::CompareType & id)
+template< class ResType, class KeyType >
+ResType * ResourceManager<ResType, KeyType>::ResourceGet(const KeyType & id)
 	{
 	auto result = mResources.find(id);
 
