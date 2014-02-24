@@ -140,6 +140,7 @@
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GLCheckError.hpp" />
     <ClInclude Include="GraphicsManager.hpp" />
+    <ClInclude Include="Logger.hpp" />
     <ClInclude Include="Resource.hpp" />
     <ClInclude Include="ResourceManager.hpp" />
     <ClInclude Include="RMesh.hpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GLCheckError.cpp" />
     <ClCompile Include="GraphicsManager.cpp" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="RMesh.cpp" />

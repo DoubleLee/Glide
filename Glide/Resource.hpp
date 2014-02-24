@@ -17,8 +17,13 @@ template< class Compare >
 class Resource
 {
 public:
+	// this is what the resource manager references to use as its key type.
 	typedef Compare CompareType;
 public:
+	/*
+	Resource, base resource class.  It's template argument is the comparer by which will be returned by GetID()
+	and also is the template type of the ResourceConfig base class.
+	*/
 	Resource(const ResourceConfig<Compare> & config);
 	Resource( Resource<Compare> && other );
 	Resource( const Resource<Compare> & other ) = delete;

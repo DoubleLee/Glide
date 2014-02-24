@@ -1,9 +1,11 @@
 #include "GraphicsManager.hpp"
 
-#include "GL/glew.h"
-#include "GLFW/glfw3.h"
+#include "GLCheckError.hpp"
 
 #include "tinyxml2.hpp"
+
+#include "GL/glew.h"
+#include "GLFW/glfw3.h"
 
 #include <string>
 #include <stdexcept>
@@ -39,6 +41,13 @@ GraphicsManager::GraphicsManager()
 		throw std::runtime_error("Failed to find height attribute in, " + file);
 		}
 
+	const char * pWindowTitle = nullptr;
+
+	if ( !(pWindowTitle = pGraphics->Attribute("window_title")) )
+		{
+		pWindowTitle = "Glide Engine";
+		}
+
 	if ( glfwInit() != GL_TRUE )
 		{
 		throw std::runtime_error("Failed to init glfw3.");
@@ -49,7 +58,7 @@ GraphicsManager::GraphicsManager()
 	glfwWindowHint( GLFW_CONTEXT_VERSION_MINOR, 3 );
 	glfwWindowHint( GLFW_OPENGL_PROFILE ,GLFW_OPENGL_CORE_PROFILE);
 
-	mpWindow = glfwCreateWindow(width, height, "Window Name", nullptr, nullptr);
+	mpWindow = glfwCreateWindow(width, height, pWindowTitle, nullptr, nullptr);
 
 	if ( !mpWindow )
 		throw std::runtime_error("Failed to create glfw3 window and/or context.");
@@ -60,6 +69,23 @@ GraphicsManager::GraphicsManager()
 	if ( glewInit() != GLEW_OK )
 		{
 		throw std::runtime_error("Failed to initialize glew.");
+		}
+	glGetError(); // clear error from experimental
+
+	// This is where we check for particular openGL version.
+	if(!GLEW_VERSION_3_3)
+		{
+		// We must get above version at least, or we throw this exception.
+		throw std::runtime_error("Failed to get atleast openGL 3.3.");
+		}
+	else
+		{
+		// we got at least what we need.  Print to 
+		int Maj,Min;
+		GLCHECKERROR(glGetIntegerv(GL_MAJOR_VERSION, &Maj))
+		GLCHECKERROR(glGetIntegerv(GL_MINOR_VERSION, &Min))
+
+		std::cout << "OpenGL context version [" << Maj << '.' << Min << "] created.\n";
 		}
 
 	glGetError();

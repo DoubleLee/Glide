@@ -2,12 +2,15 @@
 #include "RTexture.hpp"
 #include "GraphicsManager.hpp"
 #include "Scene.hpp"
+#include "Logger.hpp"
 
 #include <Windows.h>
 
 #include <string>
 
 const std::string gTextureFolder("../Resources/Textures/");
+
+
 
 enum class TexturesEnum
 	{
@@ -23,21 +26,34 @@ int CALLBACK WinMain(
 	_In_  int nCmdShow
 	)
 	{
-	std::string file(gTextureFolder);
-	file += "smileyFace.png";
+	enum Texs
+		{
+		Trash,
+		Crash,
+		Rash
+		};
+	Logger log;
+
+	std::string textureNameAndPath(gTextureFolder);
+	std::string textureName("smileyFace.png");
+	textureNameAndPath += textureName;
 
 	gl::GraphicsManager graphics;
 	gl::ResourceManager< gl::RTexture<std::string> > textureManager;
 
 	gl::ResourceManager< gl::RTexture< TexturesEnum > > textureEnumManager;
-	textureEnumManager.ResourceAdd(gl::ResourceConfig<TexturesEnum>(file, TexturesEnum::Table));
+	textureEnumManager.ResourceAdd(gl::ResourceConfig<TexturesEnum>(textureNameAndPath, TexturesEnum::Table));
 
 	gl::RTexture<TexturesEnum> * pTex = textureEnumManager.ResourceGet( TexturesEnum::Table );
 	
+	textureManager.ResourceAdd(gl::ResourceConfig<std::string>(textureNameAndPath, textureName));
 
-	textureManager.ResourceAdd( gl::ResourceConfig<std::string>(file, gl::StripPath(file) ) );
+	gl::RTexture<std::string> * pTex2 = textureManager.ResourceGet( textureName );
 
-	gl::RTexture<std::string> * pTex2 = textureManager.ResourceGet( gl::StripPath(file) );
+	gl::ResourceManager< gl::RTexture< Texs > > man;
+	man.ResourceAdd(gl::ResourceConfig<Texs>(textureNameAndPath, Texs::Trash));
+
+	gl::RTexture<Texs> * pRes = man.ResourceGet( Texs::Trash );
 
 	gl::Scene scene("../Resources/scenes/testScene.dae");
 

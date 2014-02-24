@@ -46,4 +46,22 @@ Component * GameObject::ComponentGet( const Component::FamilyID & familyID )
 		return nullptr;
 	}
 
+Void GameObject::CalculateWorlds( glm::mat4 & globalWorld )
+	{
+	mGlobalWorld = globalWorld * mLocalWorld;
+
+	for ( auto & pIndex : mChildren )
+		{
+		pIndex->CalculateWorlds( mGlobalWorld );
+		}
+	}
+
+Void GameObject::ChildAdd( GameObjectPtr & pChild )
+	{
+	if ( pChild )
+		{
+		mChildren.emplace_back( std::move(pChild) );
+		}
+	}
+
 }

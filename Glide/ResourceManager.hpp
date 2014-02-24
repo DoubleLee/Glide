@@ -17,8 +17,16 @@ public:
 	ResourceManager();
 	~ResourceManager();
 
+	/*
+	ResourceAdd adds resource to the map.  Will create the resource internally.
+	The Key is the template paramter on ResourceConfig.  The manager will grab the key from the 
+	config.
+	*/
 	Void ResourceAdd( const ResourceConfig<typename ResType::CompareType> & config );
 
+	/*
+	ResourceGet returns a resource pointer by the map key, which is the Comparer template argument of the resource.
+	*/
 	ResType * ResourceGet(const typename ResType::CompareType & id);
 
 protected:

@@ -20,16 +20,26 @@ template <class Compare>
 class RTexture : public Resource<Compare>
 {
 public:
+	/*
+	RTexture manages an openGL texture id.
+	It takes in a ResourceConfig<Compare> which is the default configuration class
+	This class only needs a file name so the default config class is fine.
+	When this class goes out of scope it will tell openGL to free the texture.
+	*/
 	RTexture( const ResourceConfig<Compare> & config );
 	RTexture( RTexture<Compare> && other );
 	RTexture( const RTexture<Compare> & other ) = delete;
 	RTexture<Compare> & operator = ( const RTexture<Compare> & other ) = delete;
 	virtual ~RTexture();
 	
+	// returns opengl texture id
 	GLuint GetTextureID() const;
 
+	// calls opengl glBindTexture with this objects texture id
+	// effectively making this texture the active one.
 	Void Bind() const;
 
+	// simply calls glBindTexture(0) so there will be no bound texture.
 	static Void BindNull();
 
 protected:
