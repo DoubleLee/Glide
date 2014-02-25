@@ -37,8 +37,8 @@ GraphicsManager::GraphicsManager()
 		{
 		throw GlideException("Failed to find width attribute in, " + file);
 		}*/
-	XML_Handler::getIntAttribute(pGraphics, "width", &width);
-	XML_Handler::getIntAttribute(pGraphics, "height", &height);
+	XML_Handler::GetIntAttribute(pGraphics, "width", &width);
+	XML_Handler::GetIntAttribute(pGraphics, "height", &height);
 
 	/*if ( pGraphics->QueryIntAttribute("height", &height) != XML_NO_ERROR )
 		{
