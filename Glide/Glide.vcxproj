@@ -149,6 +149,7 @@
     <ClInclude Include="RTexture.hpp" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="tinyxml2.hpp" />
+    <ClInclude Include="XML_Handler.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicTypes.cpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="RTexture.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="XML_Handler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

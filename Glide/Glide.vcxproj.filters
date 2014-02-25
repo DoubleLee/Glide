@@ -78,6 +78,9 @@
     <ClInclude Include="GlideException.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="XML_Handler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicTypes.cpp">
@@ -123,6 +126,9 @@
       <Filter>Source Files\Resources</Filter>
     </ClCompile>
     <ClCompile Include="GlideException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XML_Handler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

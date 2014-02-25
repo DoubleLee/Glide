@@ -5,7 +5,7 @@
 #include "GlideException.hpp"
 
 #include "tinyxml2.hpp"
-
+#include "XML_Handler.hpp"
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
 
@@ -33,15 +33,17 @@ GraphicsManager::GraphicsManager()
 
 	XMLElement * pGraphics = config.RootElement();
 
-	if ( pGraphics->QueryIntAttribute("width", &width) != XML_NO_ERROR )
+	/*if ( pGraphics->QueryIntAttribute("width", &width) != XML_NO_ERROR )
 		{
 		throw GlideException("Failed to find width attribute in, " + file);
-		}
+		}*/
+	XML_Handler::getIntAttribute(pGraphics, "width", &width);
+	XML_Handler::getIntAttribute(pGraphics, "height", &height);
 
-	if ( pGraphics->QueryIntAttribute("height", &height) != XML_NO_ERROR )
+	/*if ( pGraphics->QueryIntAttribute("height", &height) != XML_NO_ERROR )
 		{
 		throw GlideException("Failed to find height attribute in, " + file);
-		}
+		}*/
 
 	const char * pWindowTitle = nullptr;
 
