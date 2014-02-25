@@ -1,7 +1,0 @@
-02/24/14 21:40:17  Opening Log file.
-
-
-02/24/14 21:40:18  OpenGL context version [3.3] created.
-
-
-02/24/14 21:40:21  Closing file correctly.
