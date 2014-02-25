@@ -1,5 +1,6 @@
 #include "RTexture.hpp"
 
+#include "GlideException.hpp"
 
 using namespace std;
 
@@ -9,7 +10,7 @@ namespace gl
 void ErrorCallbackPNG(png_structp png_ptr, png_const_charp error_msg)
 	{
 	std::string error = error_msg;
-	throw std::runtime_error("Libpng threw the error below:\n" + error);
+	throw GlideException("Libpng threw the error below:\n" + error);
 	}
 
 void ReadDataCallbackPNG(png_structp pngReadPtr, png_bytep data, png_size_t length)
@@ -19,7 +20,7 @@ void ReadDataCallbackPNG(png_structp pngReadPtr, png_bytep data, png_size_t leng
 	}
 
 
-RTexture::RTexture(const ResourceConfig & config)
+RTexture::RTexture(const Resource::Configuration & config)
 	:
 	Resource(config)
 	{
@@ -30,7 +31,7 @@ RTexture::RTexture(const ResourceConfig & config)
 	// check it was found an able to be opened
 	if(!ifs.is_open())
 		{
-		throw std::runtime_error("Failed to find Texture file, " + mFile);
+		throw GlideException("Failed to find Texture file, " + mFile);
 		}
 
 	// setup png signature check, first 8 bytes
@@ -44,13 +45,13 @@ RTexture::RTexture(const ResourceConfig & config)
 
 	// make sure it read correctly
 	if(!ifs.good())
-		throw std::runtime_error("Unable to read signature, may not be a png file, " + mFile);
+		throw GlideException("Unable to read signature, may not be a png file, " + mFile);
 
 	// let libpng check the sig for us
 	is_png = png_sig_cmp(pngSigByteArray, 0, pngSigSize);
 	if(is_png != 0)
 		{
-		throw std::runtime_error("Signature check failed, this is not a png file, " + mFile);
+		throw GlideException("Signature check failed, this is not a png file, " + mFile);
 		}
 
 	// create read pointer
@@ -58,7 +59,7 @@ RTexture::RTexture(const ResourceConfig & config)
 
 	if(!pPngReadStruct)
 		{
-		throw std::runtime_error("libpng couldn't make a read struct, libpng error.");
+		throw GlideException("libpng couldn't make a read struct, libpng error.");
 		}
 
 	std::unique_ptr< png_struct, void(*)(png_struct*) > cleanReadStruct
@@ -78,7 +79,7 @@ RTexture::RTexture(const ResourceConfig & config)
 
 	if(!pPngInfoStruct)
 		{
-		throw std::runtime_error("libpng couldn't make a info struct, libpng error.");
+		throw GlideException("libpng couldn't make a info struct, libpng error.");
 		}
 
 	// setup the read function callback

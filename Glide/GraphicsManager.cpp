@@ -2,6 +2,7 @@
 
 #include "Logger.hpp"
 #include "GLCheckError.hpp"
+#include "GlideException.hpp"
 
 #include "tinyxml2.hpp"
 
@@ -24,7 +25,7 @@ GraphicsManager::GraphicsManager()
 	XMLDocument config;
 	if ( config.LoadFile(file.c_str()) != XML_NO_ERROR )
 		{
-		throw std::runtime_error("Failed to load xml file, " + file);
+		throw GlideException("Failed to load xml file, " + file);
 		}
 
 	int width = 0;
@@ -34,12 +35,12 @@ GraphicsManager::GraphicsManager()
 
 	if ( pGraphics->QueryIntAttribute("width", &width) != XML_NO_ERROR )
 		{
-		throw std::runtime_error("Failed to find width attribute in, " + file);
+		throw GlideException("Failed to find width attribute in, " + file);
 		}
 
 	if ( pGraphics->QueryIntAttribute("height", &height) != XML_NO_ERROR )
 		{
-		throw std::runtime_error("Failed to find height attribute in, " + file);
+		throw GlideException("Failed to find height attribute in, " + file);
 		}
 
 	const char * pWindowTitle = nullptr;
@@ -51,7 +52,7 @@ GraphicsManager::GraphicsManager()
 
 	if ( glfwInit() != GL_TRUE )
 		{
-		throw std::runtime_error("Failed to init glfw3.");
+		throw GlideException("Failed to init glfw3.");
 		}
 
 	glfwWindowHint( GLFW_RESIZABLE, GL_FALSE );
@@ -62,14 +63,14 @@ GraphicsManager::GraphicsManager()
 	mpWindow = glfwCreateWindow(width, height, pWindowTitle, nullptr, nullptr);
 
 	if ( !mpWindow )
-		throw std::runtime_error("Failed to create glfw3 window and/or context.");
+		throw GlideException("Failed to create glfw3 window and/or context.");
 
 	glfwMakeContextCurrent(mpWindow);
 
 	glewExperimental = true;
 	if ( glewInit() != GLEW_OK )
 		{
-		throw std::runtime_error("Failed to initialize glew.");
+		throw GlideException("Failed to initialize glew.");
 		}
 	glGetError(); // clear error from experimental
 
@@ -77,7 +78,7 @@ GraphicsManager::GraphicsManager()
 	if(!GLEW_VERSION_3_3)
 		{
 		// We must get above version at least, or we throw this exception.
-		throw std::runtime_error("Failed to get atleast openGL 3.3.");
+		throw GlideException("Failed to get atleast openGL 3.3.");
 		}
 	else
 		{

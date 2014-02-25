@@ -1,15 +1,17 @@
 #pragma once
 
+#include "Resource.hpp"
+
 #include <string>
 
 namespace gl
 {
 
-class ResourceConfig
+class Resource::Configuration
 {
 public:
-	ResourceConfig(const std::string & file);
-	virtual ~ResourceConfig();
+	Configuration(const std::string & file);
+	virtual ~Configuration();
 
 	const std::string & GetFileNamePath() const;
 

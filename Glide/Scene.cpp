@@ -25,7 +25,7 @@ Scene::Scene(const std::string & sceneFile)
 
 	if ( !pScene )
 		{
-		throw std::runtime_error("Failed to load scene from assimp file, " + mFile);
+		throw GlideException("Failed to load scene from assimp file, " + mFile);
 		}
 
 	LoadMaterials( pScene );

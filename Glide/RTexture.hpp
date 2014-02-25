@@ -20,13 +20,15 @@ void ReadDataCallbackPNG(png_structp pngReadPtr, png_bytep data, png_size_t leng
 class RTexture : public Resource
 {
 public:
+	typedef Resource::Configuration ConfigType;
+public:
 	/*
 	RTexture manages an openGL texture id.
 	It takes in a ResourceConfig<Compare> which is the default configuration class
 	This class only needs a file name so the default config class is fine.
 	When this class goes out of scope it will tell openGL to free the texture.
 	*/
-	RTexture( const ResourceConfig & config );
+	RTexture( const Resource::Configuration & config );
 	RTexture( RTexture && other );
 	RTexture( const RTexture & other ) = delete;
 	RTexture & operator = ( const RTexture & other ) = delete;

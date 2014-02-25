@@ -1,5 +1,7 @@
 #include "Logger.hpp"
 
+#include "GlideException.hpp"
+
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -17,7 +19,9 @@ Logger::Logger(const std::string & logFile)
 	this->open(logFile, std::ios_base::out);
 
 	if ( !is_open() )
-		throw std::runtime_error("Failed to open log file.");
+		throw GlideException("Failed to open log file.");
+
+	LogTime() << "Opening Log file.\n\n" << std::endl;
 	}
 
 Logger::~Logger()
@@ -27,7 +31,7 @@ Logger::~Logger()
 	// everything has been flushed to file already
 	// so even during a crash the log up to that point is
 	// in the file.
-	(*this) << '\n';
+	(*this) << "\n\n";
 	LogTime() << "Closing file correctly." << std::endl;
 	close();
 	}

@@ -139,6 +139,7 @@
     <ClInclude Include="CRenderGL.hpp" />
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GLCheckError.hpp" />
+    <ClInclude Include="GlideException.hpp" />
     <ClInclude Include="GraphicsManager.hpp" />
     <ClInclude Include="Logger.hpp" />
     <ClInclude Include="Resource.hpp" />
@@ -156,11 +157,11 @@
     <ClCompile Include="CRenderGL.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GLCheckError.cpp" />
+    <ClCompile Include="GlideException.cpp" />
     <ClCompile Include="GraphicsManager.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceConfig.cpp" />
-    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="RMesh.cpp" />
     <ClCompile Include="RTexture.cpp" />
     <ClCompile Include="Scene.cpp" />

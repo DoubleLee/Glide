@@ -22,7 +22,7 @@ public:
 
 	// puts the time in the log
 	// returns a reference to itself
-	// so call site looks like this
+	// so call site looks like this ( be sure to use std::endl )
 	// gLogger.LogTime() << "Error some where. Code: " << errorCode << std::endl;
 	Logger & LogTime();
 };

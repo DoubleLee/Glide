@@ -75,6 +75,9 @@
     <ClInclude Include="RMesh.hpp">
       <Filter>Header Files\Resources</Filter>
     </ClInclude>
+    <ClInclude Include="GlideException.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicTypes.cpp">
@@ -91,9 +94,6 @@
     </ClCompile>
     <ClCompile Include="CRenderGL.cpp">
       <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourceManager.cpp">
-      <Filter>Source Files\Resources</Filter>
     </ClCompile>
     <ClCompile Include="Resource.cpp">
       <Filter>Source Files\Resources</Filter>
@@ -121,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="RMesh.cpp">
       <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="GlideException.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

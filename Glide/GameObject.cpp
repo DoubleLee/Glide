@@ -1,12 +1,15 @@
 #include "GameObject.hpp"
 
+#include "Logger.hpp"
+#include "GlideException.hpp"
 
 namespace gl
 {
 
 GameObject::GameObject(const TypeID & id)
 	:
-	mTypeID(id)
+	mTypeID(id),
+	mpParent(nullptr)
 	{
 
 	}
@@ -30,7 +33,7 @@ Void GameObject::ComponentAdd( ComponentPtr & pComp )
 	{
 	if( !(mComponents.emplace(std::make_pair(pComp->GetFamilyID(), std::move(pComp))).second) )
 		{
-		throw std::runtime_error("Failed to insert component, FamilyID may already exist.");
+		throw GlideException("Failed to insert component, FamilyID may already exist.");
 		}
 	}
 
@@ -56,12 +59,51 @@ Void GameObject::CalculateWorlds( glm::mat4 & globalWorld )
 		}
 	}
 
-Void GameObject::ChildAdd( GameObjectPtr & pChild )
+Void GameObject::ChildAdd( GameObjectPtr && pChild )
 	{
 	if ( pChild )
 		{
 		mChildren.emplace_back( std::move(pChild) );
+		pChild->SetParent(this);
+		}
+	else
+		{
+		gLogger.LogTime() << "GameObject requested to add child, but pointer was nullptr." << std::endl;
 		}
 	}
 
+Void GameObject::ChildRelease( GameObject * pChild )
+	{
+	for ( auto iter = mChildren.begin(); iter != mChildren.end(); ++iter )
+		{
+		if ( (*iter).get() == pChild )
+			{
+			(*iter).release();
+			mChildren.erase( iter );
+			return;
+			}
+		}
+
+	gLogger.LogTime() << "GameObject requested to remove child that didn't exist. address: " << pChild << std::endl;
+	}
+
+Void GameObject::SetParent( GameObject * pParent )
+	{
+	mpParent = pParent;
+	}
+
+glm::mat4 & GameObject::GetLocalWorld()
+	{
+	return mLocalWorld;
+	}
+
+const glm::mat4 & GameObject::GetGlobalWorld() const
+	{
+	return mGlobalWorld;
+	}
+
+Void GameObject::SetLocalWorld( const glm::mat4 & localWorld )
+	{
+	mLocalWorld = localWorld;
+	}
 }

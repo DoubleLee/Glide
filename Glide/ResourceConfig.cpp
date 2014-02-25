@@ -3,20 +3,20 @@
 namespace gl
 {
 
-ResourceConfig::ResourceConfig(const std::string & file)
+Resource::Configuration::Configuration(const std::string & file)
 	:
 	mFileNamePath(file)
 	{
 
 	}
 
-ResourceConfig::~ResourceConfig()
+Resource::Configuration::~Configuration()
 	{
 
 	}
 
 
-const std::string & ResourceConfig::GetFileNamePath() const
+const std::string & Resource::Configuration::GetFileNamePath() const
 	{
 	return mFileNamePath;
 	}

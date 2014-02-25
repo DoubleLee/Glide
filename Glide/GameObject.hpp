@@ -30,9 +30,18 @@ public:
 
 	Void CalculateWorlds( glm::mat4 & globalWorld );
 
-	Void ChildAdd( GameObjectPtr & pChild );
+	Void ChildAdd( GameObjectPtr && pChild ); // may need & not && we'll see
+	Void ChildRelease( GameObject * pChild );
+
+	Void SetParent(GameObject * pParent);
+
+	glm::mat4 & GetLocalWorld();
+	const glm::mat4 & GetGlobalWorld() const;
+
+	Void SetLocalWorld( const glm::mat4 & localWorld );
 
 private:
+	GameObject * mpParent;
 	TypeID mTypeID;
 
 	typedef std::map< Component::FamilyID, ComponentPtr > ComponentMap;

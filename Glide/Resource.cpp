@@ -49,7 +49,7 @@ Resource::Resource(Resource && other)
 
 	}
 
-Resource::Resource(const ResourceConfig & config)
+Resource::Resource(const Resource::Configuration & config)
 	:
 	mFile(config.GetFileNamePath())
 	{
