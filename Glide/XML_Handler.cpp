@@ -38,99 +38,97 @@ bool XML_Handler::isNoError(tinyxml2::XMLError&& error)
 			}
 		case (tinyxml2::XMLError::XML_ERROR_EMPTY_DOCUMENT) :
 			{
-			throw gl::GlideException("error empty document");
+			throw gl::GlideException("error empty document", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_ELEMENT_MISMATCH) :
 			{
-			
-			throw gl::GlideException("error element missmatch\n");
+			throw gl::GlideException("error element missmatch\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_FILE_COULD_NOT_BE_OPENED) :
 			{
-			
-			throw gl::GlideException("Error file could not be opened\n");
+			throw gl::GlideException("Error file could not be opened\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_FILE_NOT_FOUND) :
 			{
-			throw gl::GlideException("Error file not found\n");
+			throw gl::GlideException("Error file not found\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_FILE_READ_ERROR) :
 			{
-			throw gl::GlideException("Error file read error\n");
+			throw gl::GlideException("Error file read error\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_IDENTIFYING_TAG) :
 			{
-			throw gl::GlideException("error identifying tag\n");
+			throw gl::GlideException("error identifying tag\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_MISMATCHED_ELEMENT) :
 			{	
-			throw gl::GlideException("error mismatched element\n");
+			throw gl::GlideException("error mismatched element\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_PARSING) :
 			{
-			throw gl::GlideException("error parsing\n");
+			throw gl::GlideException("error parsing\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_PARSING_ATTRIBUTE) :
 			{
-			throw gl::GlideException("error parsing attribute\n");
+			throw gl::GlideException("error parsing attribute\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_PARSING_CDATA) :
 			{
-			throw gl::GlideException("error parsing cData\n");
+			throw gl::GlideException("error parsing cData\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_PARSING_COMMENT) :
 			{
-			throw gl::GlideException("error parsing comment\n");
+			throw gl::GlideException("error parsing comment\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_PARSING_DECLARATION) :
 			{
-			throw gl::GlideException("error parsing decleration\n");
+			throw gl::GlideException("error parsing decleration\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_PARSING_ELEMENT) :
 			{
-			throw gl::GlideException("error parsing element\n");
+			throw gl::GlideException("error parsing element\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_PARSING_TEXT) :
 			{
-			throw gl::GlideException("error parsing text\n");
+			throw gl::GlideException("error parsing text\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_ERROR_PARSING_UNKNOWN) :
 			{
-			throw gl::GlideException("error parsing unknown\n");
+			throw gl::GlideException("error parsing unknown\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_NO_ATTRIBUTE) :
 			{
-			throw gl::GlideException("error no attribute\n");
+			throw gl::GlideException("error no attribute\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_NO_TEXT_NODE) :
 			{
-			throw gl::GlideException("error no text node\n");
+			throw gl::GlideException("error no text node\n", error);
 			return false;
 			}
 		case (tinyxml2::XMLError::XML_WRONG_ATTRIBUTE_TYPE) :
 			{
-			throw gl::GlideException("error wrong attribute type\n");
+			throw gl::GlideException("error wrong attribute type\n", error);
 			return false;
 			}
 		default:
 			{
-			throw gl::GlideException("unknown error\n");
+			throw gl::GlideException("unknown error\n", error);
 			return false; 
 			}
 		}
