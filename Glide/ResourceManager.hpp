@@ -30,6 +30,8 @@ public:
 	*/
 	inline ResType * ResourceGet(const KeyType & key);
 
+	inline UInt Size() const;
+
 protected:
 	std::map< KeyType, std::unique_ptr< ResType > > mResources;
 };
@@ -68,5 +70,11 @@ inline ResType * ResourceManager<ResType, KeyType>::ResourceGet(const KeyType & 
 		}
 
 	throw GlideException("Failed to find resource.");
+	}
+
+template< class ResType, class KeyType >
+inline UInt ResourceManager<ResType, KeyType>::Size() const
+	{
+	return mResources.size();
 	}
 }

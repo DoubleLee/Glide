@@ -15,7 +15,6 @@ Resource::Configuration::~Configuration()
 
 	}
 
-
 const std::string & Resource::Configuration::GetFileNamePath() const
 	{
 	return mFileNamePath;

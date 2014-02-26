@@ -3,31 +3,34 @@
 #include "GlideException.hpp"
 #include <stdexcept>
 
-void  XML_Handler::GetIntAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, int* num)
+namespace XML
+{
+
+void XML::GetIntAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, int* num)
 	{
 	CheckError(element->QueryIntAttribute(attributeName.c_str(), num));
 	}
 
-void XML_Handler::GetFloatAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, float* num)
+void XML::GetFloatAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, float* num)
 	{
 	CheckError(element->QueryFloatAttribute(attributeName.c_str(), num));
 	}
 
-void XML_Handler::GetDoubleAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, double* num)
+void XML::GetDoubleAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, double* num)
 	{
 	CheckError(element->QueryDoubleAttribute(attributeName.c_str(), num));
 	}
 
-void XML_Handler::GetAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, const char* str)
+void XML::GetAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, const char* str)
 	{
 	//TODO: awesome code here
 	}
-void XML_Handler::GetUnsignedAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, const char* str)
+void XML::GetUnsignedAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, const char* str)
 	{
 	 //TODO: awesome code here
 	}
 
-void XML_Handler::CheckError(const tinyxml2::XMLError error)
+void XML::CheckError(const tinyxml2::XMLError error)
 	{
 	switch (error)
 		{
@@ -134,3 +137,5 @@ void XML_Handler::CheckError(const tinyxml2::XMLError error)
 			}
 		}
 	}
+
+}

@@ -25,7 +25,7 @@ public:
 	Void TypeIDSet( const TypeID & id );
 	const TypeID & TypeIDGet() const;
 
-	Void ComponentAdd( ComponentPtr & pComp );
+	Void ComponentAdd( ComponentPtr && pComp );
 	Component * ComponentGet( const Component::FamilyID & familyID );
 
 	Void CalculateWorlds( glm::mat4 & globalWorld );

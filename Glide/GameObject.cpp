@@ -29,7 +29,7 @@ const GameObject::TypeID & GameObject::TypeIDGet() const
 	return mTypeID;
 	}
 
-Void GameObject::ComponentAdd( ComponentPtr & pComp )
+Void GameObject::ComponentAdd( ComponentPtr && pComp )
 	{
 	if( !(mComponents.emplace(std::make_pair(pComp->GetFamilyID(), std::move(pComp))).second) )
 		{
@@ -63,8 +63,8 @@ Void GameObject::ChildAdd( GameObjectPtr && pChild )
 	{
 	if ( pChild )
 		{
-		mChildren.emplace_back( std::move(pChild) );
 		pChild->SetParent(this);
+		mChildren.emplace_back( std::move(pChild) );
 		}
 	else
 		{

@@ -8,7 +8,7 @@
 #include <string>
 
 struct aiScene;
-
+struct aiNode;
 
 namespace gl
 {
@@ -21,9 +21,15 @@ public:
 
 protected:
 	Void LoadMaterials( const aiScene * pScene );
+	Void LoadMeshes( const aiScene * pScene );
 
-	ResourceManager< gl::RTexture, std::string > mTextures;
-	ResourceManager< gl::RMesh, std::string > mMeshs;
+	Void LoadNodes( const aiScene * pScene );
+	Void LoadNode( const aiNode * pNode, GameObject * pParent );
+
+	ResourceManager< gl::RTexture, UInt > mTextures;
+	ResourceManager< gl::RMesh, UInt > mMeshes;
+
+	GameObjectPtr mpRoot;
 
 	std::string mFile;
 };

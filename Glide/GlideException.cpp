@@ -15,7 +15,7 @@ GlideException::GlideException( const std::string & message )
 	gLogger.LogTime() << mWhat << std::endl;
 	}
 
-GlideException::GlideException( const std::string & message, ULong code )
+GlideException::GlideException( const std::string & message, Long code )
 	:
 	std::exception(),
 	mWhat()
@@ -25,7 +25,7 @@ GlideException::GlideException( const std::string & message, ULong code )
 	gLogger.LogTime() << mWhat << std::endl;
 	}
 
-GlideException::GlideException(const std::string & message, ULong code, const std::string & codeStr)
+GlideException::GlideException(const std::string & message, Long code, const std::string & codeStr)
 	:
 	std::exception(),
 	mWhat()
@@ -42,7 +42,7 @@ Void GlideException::BuildMessage(const std::string & message)
 	mWhat += ']';
 	}
 
-Void GlideException::BuildMessage_Code(const std::string & message, ULong code)
+Void GlideException::BuildMessage_Code(const std::string & message, Long code)
 	{
 	BuildMessage(message);
 	mWhat += " Code[";
@@ -50,7 +50,7 @@ Void GlideException::BuildMessage_Code(const std::string & message, ULong code)
 	mWhat += ']';
 	}
 
-Void GlideException::BuildMessage_Code_CodeStr(const std::string & message, ULong code, const std::string & errorCodeStr)
+Void GlideException::BuildMessage_Code_CodeStr(const std::string & message, Long code, const std::string & errorCodeStr)
 	{
 	BuildMessage_Code(message, code);
 	mWhat += " CodeStr[";

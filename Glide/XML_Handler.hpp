@@ -5,7 +5,7 @@
 #include "tinyxml2.hpp"
 
 
-namespace XML_Handler
+namespace XML
 	{
 	void GetIntAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, int* num);
 	void GetFloatAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, float* num);
