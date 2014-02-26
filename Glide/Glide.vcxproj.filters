@@ -81,6 +81,12 @@
     <ClInclude Include="XML_Handler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FilePaths.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RShader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicTypes.cpp">
@@ -129,6 +135,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="XML_Handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FilePaths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RShader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

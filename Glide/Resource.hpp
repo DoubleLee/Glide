@@ -1,14 +1,14 @@
 #pragma once
 
 #include "BasicTypes.hpp"
-
+#include "FilePaths.hpp"
 
 #include <string>
 
 
 namespace gl
 {
-std::string StripPath(const std::string & fileNamePath);
+
 
 class Resource
 {

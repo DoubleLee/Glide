@@ -5,11 +5,9 @@
 #include "Scene.hpp"
 #include "Logger.hpp"
 #include "GlideException.hpp"
+#include "FilePaths.hpp"
 
 #include <string>
-
-const std::string gTextureFolder("../Resources/Textures/");
-
 
 enum class TexturesEnum
 	{
@@ -27,7 +25,7 @@ enum Texs
 
 int main()
 	{
-	std::string textureNameAndPath(gTextureFolder);
+	std::string textureNameAndPath(gl::gTexturesFolder);
 	std::string textureName("smileyFace.png");
 	textureNameAndPath += textureName;
 

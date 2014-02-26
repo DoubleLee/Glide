@@ -137,6 +137,7 @@
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="CRender.hpp" />
     <ClInclude Include="CRenderGL.hpp" />
+    <ClInclude Include="FilePaths.hpp" />
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GLCheckError.hpp" />
     <ClInclude Include="GlideException.hpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="ResourceConfig.hpp" />
     <ClInclude Include="ResourceManager.hpp" />
     <ClInclude Include="RMesh.hpp" />
+    <ClInclude Include="RShader.hpp" />
     <ClInclude Include="RTexture.hpp" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="tinyxml2.hpp" />
@@ -156,6 +158,7 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="CRender.cpp" />
     <ClCompile Include="CRenderGL.cpp" />
+    <ClCompile Include="FilePaths.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GLCheckError.cpp" />
     <ClCompile Include="GlideException.cpp" />
@@ -164,6 +167,7 @@
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceConfig.cpp" />
     <ClCompile Include="RMesh.cpp" />
+    <ClCompile Include="RShader.cpp" />
     <ClCompile Include="RTexture.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="tinyxml2.cpp" />

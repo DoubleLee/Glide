@@ -3,6 +3,8 @@
 #include "Resource.hpp"
 #include "ResourceConfig.hpp"
 #include "CRender.hpp"
+#include "FilePaths.hpp"
+#include "RShader.hpp"
 
 #include "assimp/Importer.hpp"
 #include "assimp/scene.h"
@@ -18,7 +20,8 @@ namespace gl
 Scene::Scene(const std::string & sceneFile)
 	:
 	mFile(sceneFile),
-	mpRoot( std::make_unique<GameObject>("") )
+	mpRoot( std::make_unique<GameObject>("") ),
+	mpShaderDefault( std::make_unique<RShader>( RShader::ConfigType(gShadersFolder + "vertShader.vert", gShadersFolder + "fragShader.frag") ))
 	{
 	Assimp::Importer importer;
 
@@ -48,14 +51,15 @@ Void Scene::LoadMaterials( const aiScene * pScene )
 	// Loading materials, at this time just texture strings.
 	for ( UInt i = 0; i < pScene->mNumMaterials; ++i )
 		{
-		for ( UInt j = 0; j < pScene->mMaterials[i]->GetTextureCount(aiTextureType_DIFFUSE); ++j )
+		UInt texCount = pScene->mMaterials[i]->GetTextureCount(aiTextureType_DIFFUSE);
+		for ( UInt j = 0; j < texCount; ++j )
 			{
 			aiString texFile;
 			pScene->mMaterials[i]->GetTexture(aiTextureType_DIFFUSE, j, &texFile);
 
 			// TODO: finish writing texture file name loader.
-			RTexture::ConfigType config(texFile.C_Str());
-			mTextures.ResourceAdd(config, i);
+			RTexture::ConfigType config( gTexturesFolder + texFile.C_Str());
+			mTextures.ResourceAdd(config, texFile.C_Str());
 			}
 		}
 	}
@@ -130,7 +134,15 @@ Void Scene::LoadMeshes( const aiScene * pScene )
 			GLCHECKERROR( glBufferData( GL_ARRAY_BUFFER, sizeof( GLuint ) * vertexIndexCount, indices.data(), GL_STATIC_DRAW ) )
 			}
 
-		RTexture * pTex = mTextures.Size() ? mTextures.ResourceGet( pMesh->mMaterialIndex ): nullptr;
+		RTexture * pTex = nullptr;
+		if(pScene->mMaterials[pMesh->mMaterialIndex]->GetTextureCount(aiTextureType_DIFFUSE) > 0)
+			{
+			aiString texFile;
+			pScene->mMaterials[pMesh->mMaterialIndex]->GetTexture(aiTextureType_DIFFUSE, 0, &texFile);
+			std::string file(texFile.C_Str());
+			pTex = mTextures.ResourceGet(file);
+			}
+		
 		RMesh::ConfigType config(mFile, pTex, vertexCount, vertexIndexCount, vao, vboPositions, vboNormals, vboUVs, vboIndices);
 
 		mMeshes.ResourceAdd(config, i);
@@ -148,7 +160,7 @@ Void Scene::LoadNodes( const aiScene * pScene )
 Void Scene::LoadNode( const aiNode * pNode, GameObject * pParent )
 	{
 	// Load node meshes and create GameObject
-	std::unique_ptr<GameObject> pObject( std::make_unique<GameObject>("") );
+	std::unique_ptr<GameObject> pObject( std::make_unique<GameObject>(pNode->mName.C_Str()) );
 	// NOTE: dangerous cast here, if both are truely packed floats it should work.
 	const glm::mat4 * pLocalWorld = reinterpret_cast<const glm::mat4*>(&pNode->mTransformation);
 	pObject->SetLocalWorld( *pLocalWorld );

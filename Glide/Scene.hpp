@@ -12,6 +12,7 @@ struct aiNode;
 
 namespace gl
 {
+class RShader;
 
 class Scene
 {
@@ -26,8 +27,10 @@ protected:
 	Void LoadNodes( const aiScene * pScene );
 	Void LoadNode( const aiNode * pNode, GameObject * pParent );
 
-	ResourceManager< gl::RTexture, UInt > mTextures;
+	ResourceManager< gl::RTexture, std::string > mTextures;
 	ResourceManager< gl::RMesh, UInt > mMeshes;
+
+	std::unique_ptr<RShader> mpShaderDefault;
 
 	GameObjectPtr mpRoot;
 
