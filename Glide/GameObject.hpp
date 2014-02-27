@@ -25,6 +25,8 @@ public:
 	Void TypeIDSet( const TypeID & id );
 	const TypeID & TypeIDGet() const;
 
+	GameObject * FindChildByID( const TypeID & id );
+
 	Void ComponentAdd( ComponentPtr && pComp );
 	Component * ComponentGet( const Component::FamilyID & familyID );
 
@@ -33,12 +35,16 @@ public:
 	Void ChildAdd( GameObjectPtr && pChild ); // may need & not && we'll see
 	Void ChildRelease( GameObject * pChild );
 
+	UInt ChildCount() const;
+
 	Void SetParent(GameObject * pParent);
 
 	glm::mat4 & GetLocalWorld();
 	const glm::mat4 & GetGlobalWorld() const;
 
 	Void SetLocalWorld( const glm::mat4 & localWorld );
+
+	Void Render(const glm::mat4 & camera);
 
 private:
 	GameObject * mpParent;

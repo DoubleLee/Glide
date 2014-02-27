@@ -9,6 +9,8 @@
 
 #include <string>
 
+#define GLM_FORCE_RADIANS
+
 enum class TexturesEnum
 	{
 	Wall,
@@ -60,6 +62,8 @@ int main()
 	
 	while(graphics.WindowOpen())
 		{
+		gl::GameObject * pLamp = scene.FindObjectByID("Lamp");
+		scene.Render();
 		graphics.Update();
 		}
 

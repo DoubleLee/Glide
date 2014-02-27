@@ -20,6 +20,11 @@ public:
 	Scene(const std::string & sceneFile);
 	~Scene();
 
+	GameObject * FindObjectByID( const std::string & id, GameObject * pStartObject = nullptr );
+	RShader * GetShader();
+
+	Void Render();
+
 protected:
 	Void LoadMaterials( const aiScene * pScene );
 	Void LoadMeshes( const aiScene * pScene );

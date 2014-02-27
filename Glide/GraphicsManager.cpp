@@ -79,6 +79,7 @@ GraphicsManager::GraphicsManager()
 		{
 		throw GlideException("Failed to initialize glew.");
 		}
+
 	glGetError(); // clear error from experimental
 
 	// This is where we check for particular openGL version.
@@ -97,7 +98,16 @@ GraphicsManager::GraphicsManager()
 		gLogger.LogTime() << "OpenGL context version [" << Maj << '.' << Min << "] created." << std::endl;
 		}
 
-	glGetError();
+	// setup default openGL settings
+	GLCHECKERROR( glClearColor(0.5f, 0.5f, 0.5f, 1.0f) )
+
+	GLCHECKERROR(glEnable(GL_DEPTH_TEST))
+
+	GLCHECKERROR(glDepthFunc(GL_LESS))
+
+	GLCHECKERROR(glEnable(GL_CULL_FACE))
+	//glFrontFace( GL_CW );
+	//GLCHECKERROR(glCullFace(GL_BACK))
 	}
 
 GraphicsManager::~GraphicsManager()
@@ -115,5 +125,6 @@ Void GraphicsManager::Update()
 	{
 	glfwPollEvents();
 	glfwSwapBuffers(mpWindow);
+	GLCHECKERROR( glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ) )
 	}
 }

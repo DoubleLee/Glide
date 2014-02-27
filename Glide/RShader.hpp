@@ -29,6 +29,9 @@ public:
 	Void SetUniform(const char * pUniformName, const GLint i);
 	Void SetUniform(const char * pUniformName, const GLboolean b);
 
+	Void Bind() const;
+	static Void BindNull();
+
 protected:
 	Void LoadShaders();
 	std::string mVertexFile;

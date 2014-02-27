@@ -2,6 +2,7 @@
 
 #include "Logger.hpp"
 #include "GlideException.hpp"
+#include "CRender.hpp"
 
 namespace gl
 {
@@ -27,6 +28,23 @@ Void GameObject::TypeIDSet( const TypeID & id )
 const GameObject::TypeID & GameObject::TypeIDGet() const
 	{
 	return mTypeID;
+	}
+
+GameObject * GameObject::FindChildByID(const TypeID & id)
+	{
+	if ( mTypeID == id )
+		return this;
+	else
+		{
+		GameObject * pReturned = nullptr;
+		for ( UInt i = 0; i < mChildren.size(); ++i )
+			{
+			pReturned = mChildren[i]->FindChildByID(id);
+			if ( pReturned )
+				return pReturned;
+			}
+		return nullptr;
+		}
 	}
 
 Void GameObject::ComponentAdd( ComponentPtr && pComp )
@@ -87,6 +105,11 @@ Void GameObject::ChildRelease( GameObject * pChild )
 	gLogger.LogTime() << "GameObject requested to remove child that didn't exist. address: " << pChild << std::endl;
 	}
 
+UInt GameObject::ChildCount() const
+	{
+	return mChildren.size();
+	}
+
 Void GameObject::SetParent( GameObject * pParent )
 	{
 	mpParent = pParent;
@@ -105,5 +128,18 @@ const glm::mat4 & GameObject::GetGlobalWorld() const
 Void GameObject::SetLocalWorld( const glm::mat4 & localWorld )
 	{
 	mLocalWorld = localWorld;
+	}
+
+Void GameObject::Render(const glm::mat4 & camera)
+	{
+	CRender * pRender = static_cast<CRender*>(ComponentGet("Render"));
+
+	if ( pRender )
+		pRender->Render(camera);
+
+	for ( UInt i = 0; i < mChildren.size(); ++i )
+		{
+		mChildren[i]->Render(camera);
+		}
 	}
 }

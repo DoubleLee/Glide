@@ -27,7 +27,7 @@ RShader::~RShader()
 
 Void RShader::LoadShaders()
 	{
-	gLogger.LogTime() << "Compiling shader program from files [" << mVertexFile << ',' << mFragFile << ']' << std::endl;
+	gLogger.LogTime() << "Compiling shader program from files [" << mVertexFile << "] and [" << mFragFile << ']' << std::endl;
 
 	GLCHECKERROR( mVertID = glCreateShader(GL_VERTEX_SHADER) )
 	GLCHECKERROR( mFragID = glCreateShader(GL_FRAGMENT_SHADER) )
@@ -192,6 +192,27 @@ Void RShader::LoadShaders()
 			gLogger.LogTime() << "Linked successfully with no warnings." << std::endl;
 			}
 		}
+	}
+
+Void RShader::SetUniform(const char * pUniformName, const glm::mat4 & mat )
+	{
+	GLint loc;
+	GLCHECKERROR( loc = glGetUniformLocation( mProgramID, pUniformName ) )
+
+	if ( loc >= 0 )
+		{
+		GLCHECKERROR( glProgramUniformMatrix4fv(mProgramID, loc, 1, GL_FALSE, &mat[0][0]) )
+		}
+	}
+
+Void RShader::Bind() const
+	{
+	GLCHECKERROR(glUseProgram(mProgramID))
+	}
+
+Void RShader::BindNull()
+	{
+	GLCHECKERROR(glUseProgram(0))
 	}
 
 RShader::Configuration::Configuration(const std::string & vertexFile, const std::string & fragFile)

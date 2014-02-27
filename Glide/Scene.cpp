@@ -10,12 +10,18 @@
 #include "assimp/scene.h"
 #include "assimp/postprocess.h"
 
+#define GLM_FORCE_RADIANS
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
 
 
 using namespace Assimp;
 using namespace std;
 namespace gl
 {
+
+glm::mat4 camera = glm::perspective(3.14f / 2.0f, 4.0f / 3.0f, 0.1f, 1000.0f) * glm::lookAt(glm::vec3(0, 0, -100), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 
 Scene::Scene(const std::string & sceneFile)
 	:
@@ -44,6 +50,18 @@ Scene::Scene(const std::string & sceneFile)
 
 Scene::~Scene()
 	{
+	}
+
+RShader * Scene::GetShader()
+	{
+	return mpShaderDefault.get();
+	}
+
+Void Scene::Render()
+	{
+	mpRoot->CalculateWorlds(glm::mat4(1.0f));
+
+	mpRoot->Render(camera);
 	}
 
 Void Scene::LoadMaterials( const aiScene * pScene )
@@ -131,7 +149,7 @@ Void Scene::LoadMeshes( const aiScene * pScene )
 			{
 			GLCHECKERROR( glGenBuffers(1, &vboIndices) )
 			GLCHECKERROR( glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, vboIndices) )
-			GLCHECKERROR( glBufferData( GL_ARRAY_BUFFER, sizeof( GLuint ) * vertexIndexCount, indices.data(), GL_STATIC_DRAW ) )
+			GLCHECKERROR( glBufferData( GL_ELEMENT_ARRAY_BUFFER, sizeof( GLuint ) * vertexIndexCount, indices.data(), GL_STATIC_DRAW ) )
 			}
 
 		RTexture * pTex = nullptr;
@@ -162,13 +180,34 @@ Void Scene::LoadNode( const aiNode * pNode, GameObject * pParent )
 	// Load node meshes and create GameObject
 	std::unique_ptr<GameObject> pObject( std::make_unique<GameObject>(pNode->mName.C_Str()) );
 	// NOTE: dangerous cast here, if both are truely packed floats it should work.
-	const glm::mat4 * pLocalWorld = reinterpret_cast<const glm::mat4*>(&pNode->mTransformation);
-	pObject->SetLocalWorld( *pLocalWorld );
+	aiMatrix4x4 nodeWorld = pNode->mTransformation;
+	glm::mat4 localWorld;
+	localWorld[0][0] = nodeWorld.a1;
+	localWorld[0][1] = nodeWorld.b1;
+	localWorld[0][2] = nodeWorld.c1;
+	localWorld[0][3] = nodeWorld.d1;
+
+	localWorld[1][0] = nodeWorld.a2;
+	localWorld[1][1] = nodeWorld.b2;
+	localWorld[1][2] = nodeWorld.c2;
+	localWorld[1][3] = nodeWorld.d2;
+
+	localWorld[2][0] = nodeWorld.a3;
+	localWorld[2][1] = nodeWorld.b3;
+	localWorld[2][2] = nodeWorld.c3;
+	localWorld[2][3] = nodeWorld.d3;
+	
+	localWorld[3][0] = nodeWorld.a4;
+	localWorld[3][1] = nodeWorld.b4;
+	localWorld[3][2] = nodeWorld.c4;
+	localWorld[3][3] = nodeWorld.d4;
+
+	pObject->SetLocalWorld( localWorld );
 	// call load node on each of its children
 
 	if ( pNode->mMeshes )
 		{
-		std::unique_ptr<CRender> pCRender( std::make_unique<CRender>("", pObject.get(), mMeshes.ResourceGet( pNode->mMeshes[0] ) ) );
+		std::unique_ptr<CRender> pCRender( std::make_unique<CRender>("", pObject.get(), mMeshes.ResourceGet( pNode->mMeshes[0] ), mpShaderDefault.get() ) );
 
 		pObject->ComponentAdd(std::move(pCRender));
 		}
@@ -180,5 +219,13 @@ Void Scene::LoadNode( const aiNode * pNode, GameObject * pParent )
 		{
 		LoadNode(pNode->mChildren[i], pObjectPtr);
 		}
+	}
+
+GameObject * Scene::FindObjectByID( const std::string & id, GameObject * pStartObject)
+	{
+	if ( pStartObject == nullptr )
+		pStartObject = mpRoot.get();
+
+	return pStartObject->FindChildByID(id);
 	}
 }
