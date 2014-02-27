@@ -21,7 +21,7 @@ using namespace std;
 namespace gl
 {
 
-glm::mat4 camera = glm::perspective(3.14f / 2.0f, 4.0f / 3.0f, 0.1f, 1000.0f) * glm::lookAt(glm::vec3(0, 0, -100), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+glm::mat4 camera = glm::perspective(3.14f / 2.0f, 4.0f / 3.0f, 0.1f, 1000.0f) * glm::lookAt(glm::vec3(0, 0, -10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 
 Scene::Scene(const std::string & sceneFile)
 	:
@@ -98,7 +98,7 @@ Void Scene::LoadMeshes( const aiScene * pScene )
 
 		for ( UInt index = 0; index < vertexIndexCount; ++index )
 			{
-			indices[i] = pMesh->mFaces[index / 3].mIndices[index % 3];
+			indices[index] = pMesh->mFaces[index / 3].mIndices[index % 3];
 			}
 
 		// create vao
