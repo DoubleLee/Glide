@@ -19,13 +19,14 @@ CRender::CRender(const TypeID & typeID, GameObject * pOwner, RMesh * pMesh, RSha
 
 	}
 
+/*
 CRender::CRender()
 	:
 	Component()
 	{
 	SetFamilyID("Render");
 	}
-
+*/
 
 CRender::~CRender()
 	{

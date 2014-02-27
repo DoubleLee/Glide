@@ -36,10 +36,9 @@ GameObject * GameObject::FindChildByID(const TypeID & id)
 		return this;
 	else
 		{
-		GameObject * pReturned = nullptr;
 		for ( UInt i = 0; i < mChildren.size(); ++i )
 			{
-			pReturned = mChildren[i]->FindChildByID(id);
+			GameObject * pReturned = mChildren[i]->FindChildByID(id);
 			if ( pReturned )
 				return pReturned;
 			}

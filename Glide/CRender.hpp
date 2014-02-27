@@ -15,7 +15,7 @@ class CRender :	public Component
 {
 public:
 	CRender(const TypeID & typeID, GameObject * pOwner, RMesh * pMesh, RShader * pShader);
-	CRender();
+	//CRender();
 	virtual ~CRender();
 
 	virtual void Render(const glm::mat4 & camera);

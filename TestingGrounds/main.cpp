@@ -27,33 +27,8 @@ enum Texs
 
 int main()
 	{
-	std::string textureNameAndPath(gl::gTexturesFolder);
-	std::string textureName("smileyFace.png");
-	textureNameAndPath += textureName;
 
 	gl::GraphicsManager graphics;
-
-	// Using enum class as key
-	// create manager
-	gl::ResourceManager< gl::RTexture, TexturesEnum > textureEnumManager;
-	// load a resource
-	textureEnumManager.ResourceAdd(gl::Resource::Configuration(textureNameAndPath), TexturesEnum::Table);
-	// request a resource
-	gl::RTexture * pTex = textureEnumManager.ResourceGet(TexturesEnum::Table);
-
-	// Using std::string as key
-	gl::ResourceManager< gl::RTexture, std::string > textureManager;
-	// load a resource
-	textureManager.ResourceAdd(gl::Resource::Configuration(textureNameAndPath), textureName);
-	// request a resource
-	gl::RTexture * pTex2 = textureManager.ResourceGet(textureName);
-
-	// Using enum as key
-	gl::ResourceManager< gl::RTexture, Texs > enumManager;
-	// load a resource
-	enumManager.ResourceAdd(gl::Resource::Configuration(textureNameAndPath), Texs::Trash);
-	// request a resource
-	gl::RTexture * pRes = enumManager.ResourceGet(Texs::Trash);
 
 	gl::Scene scene("../Resources/Scenes/testScene.3ds");
 
