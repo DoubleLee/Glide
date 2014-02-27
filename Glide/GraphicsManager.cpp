@@ -107,7 +107,7 @@ GraphicsManager::GraphicsManager()
 
 	GLCHECKERROR(glEnable(GL_CULL_FACE))
 	//glFrontFace( GL_CW );
-	GLCHECKERROR(glCullFace(GL_FRONT))
+	GLCHECKERROR(glCullFace(GL_BACK))
 	}
 
 GraphicsManager::~GraphicsManager()
