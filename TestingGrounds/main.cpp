@@ -55,7 +55,7 @@ int main()
 	// request a resource
 	gl::RTexture * pRes = enumManager.ResourceGet(Texs::Trash);
 
-	gl::Scene scene("../Resources/scenes/testScene.dae");
+	gl::Scene scene("../Resources/Scenes/testScene.3ds");
 
 	// Intentional error, with thrown exception
 	//GLCHECKERROR(glBindTexture(GL_TEXTURE_2D, 900) )

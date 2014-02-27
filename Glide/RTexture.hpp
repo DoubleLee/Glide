@@ -46,7 +46,7 @@ public:
 
 protected:
 	GLuint mTextureID;
-	UInt mColorType;
+	GLenum mColorType;
 };
 
 }

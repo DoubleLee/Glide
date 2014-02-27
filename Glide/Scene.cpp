@@ -20,8 +20,8 @@ using namespace Assimp;
 using namespace std;
 namespace gl
 {
-
-glm::mat4 camera = glm::perspective(3.14f / 2.0f, 4.0f / 3.0f, 0.1f, 1000.0f) * glm::lookAt(glm::vec3(0, 0, -10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+// temporary simple camera code
+glm::mat4 camera = glm::perspective(3.14f / 2.0f, 4.0f / 3.0f, 0.1f, 1000.0f) * glm::lookAt(glm::vec3(0, 3, -10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 
 Scene::Scene(const std::string & sceneFile)
 	:
@@ -35,7 +35,8 @@ Scene::Scene(const std::string & sceneFile)
 		aiProcess_CalcTangentSpace |
 		aiProcess_Triangulate |
 		aiProcess_JoinIdenticalVertices |
-		aiProcess_SortByPType );
+		aiProcess_SortByPType |
+		aiProcess_MakeLeftHanded );
 
 	if ( !pScene )
 		{
@@ -46,7 +47,6 @@ Scene::Scene(const std::string & sceneFile)
 	LoadMeshes( pScene);
 	LoadNodes(pScene);
 	}
-
 
 Scene::~Scene()
 	{

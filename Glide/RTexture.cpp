@@ -102,6 +102,24 @@ RTexture::RTexture(const Resource::Configuration & config)
 	// color type. ( RGB, RGBA, Luminance, luminance alpha... palette.. ect
 	png_uint_32 color_type = png_get_color_type(pPngReadStruct, pPngInfoStruct);
 
+	switch( color_type )
+		{
+		case PNG_COLOR_TYPE_RGB:
+			{
+			mColorType = GL_RGB;
+			break;
+			}
+		case PNG_COLOR_TYPE_RGBA:
+			{
+			mColorType = GL_RGBA;
+			break;
+			}
+		default:
+			{
+			throw GlideException("Png color format is not supported, " + mFile);
+			}
+		}
+
 	/*if the image has a transperancy set.. convert it to a full Alpha channel..*/
 	if(png_get_valid(pPngReadStruct, pPngInfoStruct, PNG_INFO_tRNS))
 		{
@@ -110,7 +128,7 @@ RTexture::RTexture(const Resource::Configuration & config)
 		color_type = png_get_color_type(pPngReadStruct, pPngInfoStruct);
 		}
 
-	mColorType = color_type;
+	
 
 	// check to make sure bitDepth isn't 16, if it is, will ask png to
 	// change it back to 8
@@ -149,7 +167,7 @@ RTexture::RTexture(const Resource::Configuration & config)
 	GLCHECKERROR(glGenTextures(1, &mTextureID))
 	GLCHECKERROR(glBindTexture(GL_TEXTURE_2D, mTextureID))
 
-	GLCHECKERROR(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imageWidth, imageHeight, 0, (channels) == 3 ? GL_RGB : GL_RGBA, GL_UNSIGNED_BYTE, data.get()))
+	GLCHECKERROR(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imageWidth, imageHeight, 0, mColorType, GL_UNSIGNED_BYTE, data.get()))
 
 	// anisotripic filtering
 	//GLfloat maxFilter = 0.0f;
