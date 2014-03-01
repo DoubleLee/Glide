@@ -6,6 +6,13 @@
 
 namespace gl
 {
+
+/**
+Use this to throw exceptions,
+it is std::except compatable.
+
+Any time this is throw the data is also wrote to the gLogger.
+*/
 class GlideException : public std::exception
 {
 public:

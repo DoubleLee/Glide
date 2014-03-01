@@ -16,7 +16,12 @@ namespace gl
 void ErrorCallbackPNG(png_structp png_ptr, png_const_charp error_msg);
 void ReadDataCallbackPNG(png_structp pngReadPtr, png_bytep data, png_size_t length);
 
-
+/**
+RTexture represents a texture for openGL.
+Currently it only supports png, more format support in bound.
+Since RTexture loads the resource itself we need a file name.
+the default ResourceConfig stores enough info for this.
+*/
 class RTexture : public Resource
 {
 public:

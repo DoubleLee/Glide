@@ -14,12 +14,20 @@ namespace gl
 {
 class RShader;
 
+/**
+Stores the scene node hiarchy, the meshes and textures.
+
+Soon to also store the lights and cameras.
+*/
 class Scene
 {
 public:
 	Scene(const std::string & sceneFile);
 	~Scene();
 
+	/**
+	Get a game object in the hiarchy by its ID field.
+	*/
 	GameObject * FindObjectByID( const std::string & id, GameObject * pStartObject = nullptr );
 	
 	// temporary call, shaders will be managed by a resource.

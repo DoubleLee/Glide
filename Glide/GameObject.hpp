@@ -12,8 +12,17 @@ namespace gl
 {
 class GameObject;
 
+/// convenience typedef for unique_ptr<GameObject>
 typedef std::unique_ptr<GameObject> GameObjectPtr;
 
+/**
+GameObject are the actual objects in the scene.
+
+They are capable of Node hiarchy, and transformations too.
+
+GameObjects also store Components which handle the GameObjects
+functionality and data.
+*/
 class GameObject
 {
 public:

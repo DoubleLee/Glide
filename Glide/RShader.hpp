@@ -10,6 +10,15 @@
 namespace gl
 {
 
+/**
+RShader class represents a shader program.
+A shader program is made of two files at least.
+There must be a vertex shader and a fragment shader.
+
+TODO: write a function that loads vertex and fragment independantly.
+This way you can write a virtual LoadShader and have it load other shader like geometry
+and tesselation.
+*/
 class RShader : public Resource
 {
 public:
@@ -29,7 +38,13 @@ public:
 	Void SetUniform(const char * pUniformName, const GLint i);
 	Void SetUniform(const char * pUniformName, const GLboolean b);
 
+	/**
+	Binds this shader program to openGL rendering system.
+	*/
 	Void Bind() const;
+	/**
+	Binds null program to openGL rendering system.
+	*/
 	static Void BindNull();
 
 protected:
@@ -42,6 +57,10 @@ protected:
 	GLuint mFragID;
 };
 
+/**
+RShader needs at least 2 files so we inherit from the default
+resource config and then add our files.
+*/
 class RShader::Configuration : public Resource::ConfigType
 {
 public:
