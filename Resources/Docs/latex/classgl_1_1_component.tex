@@ -1,0 +1,191 @@
+\hypertarget{classgl_1_1_component}{\section{gl\-:\-:Component Class Reference}
+\label{classgl_1_1_component}\index{gl\-::\-Component@{gl\-::\-Component}}
+}
+
+
+{\ttfamily \#include $<$Component.\-hpp$>$}
+
+Inheritance diagram for gl\-:\-:Component\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classgl_1_1_component}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::string \hyperlink{classgl_1_1_component_a55fcc946bfc525917e6380e5b71a3f49}{Family\-I\-D}
+\item 
+typedef std\-::string \hyperlink{classgl_1_1_component_a2dae94eddffdba218f51d19dd9d66e4e}{Type\-I\-D}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_component_a412f50df1466615614c3b62421cebbc7}{Component} (const \hyperlink{classgl_1_1_component_a55fcc946bfc525917e6380e5b71a3f49}{Family\-I\-D} \&family\-I\-D, const \hyperlink{classgl_1_1_component_a2dae94eddffdba218f51d19dd9d66e4e}{Type\-I\-D} \&type\-I\-D, \hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$p\-Owner)
+\item 
+\hyperlink{classgl_1_1_component_a6c651251c2ce4c2243eda34815e80d59}{Component} ()
+\item 
+virtual \hyperlink{classgl_1_1_component_a43f758bf7272ace3aaae840489a4a8ae}{$\sim$\-Component} ()
+\item 
+const \hyperlink{classgl_1_1_component_a55fcc946bfc525917e6380e5b71a3f49}{Family\-I\-D} \& \hyperlink{classgl_1_1_component_aae7441b8490f9edafb99189b937fd8a0}{Get\-Family\-I\-D} () const 
+\item 
+const \hyperlink{classgl_1_1_component_a2dae94eddffdba218f51d19dd9d66e4e}{Type\-I\-D} \& \hyperlink{classgl_1_1_component_a5a4746393db3e96ca12b662b7ff7ae3a}{Get\-Type\-I\-D} () const 
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_component_a5583d825aaba0cfbebe199cd36948cb8}{Set\-Family\-I\-D} (const \hyperlink{classgl_1_1_component_a55fcc946bfc525917e6380e5b71a3f49}{Family\-I\-D} \&id)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_component_aba697a90e30a22386b19dc02bcb6ca58}{Set\-Type\-I\-D} (const \hyperlink{classgl_1_1_component_a2dae94eddffdba218f51d19dd9d66e4e}{Type\-I\-D} \&id)
+\item 
+\hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$ \hyperlink{classgl_1_1_component_a8bc9370f252fd5e9e6f7d47b5f84429b}{Get\-Owner} () const 
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_component_acc20da81fa79ebeaf5bfd1d596cb2641}{Set\-Owner} (\hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$p\-Object)
+\item 
+virtual \hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_component_afb18555fefa75987ff5532e874e3b3a1}{Update} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classgl_1_1_component}{Component} is the base class for all components. 
+
+Definition at line 16 of file Component.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classgl_1_1_component_a55fcc946bfc525917e6380e5b71a3f49}{\index{gl\-::\-Component@{gl\-::\-Component}!Family\-I\-D@{Family\-I\-D}}
+\index{Family\-I\-D@{Family\-I\-D}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Family\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::string {\bf gl\-::\-Component\-::\-Family\-I\-D}}}\label{classgl_1_1_component_a55fcc946bfc525917e6380e5b71a3f49}
+Every direct child of \hyperlink{classgl_1_1_component}{Component} should have a unique family id. 
+
+Definition at line 22 of file Component.\-hpp.
+
+\hypertarget{classgl_1_1_component_a2dae94eddffdba218f51d19dd9d66e4e}{\index{gl\-::\-Component@{gl\-::\-Component}!Type\-I\-D@{Type\-I\-D}}
+\index{Type\-I\-D@{Type\-I\-D}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Type\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::string {\bf gl\-::\-Component\-::\-Type\-I\-D}}}\label{classgl_1_1_component_a2dae94eddffdba218f51d19dd9d66e4e}
+If you need to differentiate between family components use this Type\-I\-D 
+
+Definition at line 26 of file Component.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_component_a412f50df1466615614c3b62421cebbc7}{\index{gl\-::\-Component@{gl\-::\-Component}!Component@{Component}}
+\index{Component@{Component}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Component}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Component\-::\-Component (
+\begin{DoxyParamCaption}
+\item[{const {\bf Family\-I\-D} \&}]{family\-I\-D, }
+\item[{const {\bf Type\-I\-D} \&}]{type\-I\-D, }
+\item[{{\bf Game\-Object} $\ast$}]{p\-Owner}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_component_a412f50df1466615614c3b62421cebbc7}
+
+
+Definition at line 6 of file Component.\-cpp.
+
+\hypertarget{classgl_1_1_component_a6c651251c2ce4c2243eda34815e80d59}{\index{gl\-::\-Component@{gl\-::\-Component}!Component@{Component}}
+\index{Component@{Component}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Component}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Component\-::\-Component (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_component_a6c651251c2ce4c2243eda34815e80d59}
+
+
+Definition at line 15 of file Component.\-cpp.
+
+\hypertarget{classgl_1_1_component_a43f758bf7272ace3aaae840489a4a8ae}{\index{gl\-::\-Component@{gl\-::\-Component}!$\sim$\-Component@{$\sim$\-Component}}
+\index{$\sim$\-Component@{$\sim$\-Component}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{$\sim$\-Component}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Component\-::$\sim$\-Component (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgl_1_1_component_a43f758bf7272ace3aaae840489a4a8ae}
+
+
+Definition at line 22 of file Component.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_component_aae7441b8490f9edafb99189b937fd8a0}{\index{gl\-::\-Component@{gl\-::\-Component}!Get\-Family\-I\-D@{Get\-Family\-I\-D}}
+\index{Get\-Family\-I\-D@{Get\-Family\-I\-D}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Get\-Family\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Component\-::\-Family\-I\-D} \& gl\-::\-Component\-::\-Get\-Family\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_component_aae7441b8490f9edafb99189b937fd8a0}
+Returns the family id. 
+
+Definition at line 26 of file Component.\-cpp.
+
+\hypertarget{classgl_1_1_component_a8bc9370f252fd5e9e6f7d47b5f84429b}{\index{gl\-::\-Component@{gl\-::\-Component}!Get\-Owner@{Get\-Owner}}
+\index{Get\-Owner@{Get\-Owner}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Get\-Owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game\-Object} $\ast$ gl\-::\-Component\-::\-Get\-Owner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_component_a8bc9370f252fd5e9e6f7d47b5f84429b}
+
+
+Definition at line 46 of file Component.\-cpp.
+
+\hypertarget{classgl_1_1_component_a5a4746393db3e96ca12b662b7ff7ae3a}{\index{gl\-::\-Component@{gl\-::\-Component}!Get\-Type\-I\-D@{Get\-Type\-I\-D}}
+\index{Get\-Type\-I\-D@{Get\-Type\-I\-D}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Get\-Type\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Component\-::\-Type\-I\-D} \& gl\-::\-Component\-::\-Get\-Type\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_component_a5a4746393db3e96ca12b662b7ff7ae3a}
+returns the type id. 
+
+Definition at line 31 of file Component.\-cpp.
+
+\hypertarget{classgl_1_1_component_a5583d825aaba0cfbebe199cd36948cb8}{\index{gl\-::\-Component@{gl\-::\-Component}!Set\-Family\-I\-D@{Set\-Family\-I\-D}}
+\index{Set\-Family\-I\-D@{Set\-Family\-I\-D}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Set\-Family\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Component\-::\-Set\-Family\-I\-D (
+\begin{DoxyParamCaption}
+\item[{const {\bf Family\-I\-D} \&}]{id}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_component_a5583d825aaba0cfbebe199cd36948cb8}
+
+
+Definition at line 36 of file Component.\-cpp.
+
+\hypertarget{classgl_1_1_component_acc20da81fa79ebeaf5bfd1d596cb2641}{\index{gl\-::\-Component@{gl\-::\-Component}!Set\-Owner@{Set\-Owner}}
+\index{Set\-Owner@{Set\-Owner}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Set\-Owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Component\-::\-Set\-Owner (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\-Object} $\ast$}]{p\-Object}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_component_acc20da81fa79ebeaf5bfd1d596cb2641}
+
+
+Definition at line 51 of file Component.\-cpp.
+
+\hypertarget{classgl_1_1_component_aba697a90e30a22386b19dc02bcb6ca58}{\index{gl\-::\-Component@{gl\-::\-Component}!Set\-Type\-I\-D@{Set\-Type\-I\-D}}
+\index{Set\-Type\-I\-D@{Set\-Type\-I\-D}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Set\-Type\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Component\-::\-Set\-Type\-I\-D (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type\-I\-D} \&}]{id}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_component_aba697a90e30a22386b19dc02bcb6ca58}
+
+
+Definition at line 41 of file Component.\-cpp.
+
+\hypertarget{classgl_1_1_component_afb18555fefa75987ff5532e874e3b3a1}{\index{gl\-::\-Component@{gl\-::\-Component}!Update@{Update}}
+\index{Update@{Update}!gl::Component@{gl\-::\-Component}}
+\subsubsection[{Update}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Component\-::\-Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgl_1_1_component_afb18555fefa75987ff5532e874e3b3a1}
+virtual call to update components. 
+
+Definition at line 56 of file Component.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_component_8hpp}{Component.\-hpp}\item 
+Glide/\hyperlink{_component_8cpp}{Component.\-cpp}\end{DoxyCompactItemize}

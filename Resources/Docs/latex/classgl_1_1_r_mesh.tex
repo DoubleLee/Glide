@@ -1,0 +1,214 @@
+\hypertarget{classgl_1_1_r_mesh}{\section{gl\-:\-:R\-Mesh Class Reference}
+\label{classgl_1_1_r_mesh}\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}}
+}
+
+
+{\ttfamily \#include $<$R\-Mesh.\-hpp$>$}
+
+Inheritance diagram for gl\-:\-:R\-Mesh\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgl_1_1_r_mesh}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classgl_1_1_r_mesh_1_1_configuration}{Configuration}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classgl_1_1_r_mesh_1_1_configuration}{R\-Mesh\-::\-Configuration} \hyperlink{classgl_1_1_r_mesh_a79f410d038549426f50fb60ea46f3ebd}{Config\-Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_r_mesh_a4d0f4e90717bf32767364d3e2bb7d0fa}{R\-Mesh} (const \hyperlink{classgl_1_1_r_mesh_1_1_configuration}{R\-Mesh\-::\-Configuration} \&config)
+\item 
+virtual \hyperlink{classgl_1_1_r_mesh_afb0492fdc604d1db50a17d84fb46250e}{$\sim$\-R\-Mesh} ()
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_mesh_afe64f717298a3d2d3eaa6271156dc54a}{Bind} () const 
+\item 
+\hyperlink{classgl_1_1_r_texture}{R\-Texture} $\ast$ \hyperlink{classgl_1_1_r_mesh_ada1eb2ce86eda9fa108347604b9f4068}{Get\-Texture} () const 
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_mesh_aad7602f1be7e89104e2a37e3067794ff}{Get\-Vertex\-Index\-Count} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_mesh_ac8e930f887c2b59eff37b7722115bd4f}{Bind\-Null} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_r_texture}{R\-Texture} $\ast$ \hyperlink{classgl_1_1_r_mesh_a409110e20a5f2d2a39229f6f71445b53}{mp\-Texture}
+\item 
+\hyperlink{_basic_types_8hpp_a11c112f01a7ad8f767fd48bc916463a3}{U\-Int} \hyperlink{classgl_1_1_r_mesh_a4edcf25786adf2e264c61c6b8d7f401f}{m\-Vertex\-Count}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_mesh_afdfd8a88b91096eb4b23ca9786587c61}{m\-Vertex\-Index\-Count}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_mesh_a9667468e4f7e16f934a155bd28954e7d}{m\-Vao}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_mesh_a89115eb9f8ee1ebd8dc55e68f886170a}{m\-Vbo\-Positions}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_mesh_a5efc2fecfc6da14de8008b1e04694fb8}{m\-Vbo\-Normals}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_mesh_aff4a64a5d46ccd3e1ca67cad783765d7}{m\-Vbo\-U\-Vs}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_mesh_a1f5091fc89b32918e1a4cc92ec41a852}{m\-Vbo\-Indicies}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classgl_1_1_r_mesh}{R\-Mesh} class represents a mesh. Since we are using Assimp to load entire scenes this object just takes in the open\-G\-L vao and vbos created by the scene loader, and stores those ids for rendering and destruction later. 
+
+Definition at line 18 of file R\-Mesh.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classgl_1_1_r_mesh_a79f410d038549426f50fb60ea46f3ebd}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!Config\-Type@{Config\-Type}}
+\index{Config\-Type@{Config\-Type}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{Config\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf R\-Mesh\-::\-Configuration} {\bf gl\-::\-R\-Mesh\-::\-Config\-Type}}}\label{classgl_1_1_r_mesh_a79f410d038549426f50fb60ea46f3ebd}
+
+
+Definition at line 21 of file R\-Mesh.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_r_mesh_a4d0f4e90717bf32767364d3e2bb7d0fa}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!R\-Mesh@{R\-Mesh}}
+\index{R\-Mesh@{R\-Mesh}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{R\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-R\-Mesh\-::\-R\-Mesh (
+\begin{DoxyParamCaption}
+\item[{const {\bf R\-Mesh\-::\-Configuration} \&}]{config}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_r_mesh_a4d0f4e90717bf32767364d3e2bb7d0fa}
+
+
+Definition at line 10 of file R\-Mesh.\-cpp.
+
+\hypertarget{classgl_1_1_r_mesh_afb0492fdc604d1db50a17d84fb46250e}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!$\sim$\-R\-Mesh@{$\sim$\-R\-Mesh}}
+\index{$\sim$\-R\-Mesh@{$\sim$\-R\-Mesh}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{$\sim$\-R\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-R\-Mesh\-::$\sim$\-R\-Mesh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgl_1_1_r_mesh_afb0492fdc604d1db50a17d84fb46250e}
+
+
+Definition at line 26 of file R\-Mesh.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_r_mesh_afe64f717298a3d2d3eaa6271156dc54a}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!Bind@{Bind}}
+\index{Bind@{Bind}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{Bind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Mesh\-::\-Bind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_r_mesh_afe64f717298a3d2d3eaa6271156dc54a}
+Bind this mesh to open\-G\-L's rendering system. 
+
+Definition at line 61 of file R\-Mesh.\-cpp.
+
+\hypertarget{classgl_1_1_r_mesh_ac8e930f887c2b59eff37b7722115bd4f}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!Bind\-Null@{Bind\-Null}}
+\index{Bind\-Null@{Bind\-Null}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{Bind\-Null}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Mesh\-::\-Bind\-Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classgl_1_1_r_mesh_ac8e930f887c2b59eff37b7722115bd4f}
+Binds null to open\-G\-L's rendering system. 
+
+Definition at line 66 of file R\-Mesh.\-cpp.
+
+\hypertarget{classgl_1_1_r_mesh_ada1eb2ce86eda9fa108347604b9f4068}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!Get\-Texture@{Get\-Texture}}
+\index{Get\-Texture@{Get\-Texture}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{Get\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-Texture} $\ast$ gl\-::\-R\-Mesh\-::\-Get\-Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_r_mesh_ada1eb2ce86eda9fa108347604b9f4068}
+returns the texture associated with this mesh. 
+
+Definition at line 71 of file R\-Mesh.\-cpp.
+
+\hypertarget{classgl_1_1_r_mesh_aad7602f1be7e89104e2a37e3067794ff}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!Get\-Vertex\-Index\-Count@{Get\-Vertex\-Index\-Count}}
+\index{Get\-Vertex\-Index\-Count@{Get\-Vertex\-Index\-Count}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{Get\-Vertex\-Index\-Count}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Mesh\-::\-Get\-Vertex\-Index\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_r_mesh_aad7602f1be7e89104e2a37e3067794ff}
+retuns the vertex index count. You need this when rendering meshes with index buffers. 
+
+Definition at line 76 of file R\-Mesh.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classgl_1_1_r_mesh_a409110e20a5f2d2a39229f6f71445b53}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!mp\-Texture@{mp\-Texture}}
+\index{mp\-Texture@{mp\-Texture}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{mp\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-Texture}$\ast$ gl\-::\-R\-Mesh\-::mp\-Texture\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_mesh_a409110e20a5f2d2a39229f6f71445b53}
+
+
+Definition at line 49 of file R\-Mesh.\-hpp.
+
+\hypertarget{classgl_1_1_r_mesh_a9667468e4f7e16f934a155bd28954e7d}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!m\-Vao@{m\-Vao}}
+\index{m\-Vao@{m\-Vao}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{m\-Vao}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Mesh\-::m\-Vao\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_mesh_a9667468e4f7e16f934a155bd28954e7d}
+
+
+Definition at line 52 of file R\-Mesh.\-hpp.
+
+\hypertarget{classgl_1_1_r_mesh_a1f5091fc89b32918e1a4cc92ec41a852}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!m\-Vbo\-Indicies@{m\-Vbo\-Indicies}}
+\index{m\-Vbo\-Indicies@{m\-Vbo\-Indicies}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{m\-Vbo\-Indicies}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Mesh\-::m\-Vbo\-Indicies\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_mesh_a1f5091fc89b32918e1a4cc92ec41a852}
+
+
+Definition at line 56 of file R\-Mesh.\-hpp.
+
+\hypertarget{classgl_1_1_r_mesh_a5efc2fecfc6da14de8008b1e04694fb8}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!m\-Vbo\-Normals@{m\-Vbo\-Normals}}
+\index{m\-Vbo\-Normals@{m\-Vbo\-Normals}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{m\-Vbo\-Normals}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Mesh\-::m\-Vbo\-Normals\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_mesh_a5efc2fecfc6da14de8008b1e04694fb8}
+
+
+Definition at line 54 of file R\-Mesh.\-hpp.
+
+\hypertarget{classgl_1_1_r_mesh_a89115eb9f8ee1ebd8dc55e68f886170a}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!m\-Vbo\-Positions@{m\-Vbo\-Positions}}
+\index{m\-Vbo\-Positions@{m\-Vbo\-Positions}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{m\-Vbo\-Positions}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Mesh\-::m\-Vbo\-Positions\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_mesh_a89115eb9f8ee1ebd8dc55e68f886170a}
+
+
+Definition at line 53 of file R\-Mesh.\-hpp.
+
+\hypertarget{classgl_1_1_r_mesh_aff4a64a5d46ccd3e1ca67cad783765d7}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!m\-Vbo\-U\-Vs@{m\-Vbo\-U\-Vs}}
+\index{m\-Vbo\-U\-Vs@{m\-Vbo\-U\-Vs}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{m\-Vbo\-U\-Vs}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Mesh\-::m\-Vbo\-U\-Vs\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_mesh_aff4a64a5d46ccd3e1ca67cad783765d7}
+
+
+Definition at line 55 of file R\-Mesh.\-hpp.
+
+\hypertarget{classgl_1_1_r_mesh_a4edcf25786adf2e264c61c6b8d7f401f}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!m\-Vertex\-Count@{m\-Vertex\-Count}}
+\index{m\-Vertex\-Count@{m\-Vertex\-Count}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{m\-Vertex\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-Int} gl\-::\-R\-Mesh\-::m\-Vertex\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_mesh_a4edcf25786adf2e264c61c6b8d7f401f}
+
+
+Definition at line 50 of file R\-Mesh.\-hpp.
+
+\hypertarget{classgl_1_1_r_mesh_afdfd8a88b91096eb4b23ca9786587c61}{\index{gl\-::\-R\-Mesh@{gl\-::\-R\-Mesh}!m\-Vertex\-Index\-Count@{m\-Vertex\-Index\-Count}}
+\index{m\-Vertex\-Index\-Count@{m\-Vertex\-Index\-Count}!gl::RMesh@{gl\-::\-R\-Mesh}}
+\subsubsection[{m\-Vertex\-Index\-Count}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Mesh\-::m\-Vertex\-Index\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_mesh_afdfd8a88b91096eb4b23ca9786587c61}
+
+
+Definition at line 51 of file R\-Mesh.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_r_mesh_8hpp}{R\-Mesh.\-hpp}\item 
+Glide/\hyperlink{_r_mesh_8cpp}{R\-Mesh.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,142 @@
+\hypertarget{classgl_1_1_resource}{\section{gl\-:\-:Resource Class Reference}
+\label{classgl_1_1_resource}\index{gl\-::\-Resource@{gl\-::\-Resource}}
+}
+
+
+{\ttfamily \#include $<$Resource.\-hpp$>$}
+
+Inheritance diagram for gl\-:\-:Resource\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgl_1_1_resource}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classgl_1_1_resource_1_1_configuration}{Configuration}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classgl_1_1_resource_1_1_configuration}{Resource\-::\-Configuration} \hyperlink{classgl_1_1_resource_a18683d13ef2edfbe9cb1e694497f6898}{Config\-Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_resource_a1edca9f900b5d2851661d81317ba0076}{Resource} (const \hyperlink{classgl_1_1_resource_1_1_configuration}{Resource\-::\-Configuration} \&config)
+\item 
+\hyperlink{classgl_1_1_resource_a15aa46dff1cf8f0f674f444831b8a288}{Resource} (\hyperlink{classgl_1_1_resource}{Resource} \&\&other)
+\item 
+\hyperlink{classgl_1_1_resource_aed04a0b3ef70ec4c834b87e29d50f761}{Resource} (const \hyperlink{classgl_1_1_resource}{Resource} \&other)=delete
+\item 
+\hyperlink{classgl_1_1_resource}{Resource} \& \hyperlink{classgl_1_1_resource_aa5d1a0dc03ebfeb6bdd2b12a795a9fdd}{operator=} (const \hyperlink{classgl_1_1_resource}{Resource} \&other)=delete
+\item 
+virtual \hyperlink{classgl_1_1_resource_aaabd5bae068524556573c4f9f026c130}{$\sim$\-Resource} ()
+\item 
+const std\-::string \& \hyperlink{classgl_1_1_resource_a303a83798d6fad7e933fa7745c9ec18d}{Get\-File} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classgl_1_1_resource_a1e2c1b22896c2a996f79a3a0308b8ecc}{m\-File}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for resources.
+
+All resource classes take in either \hyperlink{classgl_1_1_resource_1_1_configuration}{Resource\-::\-Configuration} or a subclass of \hyperlink{classgl_1_1_resource_1_1_configuration}{Resource\-::\-Configuration} This is to provide a clean extentable api. Also the Resource\-Managers take in the proper Resource\-Sub\-Class\-::\-Config\-Type 
+
+Definition at line 19 of file Resource.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classgl_1_1_resource_a18683d13ef2edfbe9cb1e694497f6898}{\index{gl\-::\-Resource@{gl\-::\-Resource}!Config\-Type@{Config\-Type}}
+\index{Config\-Type@{Config\-Type}!gl::Resource@{gl\-::\-Resource}}
+\subsubsection[{Config\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Resource\-::\-Configuration} {\bf gl\-::\-Resource\-::\-Config\-Type}}}\label{classgl_1_1_resource_a18683d13ef2edfbe9cb1e694497f6898}
+
+
+Definition at line 22 of file Resource.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_resource_a1edca9f900b5d2851661d81317ba0076}{\index{gl\-::\-Resource@{gl\-::\-Resource}!Resource@{Resource}}
+\index{Resource@{Resource}!gl::Resource@{gl\-::\-Resource}}
+\subsubsection[{Resource}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Resource\-::\-Resource (
+\begin{DoxyParamCaption}
+\item[{const {\bf Resource\-::\-Configuration} \&}]{config}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_resource_a1edca9f900b5d2851661d81317ba0076}
+\hyperlink{classgl_1_1_resource}{Resource}, base resource class. It's template argument is the comparer by which will be returned by Get\-I\-D() and also is the template type of the Resource\-Config base class. 
+
+Definition at line 52 of file Resource.\-cpp.
+
+\hypertarget{classgl_1_1_resource_a15aa46dff1cf8f0f674f444831b8a288}{\index{gl\-::\-Resource@{gl\-::\-Resource}!Resource@{Resource}}
+\index{Resource@{Resource}!gl::Resource@{gl\-::\-Resource}}
+\subsubsection[{Resource}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Resource\-::\-Resource (
+\begin{DoxyParamCaption}
+\item[{{\bf Resource} \&\&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_resource_a15aa46dff1cf8f0f674f444831b8a288}
+
+
+Definition at line 45 of file Resource.\-cpp.
+
+\hypertarget{classgl_1_1_resource_aed04a0b3ef70ec4c834b87e29d50f761}{\index{gl\-::\-Resource@{gl\-::\-Resource}!Resource@{Resource}}
+\index{Resource@{Resource}!gl::Resource@{gl\-::\-Resource}}
+\subsubsection[{Resource}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Resource\-::\-Resource (
+\begin{DoxyParamCaption}
+\item[{const {\bf Resource} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classgl_1_1_resource_aed04a0b3ef70ec4c834b87e29d50f761}
+\hypertarget{classgl_1_1_resource_aaabd5bae068524556573c4f9f026c130}{\index{gl\-::\-Resource@{gl\-::\-Resource}!$\sim$\-Resource@{$\sim$\-Resource}}
+\index{$\sim$\-Resource@{$\sim$\-Resource}!gl::Resource@{gl\-::\-Resource}}
+\subsubsection[{$\sim$\-Resource}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Resource\-::$\sim$\-Resource (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgl_1_1_resource_aaabd5bae068524556573c4f9f026c130}
+
+
+Definition at line 59 of file Resource.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_resource_a303a83798d6fad7e933fa7745c9ec18d}{\index{gl\-::\-Resource@{gl\-::\-Resource}!Get\-File@{Get\-File}}
+\index{Get\-File@{Get\-File}!gl::Resource@{gl\-::\-Resource}}
+\subsubsection[{Get\-File}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string \& gl\-::\-Resource\-::\-Get\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_resource_a303a83798d6fad7e933fa7745c9ec18d}
+
+
+Definition at line 64 of file Resource.\-cpp.
+
+\hypertarget{classgl_1_1_resource_aa5d1a0dc03ebfeb6bdd2b12a795a9fdd}{\index{gl\-::\-Resource@{gl\-::\-Resource}!operator=@{operator=}}
+\index{operator=@{operator=}!gl::Resource@{gl\-::\-Resource}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource}\& gl\-::\-Resource\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Resource} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classgl_1_1_resource_aa5d1a0dc03ebfeb6bdd2b12a795a9fdd}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classgl_1_1_resource_a1e2c1b22896c2a996f79a3a0308b8ecc}{\index{gl\-::\-Resource@{gl\-::\-Resource}!m\-File@{m\-File}}
+\index{m\-File@{m\-File}!gl::Resource@{gl\-::\-Resource}}
+\subsubsection[{m\-File}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string gl\-::\-Resource\-::m\-File\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_resource_a1e2c1b22896c2a996f79a3a0308b8ecc}
+
+
+Definition at line 38 of file Resource.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_resource_8hpp}{Resource.\-hpp}\item 
+Glide/\hyperlink{_resource_8cpp}{Resource.\-cpp}\end{DoxyCompactItemize}

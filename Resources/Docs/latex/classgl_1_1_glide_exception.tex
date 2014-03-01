@@ -1,0 +1,152 @@
+\hypertarget{classgl_1_1_glide_exception}{\section{gl\-:\-:Glide\-Exception Class Reference}
+\label{classgl_1_1_glide_exception}\index{gl\-::\-Glide\-Exception@{gl\-::\-Glide\-Exception}}
+}
+
+
+{\ttfamily \#include $<$Glide\-Exception.\-hpp$>$}
+
+Inheritance diagram for gl\-:\-:Glide\-Exception\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgl_1_1_glide_exception}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_glide_exception_aced3eebf8bbc7c3ece421aba2968eb08}{Glide\-Exception} (const std\-::string \&message)
+\item 
+\hyperlink{classgl_1_1_glide_exception_aeb51efa7265ec37545424eb14210348e}{Glide\-Exception} (const std\-::string \&message, \hyperlink{_basic_types_8hpp_a57ba1b89723b1138a6c560e57422acd5}{Long} code)
+\item 
+\hyperlink{classgl_1_1_glide_exception_a48c8b727d59aacc363f288f12fb178bb}{Glide\-Exception} (const std\-::string \&message, \hyperlink{_basic_types_8hpp_a57ba1b89723b1138a6c560e57422acd5}{Long} code, const std\-::string \&code\-Str)
+\item 
+virtual const char $\ast$ \hyperlink{classgl_1_1_glide_exception_a2c36fecffc35bb3c223a85b59f5322fe}{what} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_glide_exception_aef61dcf7d8844dff478b7be0e762914f}{Build\-Message} (const std\-::string \&message)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_glide_exception_a3a7e5acc5f75f29da43430ff39f8d5c4}{Build\-Message\-\_\-\-Code} (const std\-::string \&message, \hyperlink{_basic_types_8hpp_a57ba1b89723b1138a6c560e57422acd5}{Long} code)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_glide_exception_ac3327c44f3918052e70c05e7051903d2}{Build\-Message\-\_\-\-Code\-\_\-\-Code\-Str} (const std\-::string \&message, \hyperlink{_basic_types_8hpp_a57ba1b89723b1138a6c560e57422acd5}{Long} code, const std\-::string \&error\-Code\-Str)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classgl_1_1_glide_exception_afb68bf6b714e824ce58bef03f4264b91}{m\-What}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Use this to throw exceptions, it is std\-::except compatable.
+
+Any time this is throw the data is also wrote to the g\-Logger. 
+
+Definition at line 16 of file Glide\-Exception.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_glide_exception_aced3eebf8bbc7c3ece421aba2968eb08}{\index{gl\-::\-Glide\-Exception@{gl\-::\-Glide\-Exception}!Glide\-Exception@{Glide\-Exception}}
+\index{Glide\-Exception@{Glide\-Exception}!gl::GlideException@{gl\-::\-Glide\-Exception}}
+\subsubsection[{Glide\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Glide\-Exception\-::\-Glide\-Exception (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_glide_exception_aced3eebf8bbc7c3ece421aba2968eb08}
+
+
+Definition at line 9 of file Glide\-Exception.\-cpp.
+
+\hypertarget{classgl_1_1_glide_exception_aeb51efa7265ec37545424eb14210348e}{\index{gl\-::\-Glide\-Exception@{gl\-::\-Glide\-Exception}!Glide\-Exception@{Glide\-Exception}}
+\index{Glide\-Exception@{Glide\-Exception}!gl::GlideException@{gl\-::\-Glide\-Exception}}
+\subsubsection[{Glide\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Glide\-Exception\-::\-Glide\-Exception (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message, }
+\item[{{\bf Long}}]{code}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_glide_exception_aeb51efa7265ec37545424eb14210348e}
+
+
+Definition at line 18 of file Glide\-Exception.\-cpp.
+
+\hypertarget{classgl_1_1_glide_exception_a48c8b727d59aacc363f288f12fb178bb}{\index{gl\-::\-Glide\-Exception@{gl\-::\-Glide\-Exception}!Glide\-Exception@{Glide\-Exception}}
+\index{Glide\-Exception@{Glide\-Exception}!gl::GlideException@{gl\-::\-Glide\-Exception}}
+\subsubsection[{Glide\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Glide\-Exception\-::\-Glide\-Exception (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message, }
+\item[{{\bf Long}}]{code, }
+\item[{const std\-::string \&}]{code\-Str}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_glide_exception_a48c8b727d59aacc363f288f12fb178bb}
+
+
+Definition at line 28 of file Glide\-Exception.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_glide_exception_aef61dcf7d8844dff478b7be0e762914f}{\index{gl\-::\-Glide\-Exception@{gl\-::\-Glide\-Exception}!Build\-Message@{Build\-Message}}
+\index{Build\-Message@{Build\-Message}!gl::GlideException@{gl\-::\-Glide\-Exception}}
+\subsubsection[{Build\-Message}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Glide\-Exception\-::\-Build\-Message (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_glide_exception_aef61dcf7d8844dff478b7be0e762914f}
+
+
+Definition at line 38 of file Glide\-Exception.\-cpp.
+
+\hypertarget{classgl_1_1_glide_exception_a3a7e5acc5f75f29da43430ff39f8d5c4}{\index{gl\-::\-Glide\-Exception@{gl\-::\-Glide\-Exception}!Build\-Message\-\_\-\-Code@{Build\-Message\-\_\-\-Code}}
+\index{Build\-Message\-\_\-\-Code@{Build\-Message\-\_\-\-Code}!gl::GlideException@{gl\-::\-Glide\-Exception}}
+\subsubsection[{Build\-Message\-\_\-\-Code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Glide\-Exception\-::\-Build\-Message\-\_\-\-Code (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message, }
+\item[{{\bf Long}}]{code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_glide_exception_a3a7e5acc5f75f29da43430ff39f8d5c4}
+
+
+Definition at line 45 of file Glide\-Exception.\-cpp.
+
+\hypertarget{classgl_1_1_glide_exception_ac3327c44f3918052e70c05e7051903d2}{\index{gl\-::\-Glide\-Exception@{gl\-::\-Glide\-Exception}!Build\-Message\-\_\-\-Code\-\_\-\-Code\-Str@{Build\-Message\-\_\-\-Code\-\_\-\-Code\-Str}}
+\index{Build\-Message\-\_\-\-Code\-\_\-\-Code\-Str@{Build\-Message\-\_\-\-Code\-\_\-\-Code\-Str}!gl::GlideException@{gl\-::\-Glide\-Exception}}
+\subsubsection[{Build\-Message\-\_\-\-Code\-\_\-\-Code\-Str}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Glide\-Exception\-::\-Build\-Message\-\_\-\-Code\-\_\-\-Code\-Str (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message, }
+\item[{{\bf Long}}]{code, }
+\item[{const std\-::string \&}]{error\-Code\-Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_glide_exception_ac3327c44f3918052e70c05e7051903d2}
+
+
+Definition at line 53 of file Glide\-Exception.\-cpp.
+
+\hypertarget{classgl_1_1_glide_exception_a2c36fecffc35bb3c223a85b59f5322fe}{\index{gl\-::\-Glide\-Exception@{gl\-::\-Glide\-Exception}!what@{what}}
+\index{what@{what}!gl::GlideException@{gl\-::\-Glide\-Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gl\-::\-Glide\-Exception\-::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgl_1_1_glide_exception_a2c36fecffc35bb3c223a85b59f5322fe}
+
+
+Definition at line 61 of file Glide\-Exception.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classgl_1_1_glide_exception_afb68bf6b714e824ce58bef03f4264b91}{\index{gl\-::\-Glide\-Exception@{gl\-::\-Glide\-Exception}!m\-What@{m\-What}}
+\index{m\-What@{m\-What}!gl::GlideException@{gl\-::\-Glide\-Exception}}
+\subsubsection[{m\-What}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string gl\-::\-Glide\-Exception\-::m\-What\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_glide_exception_afb68bf6b714e824ce58bef03f4264b91}
+
+
+Definition at line 30 of file Glide\-Exception.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_glide_exception_8hpp}{Glide\-Exception.\-hpp}\item 
+Glide/\hyperlink{_glide_exception_8cpp}{Glide\-Exception.\-cpp}\end{DoxyCompactItemize}

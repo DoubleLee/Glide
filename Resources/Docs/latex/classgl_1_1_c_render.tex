@@ -1,0 +1,113 @@
+\hypertarget{classgl_1_1_c_render}{\section{gl\-:\-:C\-Render Class Reference}
+\label{classgl_1_1_c_render}\index{gl\-::\-C\-Render@{gl\-::\-C\-Render}}
+}
+
+
+{\ttfamily \#include $<$C\-Render.\-hpp$>$}
+
+Inheritance diagram for gl\-:\-:C\-Render\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classgl_1_1_c_render}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_c_render_ad81c4b1eaf7060f8314b7b63fbb35f57}{C\-Render} (const \hyperlink{classgl_1_1_component_a2dae94eddffdba218f51d19dd9d66e4e}{Type\-I\-D} \&type\-I\-D, \hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$p\-Owner, \hyperlink{classgl_1_1_r_mesh}{R\-Mesh} $\ast$p\-Mesh, \hyperlink{classgl_1_1_r_shader}{R\-Shader} $\ast$p\-Shader)
+\item 
+virtual \hyperlink{classgl_1_1_c_render_a28594f36d8ae3136dfd35018c0ea14a6}{$\sim$\-C\-Render} ()
+\item 
+virtual void \hyperlink{classgl_1_1_c_render_a9cc0ab19657613e1767fa0dd5a580617}{Render} (const glm\-::mat4 \&\hyperlink{namespacegl_a5580e107f8adbdc0f887df19caebb589}{camera})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_r_mesh}{R\-Mesh} $\ast$ \hyperlink{classgl_1_1_c_render_a0dd8e2aad391023cc6ffb31fdc84a9ba}{mp\-Mesh}
+\item 
+\hyperlink{classgl_1_1_r_texture}{R\-Texture} $\ast$ \hyperlink{classgl_1_1_c_render_ae6e4037e82d612aae8e25885538e96f9}{mp\-Texture}
+\item 
+\hyperlink{classgl_1_1_r_shader}{R\-Shader} $\ast$ \hyperlink{classgl_1_1_c_render_a7114c3d03ac0e599755f9f7f5f85960d}{mp\-Shader}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the open\-G\-L Rendering component. Every \hyperlink{classgl_1_1_game_object}{Game\-Object} that needs to be rendered needs one of these. It stores the mesh, texture and shader pointers. It will grab the Texture from the mesh passed in.
+
+N\-O\-T\-E\-: currently there is a shader pointer passed in this may change. 
+
+Definition at line 22 of file C\-Render.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_c_render_ad81c4b1eaf7060f8314b7b63fbb35f57}{\index{gl\-::\-C\-Render@{gl\-::\-C\-Render}!C\-Render@{C\-Render}}
+\index{C\-Render@{C\-Render}!gl::CRender@{gl\-::\-C\-Render}}
+\subsubsection[{C\-Render}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-C\-Render\-::\-C\-Render (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type\-I\-D} \&}]{type\-I\-D, }
+\item[{{\bf Game\-Object} $\ast$}]{p\-Owner, }
+\item[{{\bf R\-Mesh} $\ast$}]{p\-Mesh, }
+\item[{{\bf R\-Shader} $\ast$}]{p\-Shader}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_c_render_ad81c4b1eaf7060f8314b7b63fbb35f57}
+
+
+Definition at line 12 of file C\-Render.\-cpp.
+
+\hypertarget{classgl_1_1_c_render_a28594f36d8ae3136dfd35018c0ea14a6}{\index{gl\-::\-C\-Render@{gl\-::\-C\-Render}!$\sim$\-C\-Render@{$\sim$\-C\-Render}}
+\index{$\sim$\-C\-Render@{$\sim$\-C\-Render}!gl::CRender@{gl\-::\-C\-Render}}
+\subsubsection[{$\sim$\-C\-Render}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-C\-Render\-::$\sim$\-C\-Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgl_1_1_c_render_a28594f36d8ae3136dfd35018c0ea14a6}
+
+
+Definition at line 31 of file C\-Render.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_c_render_a9cc0ab19657613e1767fa0dd5a580617}{\index{gl\-::\-C\-Render@{gl\-::\-C\-Render}!Render@{Render}}
+\index{Render@{Render}!gl::CRender@{gl\-::\-C\-Render}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-C\-Render\-::\-Render (
+\begin{DoxyParamCaption}
+\item[{const glm\-::mat4 \&}]{camera}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgl_1_1_c_render_a9cc0ab19657613e1767fa0dd5a580617}
+render the game object this component is attached to. 
+
+Definition at line 36 of file C\-Render.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classgl_1_1_c_render_a0dd8e2aad391023cc6ffb31fdc84a9ba}{\index{gl\-::\-C\-Render@{gl\-::\-C\-Render}!mp\-Mesh@{mp\-Mesh}}
+\index{mp\-Mesh@{mp\-Mesh}!gl::CRender@{gl\-::\-C\-Render}}
+\subsubsection[{mp\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-Mesh}$\ast$ gl\-::\-C\-Render\-::mp\-Mesh\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_c_render_a0dd8e2aad391023cc6ffb31fdc84a9ba}
+
+
+Definition at line 35 of file C\-Render.\-hpp.
+
+\hypertarget{classgl_1_1_c_render_a7114c3d03ac0e599755f9f7f5f85960d}{\index{gl\-::\-C\-Render@{gl\-::\-C\-Render}!mp\-Shader@{mp\-Shader}}
+\index{mp\-Shader@{mp\-Shader}!gl::CRender@{gl\-::\-C\-Render}}
+\subsubsection[{mp\-Shader}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-Shader}$\ast$ gl\-::\-C\-Render\-::mp\-Shader\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_c_render_a7114c3d03ac0e599755f9f7f5f85960d}
+
+
+Definition at line 37 of file C\-Render.\-hpp.
+
+\hypertarget{classgl_1_1_c_render_ae6e4037e82d612aae8e25885538e96f9}{\index{gl\-::\-C\-Render@{gl\-::\-C\-Render}!mp\-Texture@{mp\-Texture}}
+\index{mp\-Texture@{mp\-Texture}!gl::CRender@{gl\-::\-C\-Render}}
+\subsubsection[{mp\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-Texture}$\ast$ gl\-::\-C\-Render\-::mp\-Texture\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_c_render_ae6e4037e82d612aae8e25885538e96f9}
+
+
+Definition at line 36 of file C\-Render.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_c_render_8hpp}{C\-Render.\-hpp}\item 
+Glide/\hyperlink{_c_render_8cpp}{C\-Render.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+\hypertarget{_scene_8cpp}{\section{Glide/\-Scene.cpp File Reference}
+\label{_scene_8cpp}\index{Glide/\-Scene.\-cpp@{Glide/\-Scene.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}Scene.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Resource.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Resource\-Config.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}C\-Render.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}File\-Paths.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}R\-Shader.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}assimp/\-Importer.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}assimp/scene.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}assimp/postprocess.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$glm/glm.\-hpp$>$}\\*
+{\ttfamily \#include $<$glm/gtc/matrix\-\_\-transform.\-hpp$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacegl}{gl}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_scene_8cpp_a816ab7d5c2ce1f0a01216042837beb93}{G\-L\-M\-\_\-\-F\-O\-R\-C\-E\-\_\-\-R\-A\-D\-I\-A\-N\-S}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+glm\-::mat4 \hyperlink{namespacegl_a5580e107f8adbdc0f887df19caebb589}{gl\-::camera} = glm\-::perspective(3.\-14f / 2.\-0f, 4.\-0f / 3.\-0f, 0.\-1f, 1000.\-0f) $\ast$ glm\-::look\-At(glm\-::vec3(0, 4, 5), glm\-::vec3(0, 0, 0), glm\-::vec3(0, 1, 0))
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_scene_8cpp_a816ab7d5c2ce1f0a01216042837beb93}{\index{Scene.\-cpp@{Scene.\-cpp}!G\-L\-M\-\_\-\-F\-O\-R\-C\-E\-\_\-\-R\-A\-D\-I\-A\-N\-S@{G\-L\-M\-\_\-\-F\-O\-R\-C\-E\-\_\-\-R\-A\-D\-I\-A\-N\-S}}
+\index{G\-L\-M\-\_\-\-F\-O\-R\-C\-E\-\_\-\-R\-A\-D\-I\-A\-N\-S@{G\-L\-M\-\_\-\-F\-O\-R\-C\-E\-\_\-\-R\-A\-D\-I\-A\-N\-S}!Scene.cpp@{Scene.\-cpp}}
+\subsubsection[{G\-L\-M\-\_\-\-F\-O\-R\-C\-E\-\_\-\-R\-A\-D\-I\-A\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-L\-M\-\_\-\-F\-O\-R\-C\-E\-\_\-\-R\-A\-D\-I\-A\-N\-S}}\label{_scene_8cpp_a816ab7d5c2ce1f0a01216042837beb93}
+
+
+Definition at line 13 of file Scene.\-cpp.
+

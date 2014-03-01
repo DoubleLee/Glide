@@ -1,0 +1,92 @@
+\hypertarget{class_g_l_exception}{\section{G\-L\-Exception Class Reference}
+\label{class_g_l_exception}\index{G\-L\-Exception@{G\-L\-Exception}}
+}
+
+
+The \hyperlink{class_g_l_exception}{G\-L\-Exception} class.  
+
+
+
+
+{\ttfamily \#include $<$G\-L\-Check\-Error.\-hpp$>$}
+
+Inheritance diagram for G\-L\-Exception\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_l_exception}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_g_l_exception_a4e89f3cf9f4111c5ff27f1b4a04cbc44}{G\-L\-Exception} (int code, int line, std\-::string file)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_g_l_exception}{G\-L\-Exception}. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{class_g_l_exception_adb5040f64f34f6c86e6019b0d8d65c78}{what} () const \hyperlink{_g_l_check_error_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\-O\-E\-X\-C\-E\-P\-T}
+\begin{DoxyCompactList}\small\item\em what \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_g_l_exception}{G\-L\-Exception} class. 
+
+This is the class to use for throwing an exception when an open\-G\-L error is detected.
+
+It inherits from std\-::exception 
+
+Definition at line 22 of file G\-L\-Check\-Error.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_g_l_exception_a4e89f3cf9f4111c5ff27f1b4a04cbc44}{\index{G\-L\-Exception@{G\-L\-Exception}!G\-L\-Exception@{G\-L\-Exception}}
+\index{G\-L\-Exception@{G\-L\-Exception}!GLException@{G\-L\-Exception}}
+\subsubsection[{G\-L\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}G\-L\-Exception\-::\-G\-L\-Exception (
+\begin{DoxyParamCaption}
+\item[{int}]{code, }
+\item[{int}]{line, }
+\item[{std\-::string}]{file}
+\end{DoxyParamCaption}
+)}}\label{class_g_l_exception_a4e89f3cf9f4111c5ff27f1b4a04cbc44}
+
+
+\hyperlink{class_g_l_exception}{G\-L\-Exception}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The open\-G\-L error code. \\
+\hline
+{\em line} & The line which the error occurred. \\
+\hline
+{\em file} & The file which the error occurred. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file G\-L\-Check\-Error.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_g_l_exception_adb5040f64f34f6c86e6019b0d8d65c78}{\index{G\-L\-Exception@{G\-L\-Exception}!what@{what}}
+\index{what@{what}!GLException@{G\-L\-Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ G\-L\-Exception\-::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_g_l_exception_adb5040f64f34f6c86e6019b0d8d65c78}
+
+
+what 
+
+\begin{DoxyReturn}{Returns}
+The c-\/string to explain what happend. 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file G\-L\-Check\-Error.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_g_l_check_error_8hpp}{G\-L\-Check\-Error.\-hpp}\item 
+Glide/\hyperlink{_g_l_check_error_8cpp}{G\-L\-Check\-Error.\-cpp}\end{DoxyCompactItemize}

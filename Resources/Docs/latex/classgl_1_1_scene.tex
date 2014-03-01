@@ -1,0 +1,205 @@
+\hypertarget{classgl_1_1_scene}{\section{gl\-:\-:Scene Class Reference}
+\label{classgl_1_1_scene}\index{gl\-::\-Scene@{gl\-::\-Scene}}
+}
+
+
+{\ttfamily \#include $<$Scene.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_scene_a20c2bb328c15cc78c5ee9871f8f2533e}{Scene} (const std\-::string \&scene\-File)
+\item 
+\hyperlink{classgl_1_1_scene_a6ab424422c62cfcae8f9d27568902c89}{$\sim$\-Scene} ()
+\item 
+\hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$ \hyperlink{classgl_1_1_scene_a795f1b5059282e416b3ac320df2f6e6b}{Find\-Object\-By\-I\-D} (const std\-::string \&id, \hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$p\-Start\-Object=nullptr)
+\item 
+\hyperlink{classgl_1_1_r_shader}{R\-Shader} $\ast$ \hyperlink{classgl_1_1_scene_a67891131153f1b2c47af90743fbc854c}{Get\-Shader} ()
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_scene_a90a883380627b976bebfacc5cc4a24ac}{Render} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_scene_abe710b6eb4fcb56b72e4251b30cc007c}{Load\-Materials} (const ai\-Scene $\ast$p\-Scene)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_scene_aa628ca64f9efc796c5a0977e3db23b1c}{Load\-Meshes} (const ai\-Scene $\ast$p\-Scene)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_scene_a192e408ea2a6965aab0e8ec1d3923158}{Load\-Nodes} (const ai\-Scene $\ast$p\-Scene)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_scene_aa1a68b256316296663b03acbba910c6f}{Load\-Node} (const ai\-Node $\ast$p\-Node, \hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$p\-Parent)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_resource_manager}{Resource\-Manager}$<$ \hyperlink{classgl_1_1_r_texture}{gl\-::\-R\-Texture}, \\*
+std\-::string $>$ \hyperlink{classgl_1_1_scene_a73712112854dd06b3fe837acac4edd26}{m\-Textures}
+\item 
+\hyperlink{classgl_1_1_resource_manager}{Resource\-Manager}$<$ \hyperlink{classgl_1_1_r_mesh}{gl\-::\-R\-Mesh}, \hyperlink{_basic_types_8hpp_a11c112f01a7ad8f767fd48bc916463a3}{U\-Int} $>$ \hyperlink{classgl_1_1_scene_a4005eea9240f83937897af8798c413c7}{m\-Meshes}
+\item 
+std\-::unique\-\_\-ptr$<$ \hyperlink{classgl_1_1_r_shader}{R\-Shader} $>$ \hyperlink{classgl_1_1_scene_a8480592c3885010d88253bfcc04d54a0}{mp\-Shader\-Default}
+\item 
+\hyperlink{namespacegl_a4caed01d7776fc4f8768dbf8d88d0388}{Game\-Object\-Ptr} \hyperlink{classgl_1_1_scene_aaec3924a3fe960cebf42483f8cf163ed}{mp\-Root}
+\item 
+std\-::string \hyperlink{classgl_1_1_scene_aa81b7ec7e9de4ea30e2d26a3007f35c4}{m\-File}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the scene node hiarchy, the meshes and textures.
+
+Soon to also store the lights and cameras. 
+
+Definition at line 22 of file Scene.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_scene_a20c2bb328c15cc78c5ee9871f8f2533e}{\index{gl\-::\-Scene@{gl\-::\-Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{Scene}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Scene\-::\-Scene (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{scene\-File}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_scene_a20c2bb328c15cc78c5ee9871f8f2533e}
+
+
+Definition at line 25 of file Scene.\-cpp.
+
+\hypertarget{classgl_1_1_scene_a6ab424422c62cfcae8f9d27568902c89}{\index{gl\-::\-Scene@{gl\-::\-Scene}!$\sim$\-Scene@{$\sim$\-Scene}}
+\index{$\sim$\-Scene@{$\sim$\-Scene}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{$\sim$\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Scene\-::$\sim$\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_scene_a6ab424422c62cfcae8f9d27568902c89}
+
+
+Definition at line 50 of file Scene.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_scene_a795f1b5059282e416b3ac320df2f6e6b}{\index{gl\-::\-Scene@{gl\-::\-Scene}!Find\-Object\-By\-I\-D@{Find\-Object\-By\-I\-D}}
+\index{Find\-Object\-By\-I\-D@{Find\-Object\-By\-I\-D}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{Find\-Object\-By\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game\-Object} $\ast$ gl\-::\-Scene\-::\-Find\-Object\-By\-I\-D (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{id, }
+\item[{{\bf Game\-Object} $\ast$}]{p\-Start\-Object = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_scene_a795f1b5059282e416b3ac320df2f6e6b}
+Get a game object in the hiarchy by its I\-D field. 
+
+Definition at line 223 of file Scene.\-cpp.
+
+\hypertarget{classgl_1_1_scene_a67891131153f1b2c47af90743fbc854c}{\index{gl\-::\-Scene@{gl\-::\-Scene}!Get\-Shader@{Get\-Shader}}
+\index{Get\-Shader@{Get\-Shader}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{Get\-Shader}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-Shader} $\ast$ gl\-::\-Scene\-::\-Get\-Shader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_scene_a67891131153f1b2c47af90743fbc854c}
+
+
+Definition at line 54 of file Scene.\-cpp.
+
+\hypertarget{classgl_1_1_scene_abe710b6eb4fcb56b72e4251b30cc007c}{\index{gl\-::\-Scene@{gl\-::\-Scene}!Load\-Materials@{Load\-Materials}}
+\index{Load\-Materials@{Load\-Materials}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{Load\-Materials}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Scene\-::\-Load\-Materials (
+\begin{DoxyParamCaption}
+\item[{const ai\-Scene $\ast$}]{p\-Scene}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_scene_abe710b6eb4fcb56b72e4251b30cc007c}
+
+
+Definition at line 66 of file Scene.\-cpp.
+
+\hypertarget{classgl_1_1_scene_aa628ca64f9efc796c5a0977e3db23b1c}{\index{gl\-::\-Scene@{gl\-::\-Scene}!Load\-Meshes@{Load\-Meshes}}
+\index{Load\-Meshes@{Load\-Meshes}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{Load\-Meshes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Scene\-::\-Load\-Meshes (
+\begin{DoxyParamCaption}
+\item[{const ai\-Scene $\ast$}]{p\-Scene}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_scene_aa628ca64f9efc796c5a0977e3db23b1c}
+
+
+Definition at line 84 of file Scene.\-cpp.
+
+\hypertarget{classgl_1_1_scene_aa1a68b256316296663b03acbba910c6f}{\index{gl\-::\-Scene@{gl\-::\-Scene}!Load\-Node@{Load\-Node}}
+\index{Load\-Node@{Load\-Node}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{Load\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Scene\-::\-Load\-Node (
+\begin{DoxyParamCaption}
+\item[{const ai\-Node $\ast$}]{p\-Node, }
+\item[{{\bf Game\-Object} $\ast$}]{p\-Parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_scene_aa1a68b256316296663b03acbba910c6f}
+
+
+Definition at line 177 of file Scene.\-cpp.
+
+\hypertarget{classgl_1_1_scene_a192e408ea2a6965aab0e8ec1d3923158}{\index{gl\-::\-Scene@{gl\-::\-Scene}!Load\-Nodes@{Load\-Nodes}}
+\index{Load\-Nodes@{Load\-Nodes}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{Load\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Scene\-::\-Load\-Nodes (
+\begin{DoxyParamCaption}
+\item[{const ai\-Scene $\ast$}]{p\-Scene}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_scene_a192e408ea2a6965aab0e8ec1d3923158}
+
+
+Definition at line 169 of file Scene.\-cpp.
+
+\hypertarget{classgl_1_1_scene_a90a883380627b976bebfacc5cc4a24ac}{\index{gl\-::\-Scene@{gl\-::\-Scene}!Render@{Render}}
+\index{Render@{Render}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Scene\-::\-Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_scene_a90a883380627b976bebfacc5cc4a24ac}
+
+
+Definition at line 59 of file Scene.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classgl_1_1_scene_aa81b7ec7e9de4ea30e2d26a3007f35c4}{\index{gl\-::\-Scene@{gl\-::\-Scene}!m\-File@{m\-File}}
+\index{m\-File@{m\-File}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{m\-File}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string gl\-::\-Scene\-::m\-File\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_scene_aa81b7ec7e9de4ea30e2d26a3007f35c4}
+
+
+Definition at line 52 of file Scene.\-hpp.
+
+\hypertarget{classgl_1_1_scene_a4005eea9240f83937897af8798c413c7}{\index{gl\-::\-Scene@{gl\-::\-Scene}!m\-Meshes@{m\-Meshes}}
+\index{m\-Meshes@{m\-Meshes}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{m\-Meshes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\-Manager}$<$ {\bf gl\-::\-R\-Mesh}, {\bf U\-Int} $>$ gl\-::\-Scene\-::m\-Meshes\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_scene_a4005eea9240f83937897af8798c413c7}
+
+
+Definition at line 46 of file Scene.\-hpp.
+
+\hypertarget{classgl_1_1_scene_aaec3924a3fe960cebf42483f8cf163ed}{\index{gl\-::\-Scene@{gl\-::\-Scene}!mp\-Root@{mp\-Root}}
+\index{mp\-Root@{mp\-Root}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{mp\-Root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game\-Object\-Ptr} gl\-::\-Scene\-::mp\-Root\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_scene_aaec3924a3fe960cebf42483f8cf163ed}
+
+
+Definition at line 50 of file Scene.\-hpp.
+
+\hypertarget{classgl_1_1_scene_a8480592c3885010d88253bfcc04d54a0}{\index{gl\-::\-Scene@{gl\-::\-Scene}!mp\-Shader\-Default@{mp\-Shader\-Default}}
+\index{mp\-Shader\-Default@{mp\-Shader\-Default}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{mp\-Shader\-Default}]{\setlength{\rightskip}{0pt plus 5cm}std\-::unique\-\_\-ptr$<${\bf R\-Shader}$>$ gl\-::\-Scene\-::mp\-Shader\-Default\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_scene_a8480592c3885010d88253bfcc04d54a0}
+
+
+Definition at line 48 of file Scene.\-hpp.
+
+\hypertarget{classgl_1_1_scene_a73712112854dd06b3fe837acac4edd26}{\index{gl\-::\-Scene@{gl\-::\-Scene}!m\-Textures@{m\-Textures}}
+\index{m\-Textures@{m\-Textures}!gl::Scene@{gl\-::\-Scene}}
+\subsubsection[{m\-Textures}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\-Manager}$<$ {\bf gl\-::\-R\-Texture}, std\-::string $>$ gl\-::\-Scene\-::m\-Textures\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_scene_a73712112854dd06b3fe837acac4edd26}
+
+
+Definition at line 45 of file Scene.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_scene_8hpp}{Scene.\-hpp}\item 
+Glide/\hyperlink{_scene_8cpp}{Scene.\-cpp}\end{DoxyCompactItemize}

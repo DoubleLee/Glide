@@ -1,0 +1,68 @@
+\hypertarget{_g_l_check_error_8hpp}{\section{Glide/\-G\-L\-Check\-Error.hpp File Reference}
+\label{_g_l_check_error_8hpp}\index{Glide/\-G\-L\-Check\-Error.\-hpp@{Glide/\-G\-L\-Check\-Error.\-hpp}}
+}
+{\ttfamily \#include \char`\"{}Logger.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_g_l_exception}{G\-L\-Exception}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_g_l_exception}{G\-L\-Exception} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_g_l_check_error_8hpp_a18cb8583985df40ca9442c2dd3451a90}{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-\_\-\-H\-P\-P}
+\item 
+\#define \hyperlink{_g_l_check_error_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\-O\-E\-X\-C\-E\-P\-T}~noexcept
+\item 
+\#define \hyperlink{_g_l_check_error_8hpp_a558dc1f92c69dc35438559b600170649}{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R}(call\-Code)~\{ call\-Code; G\-Lenum error\-Code = gl\-Get\-Error(); if (error\-Code != G\-L\-\_\-\-N\-O\-\_\-\-E\-R\-R\-O\-R) \{throw \hyperlink{class_g_l_exception}{G\-L\-Exception}( error\-Code, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-);\} \}
+\begin{DoxyCompactList}\small\item\em G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R macro. \end{DoxyCompactList}\item 
+\#define \hyperlink{_g_l_check_error_8hpp_aa2e0743ff90d40fe0f560155f3b60a60}{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-W\-A\-R\-N\-I\-N\-G}(call\-Code)~\{ call\-Code; G\-Lenum error\-Code = gl\-Get\-Error(); if ( error\-Code != G\-L\-\_\-\-N\-O\-\_\-\-E\-R\-R\-O\-R) \{ g\-Logger $<$$<$ \char`\"{}Open\-G\-L error code\-: \char`\"{} $<$$<$ error\-Code $<$$<$ '\textbackslash{}n' $<$$<$ \char`\"{}File\-: \char`\"{} $<$$<$ \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\- $<$$<$ \char`\"{} Line\-: \char`\"{} $<$$<$ \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\- $<$$<$ '\textbackslash{}n'; \} \}
+\begin{DoxyCompactList}\small\item\em G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-W\-A\-R\-N\-I\-N\-G macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_g_l_check_error_8hpp_a558dc1f92c69dc35438559b600170649}{\index{G\-L\-Check\-Error.\-hpp@{G\-L\-Check\-Error.\-hpp}!G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R@{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R}}
+\index{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R@{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R}!GLCheckError.hpp@{G\-L\-Check\-Error.\-hpp}}
+\subsubsection[{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{call\-Code}
+\end{DoxyParamCaption}
+)~\{ call\-Code; G\-Lenum error\-Code = gl\-Get\-Error(); if (error\-Code != G\-L\-\_\-\-N\-O\-\_\-\-E\-R\-R\-O\-R) \{throw {\bf G\-L\-Exception}( error\-Code, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-);\} \}}}\label{_g_l_check_error_8hpp_a558dc1f92c69dc35438559b600170649}
+
+
+G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R macro. 
+
+This is how you throw check gl commands for errors, it will throw an exception with all the relevant info. 
+
+Definition at line 50 of file G\-L\-Check\-Error.\-hpp.
+
+\hypertarget{_g_l_check_error_8hpp_a18cb8583985df40ca9442c2dd3451a90}{\index{G\-L\-Check\-Error.\-hpp@{G\-L\-Check\-Error.\-hpp}!G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-\_\-\-H\-P\-P@{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-\_\-\-H\-P\-P}}
+\index{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-\_\-\-H\-P\-P@{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-\_\-\-H\-P\-P}!GLCheckError.hpp@{G\-L\-Check\-Error.\-hpp}}
+\subsubsection[{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-\_\-\-H\-P\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-\_\-\-H\-P\-P}}\label{_g_l_check_error_8hpp_a18cb8583985df40ca9442c2dd3451a90}
+
+
+Definition at line 3 of file G\-L\-Check\-Error.\-hpp.
+
+\hypertarget{_g_l_check_error_8hpp_aa2e0743ff90d40fe0f560155f3b60a60}{\index{G\-L\-Check\-Error.\-hpp@{G\-L\-Check\-Error.\-hpp}!G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-W\-A\-R\-N\-I\-N\-G@{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-W\-A\-R\-N\-I\-N\-G}}
+\index{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-W\-A\-R\-N\-I\-N\-G@{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-W\-A\-R\-N\-I\-N\-G}!GLCheckError.hpp@{G\-L\-Check\-Error.\-hpp}}
+\subsubsection[{G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-W\-A\-R\-N\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-W\-A\-R\-N\-I\-N\-G(
+\begin{DoxyParamCaption}
+\item[{}]{call\-Code}
+\end{DoxyParamCaption}
+)~\{ call\-Code; G\-Lenum error\-Code = gl\-Get\-Error(); if ( error\-Code != G\-L\-\_\-\-N\-O\-\_\-\-E\-R\-R\-O\-R) \{ g\-Logger $<$$<$ \char`\"{}Open\-G\-L error code\-: \char`\"{} $<$$<$ error\-Code $<$$<$ '\textbackslash{}n' $<$$<$ \char`\"{}File\-: \char`\"{} $<$$<$ \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\- $<$$<$ \char`\"{} Line\-: \char`\"{} $<$$<$ \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\- $<$$<$ '\textbackslash{}n'; \} \}}}\label{_g_l_check_error_8hpp_aa2e0743ff90d40fe0f560155f3b60a60}
+
+
+G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R\-W\-A\-R\-N\-I\-N\-G macro. 
+
+Use this instead of G\-L\-C\-H\-E\-C\-K\-E\-R\-R\-O\-R in dtors which should not throw exceptions, and other cases where you can't throw an exception. (noexcept) 
+
+Definition at line 58 of file G\-L\-Check\-Error.\-hpp.
+
+\hypertarget{_g_l_check_error_8hpp_a10a59554805ac7ce3905fd3540f98137}{\index{G\-L\-Check\-Error.\-hpp@{G\-L\-Check\-Error.\-hpp}!N\-O\-E\-X\-C\-E\-P\-T@{N\-O\-E\-X\-C\-E\-P\-T}}
+\index{N\-O\-E\-X\-C\-E\-P\-T@{N\-O\-E\-X\-C\-E\-P\-T}!GLCheckError.hpp@{G\-L\-Check\-Error.\-hpp}}
+\subsubsection[{N\-O\-E\-X\-C\-E\-P\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-E\-X\-C\-E\-P\-T~noexcept}}\label{_g_l_check_error_8hpp_a10a59554805ac7ce3905fd3540f98137}
+
+
+Definition at line 10 of file G\-L\-Check\-Error.\-hpp.
+

@@ -1,0 +1,244 @@
+\hypertarget{namespacegl}{\section{gl Namespace Reference}
+\label{namespacegl}\index{gl@{gl}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classgl_1_1_c_camera}{C\-Camera}
+\item 
+class \hyperlink{classgl_1_1_component}{Component}
+\item 
+class \hyperlink{classgl_1_1_c_render}{C\-Render}
+\item 
+class \hyperlink{classgl_1_1_c_render_g_l}{C\-Render\-G\-L}
+\item 
+class \hyperlink{classgl_1_1_game_object}{Game\-Object}
+\item 
+class \hyperlink{classgl_1_1_glide_exception}{Glide\-Exception}
+\item 
+class \hyperlink{classgl_1_1_graphics_manager}{Graphics\-Manager}
+\item 
+class \hyperlink{classgl_1_1_logger}{Logger}
+\item 
+class \hyperlink{classgl_1_1_resource}{Resource}
+\item 
+class \hyperlink{classgl_1_1_resource_manager}{Resource\-Manager}
+\item 
+class \hyperlink{classgl_1_1_r_mesh}{R\-Mesh}
+\item 
+class \hyperlink{classgl_1_1_r_shader}{R\-Shader}
+\item 
+class \hyperlink{classgl_1_1_r_texture}{R\-Texture}
+\item 
+class \hyperlink{classgl_1_1_scene}{Scene}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::unique\-\_\-ptr\\*
+$<$ \hyperlink{classgl_1_1_component}{Component} $>$ \hyperlink{namespacegl_a2cd59688c30d8f0b1168a93aa4bffbcc}{Component\-Ptr}
+\item 
+typedef std\-::unique\-\_\-ptr\\*
+$<$ \hyperlink{classgl_1_1_game_object}{Game\-Object} $>$ \hyperlink{namespacegl_a4caed01d7776fc4f8768dbf8d88d0388}{Game\-Object\-Ptr}
+\begin{DoxyCompactList}\small\item\em convenience typedef for unique\-\_\-ptr$<$\-Game\-Object$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::string \hyperlink{namespacegl_af5836b3529871ab4fc09af0a394c45e1}{g\-Configs\-Folder} (\char`\"{}../Resources/Configs/\char`\"{})
+\item 
+const std\-::string \hyperlink{namespacegl_a8ae293cd338717930453aa0b9ffc69bc}{g\-Textures\-Folder} (\char`\"{}../Resources/Textures/\char`\"{})
+\item 
+const std\-::string \hyperlink{namespacegl_aa9df753e0c2987d57550ab72ec9c964d}{g\-Scenes\-Folder} (\char`\"{}../Resources/Scenes/\char`\"{})
+\item 
+const std\-::string \hyperlink{namespacegl_a3eb61334b6c98adebcd09206a8fca0d2}{g\-Shaders\-Folder} (\char`\"{}../Resources/Shaders/\char`\"{})
+\item 
+std\-::string \hyperlink{namespacegl_aed3aca6a157ef77d31fd645d63bb3bbe}{Strip\-Path} (const std\-::string \&file\-Name\-Path)
+\item 
+const glm\-::vec3 \& \hyperlink{namespacegl_a4b22b2879b24e388452e930345a4cb37}{Get\-Position} (const glm\-::mat4 \&mat)
+\item 
+const glm\-::vec3 \& \hyperlink{namespacegl_ac54480c43577b06b69f6f2fdbab4d1c5}{Get\-Forward} (const glm\-::mat4 \&mat)
+\item 
+const glm\-::vec3 \& \hyperlink{namespacegl_a8435e4a74113d2a44a7ec9918fd0b7cc}{Get\-Up} (const glm\-::mat4 \&mat)
+\item 
+const glm\-::vec3 \& \hyperlink{namespacegl_afd7c49eb05f519611109ae40219d17fa}{Get\-Right} (const glm\-::mat4 \&mat)
+\item 
+void \hyperlink{namespacegl_a6a0f77938f6934898e42773bbbad479b}{Error\-Callback\-P\-N\-G} (png\-\_\-structp png\-\_\-ptr, png\-\_\-const\-\_\-charp error\-\_\-msg)
+\item 
+void \hyperlink{namespacegl_a35af4bc1afee30a4d4613a1dd3afce65}{Read\-Data\-Callback\-P\-N\-G} (png\-\_\-structp png\-Read\-Ptr, png\-\_\-bytep data, png\-\_\-size\-\_\-t length)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::string \hyperlink{namespacegl_aafe9d24eae03ed5746915f9eca31a8a7}{g\-Configs\-Folder}
+\item 
+const std\-::string \hyperlink{namespacegl_a29b4d4caadd5b8410c596cc8400a97fa}{g\-Textures\-Folder}
+\item 
+const std\-::string \hyperlink{namespacegl_a0d856c0557484a919d502684cd99757f}{g\-Scenes\-Folder}
+\item 
+const std\-::string \hyperlink{namespacegl_a093da90108ad18db03ecd26baa2cf69f}{g\-Shaders\-Folder}
+\item 
+\hyperlink{classgl_1_1_logger}{Logger} \hyperlink{namespacegl_a55370b885058f1d6b99e298bc7bc722d}{g\-Logger} (\char`\"{}Log.\-txt\char`\"{})
+\item 
+glm\-::mat4 \hyperlink{namespacegl_a5580e107f8adbdc0f887df19caebb589}{camera} = glm\-::perspective(3.\-14f / 2.\-0f, 4.\-0f / 3.\-0f, 0.\-1f, 1000.\-0f) $\ast$ glm\-::look\-At(glm\-::vec3(0, 4, 5), glm\-::vec3(0, 0, 0), glm\-::vec3(0, 1, 0))
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{namespacegl_a2cd59688c30d8f0b1168a93aa4bffbcc}{\index{gl@{gl}!Component\-Ptr@{Component\-Ptr}}
+\index{Component\-Ptr@{Component\-Ptr}!gl@{gl}}
+\subsubsection[{Component\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::unique\-\_\-ptr$<${\bf Component}$>$ {\bf gl\-::\-Component\-Ptr}}}\label{namespacegl_a2cd59688c30d8f0b1168a93aa4bffbcc}
+
+
+Definition at line 61 of file Component.\-hpp.
+
+\hypertarget{namespacegl_a4caed01d7776fc4f8768dbf8d88d0388}{\index{gl@{gl}!Game\-Object\-Ptr@{Game\-Object\-Ptr}}
+\index{Game\-Object\-Ptr@{Game\-Object\-Ptr}!gl@{gl}}
+\subsubsection[{Game\-Object\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::unique\-\_\-ptr$<${\bf Game\-Object}$>$ {\bf gl\-::\-Game\-Object\-Ptr}}}\label{namespacegl_a4caed01d7776fc4f8768dbf8d88d0388}
+
+
+convenience typedef for unique\-\_\-ptr$<$\-Game\-Object$>$ 
+
+
+
+Definition at line 13 of file Game\-Object.\-hpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{namespacegl_a6a0f77938f6934898e42773bbbad479b}{\index{gl@{gl}!Error\-Callback\-P\-N\-G@{Error\-Callback\-P\-N\-G}}
+\index{Error\-Callback\-P\-N\-G@{Error\-Callback\-P\-N\-G}!gl@{gl}}
+\subsubsection[{Error\-Callback\-P\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}void gl\-::\-Error\-Callback\-P\-N\-G (
+\begin{DoxyParamCaption}
+\item[{png\-\_\-structp}]{png\-\_\-ptr, }
+\item[{png\-\_\-const\-\_\-charp}]{error\-\_\-msg}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_a6a0f77938f6934898e42773bbbad479b}
+
+
+Definition at line 10 of file R\-Texture.\-cpp.
+
+\hypertarget{namespacegl_af5836b3529871ab4fc09af0a394c45e1}{\index{gl@{gl}!g\-Configs\-Folder@{g\-Configs\-Folder}}
+\index{g\-Configs\-Folder@{g\-Configs\-Folder}!gl@{gl}}
+\subsubsection[{g\-Configs\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string gl\-::g\-Configs\-Folder (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}../Resources/Configs/\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_af5836b3529871ab4fc09af0a394c45e1}
+\hypertarget{namespacegl_ac54480c43577b06b69f6f2fdbab4d1c5}{\index{gl@{gl}!Get\-Forward@{Get\-Forward}}
+\index{Get\-Forward@{Get\-Forward}!gl@{gl}}
+\subsubsection[{Get\-Forward}]{\setlength{\rightskip}{0pt plus 5cm}const glm\-::vec3 \& gl\-::\-Get\-Forward (
+\begin{DoxyParamCaption}
+\item[{const glm\-::mat4 \&}]{mat}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_ac54480c43577b06b69f6f2fdbab4d1c5}
+
+
+Definition at line 10 of file Matrix4.\-cpp.
+
+\hypertarget{namespacegl_a4b22b2879b24e388452e930345a4cb37}{\index{gl@{gl}!Get\-Position@{Get\-Position}}
+\index{Get\-Position@{Get\-Position}!gl@{gl}}
+\subsubsection[{Get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}const glm\-::vec3 \& gl\-::\-Get\-Position (
+\begin{DoxyParamCaption}
+\item[{const glm\-::mat4 \&}]{mat}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_a4b22b2879b24e388452e930345a4cb37}
+
+
+Definition at line 5 of file Matrix4.\-cpp.
+
+\hypertarget{namespacegl_afd7c49eb05f519611109ae40219d17fa}{\index{gl@{gl}!Get\-Right@{Get\-Right}}
+\index{Get\-Right@{Get\-Right}!gl@{gl}}
+\subsubsection[{Get\-Right}]{\setlength{\rightskip}{0pt plus 5cm}const glm\-::vec3 \& gl\-::\-Get\-Right (
+\begin{DoxyParamCaption}
+\item[{const glm\-::mat4 \&}]{mat}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_afd7c49eb05f519611109ae40219d17fa}
+
+
+Definition at line 20 of file Matrix4.\-cpp.
+
+\hypertarget{namespacegl_a8435e4a74113d2a44a7ec9918fd0b7cc}{\index{gl@{gl}!Get\-Up@{Get\-Up}}
+\index{Get\-Up@{Get\-Up}!gl@{gl}}
+\subsubsection[{Get\-Up}]{\setlength{\rightskip}{0pt plus 5cm}const glm\-::vec3 \& gl\-::\-Get\-Up (
+\begin{DoxyParamCaption}
+\item[{const glm\-::mat4 \&}]{mat}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_a8435e4a74113d2a44a7ec9918fd0b7cc}
+
+
+Definition at line 15 of file Matrix4.\-cpp.
+
+\hypertarget{namespacegl_aa9df753e0c2987d57550ab72ec9c964d}{\index{gl@{gl}!g\-Scenes\-Folder@{g\-Scenes\-Folder}}
+\index{g\-Scenes\-Folder@{g\-Scenes\-Folder}!gl@{gl}}
+\subsubsection[{g\-Scenes\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string gl\-::g\-Scenes\-Folder (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}../Resources/Scenes/\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_aa9df753e0c2987d57550ab72ec9c964d}
+\hypertarget{namespacegl_a3eb61334b6c98adebcd09206a8fca0d2}{\index{gl@{gl}!g\-Shaders\-Folder@{g\-Shaders\-Folder}}
+\index{g\-Shaders\-Folder@{g\-Shaders\-Folder}!gl@{gl}}
+\subsubsection[{g\-Shaders\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string gl\-::g\-Shaders\-Folder (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}../Resources/Shaders/\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_a3eb61334b6c98adebcd09206a8fca0d2}
+\hypertarget{namespacegl_a8ae293cd338717930453aa0b9ffc69bc}{\index{gl@{gl}!g\-Textures\-Folder@{g\-Textures\-Folder}}
+\index{g\-Textures\-Folder@{g\-Textures\-Folder}!gl@{gl}}
+\subsubsection[{g\-Textures\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string gl\-::g\-Textures\-Folder (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}../Resources/Textures/\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_a8ae293cd338717930453aa0b9ffc69bc}
+\hypertarget{namespacegl_a35af4bc1afee30a4d4613a1dd3afce65}{\index{gl@{gl}!Read\-Data\-Callback\-P\-N\-G@{Read\-Data\-Callback\-P\-N\-G}}
+\index{Read\-Data\-Callback\-P\-N\-G@{Read\-Data\-Callback\-P\-N\-G}!gl@{gl}}
+\subsubsection[{Read\-Data\-Callback\-P\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}void gl\-::\-Read\-Data\-Callback\-P\-N\-G (
+\begin{DoxyParamCaption}
+\item[{png\-\_\-structp}]{png\-Read\-Ptr, }
+\item[{png\-\_\-bytep}]{data, }
+\item[{png\-\_\-size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_a35af4bc1afee30a4d4613a1dd3afce65}
+
+
+Definition at line 16 of file R\-Texture.\-cpp.
+
+\hypertarget{namespacegl_aed3aca6a157ef77d31fd645d63bb3bbe}{\index{gl@{gl}!Strip\-Path@{Strip\-Path}}
+\index{Strip\-Path@{Strip\-Path}!gl@{gl}}
+\subsubsection[{Strip\-Path}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string gl\-::\-Strip\-Path (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{file\-Name\-Path}
+\end{DoxyParamCaption}
+)}}\label{namespacegl_aed3aca6a157ef77d31fd645d63bb3bbe}
+
+
+Definition at line 8 of file Resource.\-cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespacegl_a5580e107f8adbdc0f887df19caebb589}{\index{gl@{gl}!camera@{camera}}
+\index{camera@{camera}!gl@{gl}}
+\subsubsection[{camera}]{\setlength{\rightskip}{0pt plus 5cm}glm\-::mat4 gl\-::camera = glm\-::perspective(3.\-14f / 2.\-0f, 4.\-0f / 3.\-0f, 0.\-1f, 1000.\-0f) $\ast$ glm\-::look\-At(glm\-::vec3(0, 4, 5), glm\-::vec3(0, 0, 0), glm\-::vec3(0, 1, 0))}}\label{namespacegl_a5580e107f8adbdc0f887df19caebb589}
+
+
+Definition at line 23 of file Scene.\-cpp.
+
+\hypertarget{namespacegl_aafe9d24eae03ed5746915f9eca31a8a7}{\index{gl@{gl}!g\-Configs\-Folder@{g\-Configs\-Folder}}
+\index{g\-Configs\-Folder@{g\-Configs\-Folder}!gl@{gl}}
+\subsubsection[{g\-Configs\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string gl\-::g\-Configs\-Folder}}\label{namespacegl_aafe9d24eae03ed5746915f9eca31a8a7}
+\hypertarget{namespacegl_a55370b885058f1d6b99e298bc7bc722d}{\index{gl@{gl}!g\-Logger@{g\-Logger}}
+\index{g\-Logger@{g\-Logger}!gl@{gl}}
+\subsubsection[{g\-Logger}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} gl\-::g\-Logger}}\label{namespacegl_a55370b885058f1d6b99e298bc7bc722d}
+
+
+Definition at line 30 of file Logger.\-hpp.
+
+\hypertarget{namespacegl_a0d856c0557484a919d502684cd99757f}{\index{gl@{gl}!g\-Scenes\-Folder@{g\-Scenes\-Folder}}
+\index{g\-Scenes\-Folder@{g\-Scenes\-Folder}!gl@{gl}}
+\subsubsection[{g\-Scenes\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string gl\-::g\-Scenes\-Folder}}\label{namespacegl_a0d856c0557484a919d502684cd99757f}
+\hypertarget{namespacegl_a093da90108ad18db03ecd26baa2cf69f}{\index{gl@{gl}!g\-Shaders\-Folder@{g\-Shaders\-Folder}}
+\index{g\-Shaders\-Folder@{g\-Shaders\-Folder}!gl@{gl}}
+\subsubsection[{g\-Shaders\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string gl\-::g\-Shaders\-Folder}}\label{namespacegl_a093da90108ad18db03ecd26baa2cf69f}
+\hypertarget{namespacegl_a29b4d4caadd5b8410c596cc8400a97fa}{\index{gl@{gl}!g\-Textures\-Folder@{g\-Textures\-Folder}}
+\index{g\-Textures\-Folder@{g\-Textures\-Folder}!gl@{gl}}
+\subsubsection[{g\-Textures\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string gl\-::g\-Textures\-Folder}}\label{namespacegl_a29b4d4caadd5b8410c596cc8400a97fa}

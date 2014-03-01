@@ -1,0 +1,256 @@
+\hypertarget{classgl_1_1_game_object}{\section{gl\-:\-:Game\-Object Class Reference}
+\label{classgl_1_1_game_object}\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}}
+}
+
+
+{\ttfamily \#include $<$Game\-Object.\-hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::string \hyperlink{classgl_1_1_game_object_af0b06465180bf63b80fe2b6d1288e4a8}{Type\-I\-D}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_game_object_a54d8bd17754619e3d7333b4fa4251b3e}{Game\-Object} (const \hyperlink{classgl_1_1_game_object_af0b06465180bf63b80fe2b6d1288e4a8}{Type\-I\-D} \&id)
+\item 
+\hyperlink{classgl_1_1_game_object_aa47b1c3761556efbe3c1df1639e0a588}{$\sim$\-Game\-Object} ()
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_game_object_a5793cf8e0b53314435982cba0c98eebd}{Type\-I\-D\-Set} (const \hyperlink{classgl_1_1_game_object_af0b06465180bf63b80fe2b6d1288e4a8}{Type\-I\-D} \&id)
+\item 
+const \hyperlink{classgl_1_1_game_object_af0b06465180bf63b80fe2b6d1288e4a8}{Type\-I\-D} \& \hyperlink{classgl_1_1_game_object_a26bcf5fae15ac65b82b4f6e9a8acfe82}{Type\-I\-D\-Get} () const 
+\item 
+\hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$ \hyperlink{classgl_1_1_game_object_aa684ba79a38aab36ab4bea64680f3a44}{Find\-Child\-By\-I\-D} (const \hyperlink{classgl_1_1_game_object_af0b06465180bf63b80fe2b6d1288e4a8}{Type\-I\-D} \&id)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_game_object_aae16450033b01f4547bcdff6ef8fc9d9}{Component\-Add} (\hyperlink{namespacegl_a2cd59688c30d8f0b1168a93aa4bffbcc}{Component\-Ptr} \&\&p\-Comp)
+\item 
+\hyperlink{classgl_1_1_component}{Component} $\ast$ \hyperlink{classgl_1_1_game_object_a803ef654e89242c91d4e04b9d3907b37}{Component\-Get} (const \hyperlink{classgl_1_1_component_a55fcc946bfc525917e6380e5b71a3f49}{Component\-::\-Family\-I\-D} \&family\-I\-D)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_game_object_a4759602c4b3ec77ac88d0d1396942abc}{Calculate\-Worlds} (const glm\-::mat4 \&global\-World)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_game_object_a8556af0edf169a644fa67cc069fdc9e3}{Child\-Add} (\hyperlink{namespacegl_a4caed01d7776fc4f8768dbf8d88d0388}{Game\-Object\-Ptr} \&\&p\-Child)
+\item 
+\hyperlink{namespacegl_a4caed01d7776fc4f8768dbf8d88d0388}{Game\-Object\-Ptr} \&\& \hyperlink{classgl_1_1_game_object_a11ceceb648f4b90da4465d0ac0177057}{Child\-Release} (\hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$p\-Child)
+\item 
+\hyperlink{_basic_types_8hpp_a11c112f01a7ad8f767fd48bc916463a3}{U\-Int} \hyperlink{classgl_1_1_game_object_ac663a2b621e729dcb34a0a9e06915e26}{Child\-Count} () const 
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_game_object_a470ffd663dd64d99d8e0620ee145c6be}{Set\-Parent} (\hyperlink{classgl_1_1_game_object}{Game\-Object} $\ast$p\-Parent)
+\item 
+glm\-::mat4 \& \hyperlink{classgl_1_1_game_object_a50205a28ddada11ebe9845a74102608d}{Get\-Local\-World} ()
+\item 
+const glm\-::mat4 \& \hyperlink{classgl_1_1_game_object_a5231499fc5be4d31391d91b5182aae10}{Get\-Global\-World} () const 
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_game_object_a21baa7622c55cb7f517e7135aac10340}{Set\-Local\-World} (const glm\-::mat4 \&local\-World)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_game_object_a3d04c8aa54ff7ed474163d104ae8245f}{Render} (const glm\-::mat4 \&\hyperlink{namespacegl_a5580e107f8adbdc0f887df19caebb589}{camera})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classgl_1_1_game_object}{Game\-Object} are the actual objects in the scene.
+
+They are capable of Node hiarchy, and transformations too.
+
+Game\-Objects also store Components which handle the Game\-Objects functionality and data. 
+
+Definition at line 26 of file Game\-Object.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classgl_1_1_game_object_af0b06465180bf63b80fe2b6d1288e4a8}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Type\-I\-D@{Type\-I\-D}}
+\index{Type\-I\-D@{Type\-I\-D}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Type\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::string {\bf gl\-::\-Game\-Object\-::\-Type\-I\-D}}}\label{classgl_1_1_game_object_af0b06465180bf63b80fe2b6d1288e4a8}
+
+
+Definition at line 29 of file Game\-Object.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_game_object_a54d8bd17754619e3d7333b4fa4251b3e}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Game\-Object@{Game\-Object}}
+\index{Game\-Object@{Game\-Object}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Game\-Object}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Game\-Object\-::\-Game\-Object (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type\-I\-D} \&}]{id}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a54d8bd17754619e3d7333b4fa4251b3e}
+
+
+Definition at line 10 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_aa47b1c3761556efbe3c1df1639e0a588}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!$\sim$\-Game\-Object@{$\sim$\-Game\-Object}}
+\index{$\sim$\-Game\-Object@{$\sim$\-Game\-Object}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{$\sim$\-Game\-Object}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-Game\-Object\-::$\sim$\-Game\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_aa47b1c3761556efbe3c1df1639e0a588}
+
+
+Definition at line 18 of file Game\-Object.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_game_object_a4759602c4b3ec77ac88d0d1396942abc}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Calculate\-Worlds@{Calculate\-Worlds}}
+\index{Calculate\-Worlds@{Calculate\-Worlds}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Calculate\-Worlds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Game\-Object\-::\-Calculate\-Worlds (
+\begin{DoxyParamCaption}
+\item[{const glm\-::mat4 \&}]{global\-World}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a4759602c4b3ec77ac88d0d1396942abc}
+
+
+Definition at line 69 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a8556af0edf169a644fa67cc069fdc9e3}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Child\-Add@{Child\-Add}}
+\index{Child\-Add@{Child\-Add}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Child\-Add}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Game\-Object\-::\-Child\-Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\-Object\-Ptr} \&\&}]{p\-Child}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a8556af0edf169a644fa67cc069fdc9e3}
+
+
+Definition at line 79 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_ac663a2b621e729dcb34a0a9e06915e26}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Child\-Count@{Child\-Count}}
+\index{Child\-Count@{Child\-Count}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Child\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-Int} gl\-::\-Game\-Object\-::\-Child\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_game_object_ac663a2b621e729dcb34a0a9e06915e26}
+
+
+Definition at line 108 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a11ceceb648f4b90da4465d0ac0177057}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Child\-Release@{Child\-Release}}
+\index{Child\-Release@{Child\-Release}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Child\-Release}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game\-Object\-Ptr} \&\& gl\-::\-Game\-Object\-::\-Child\-Release (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\-Object} $\ast$}]{p\-Child}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a11ceceb648f4b90da4465d0ac0177057}
+
+
+Definition at line 92 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_aae16450033b01f4547bcdff6ef8fc9d9}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Component\-Add@{Component\-Add}}
+\index{Component\-Add@{Component\-Add}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Component\-Add}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Game\-Object\-::\-Component\-Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Component\-Ptr} \&\&}]{p\-Comp}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_aae16450033b01f4547bcdff6ef8fc9d9}
+
+
+Definition at line 49 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a803ef654e89242c91d4e04b9d3907b37}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Component\-Get@{Component\-Get}}
+\index{Component\-Get@{Component\-Get}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Component\-Get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Component} $\ast$ gl\-::\-Game\-Object\-::\-Component\-Get (
+\begin{DoxyParamCaption}
+\item[{const {\bf Component\-::\-Family\-I\-D} \&}]{family\-I\-D}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a803ef654e89242c91d4e04b9d3907b37}
+
+
+Definition at line 57 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_aa684ba79a38aab36ab4bea64680f3a44}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Find\-Child\-By\-I\-D@{Find\-Child\-By\-I\-D}}
+\index{Find\-Child\-By\-I\-D@{Find\-Child\-By\-I\-D}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Find\-Child\-By\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game\-Object} $\ast$ gl\-::\-Game\-Object\-::\-Find\-Child\-By\-I\-D (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type\-I\-D} \&}]{id}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_aa684ba79a38aab36ab4bea64680f3a44}
+
+
+Definition at line 33 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a5231499fc5be4d31391d91b5182aae10}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Get\-Global\-World@{Get\-Global\-World}}
+\index{Get\-Global\-World@{Get\-Global\-World}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Get\-Global\-World}]{\setlength{\rightskip}{0pt plus 5cm}const glm\-::mat4 \& gl\-::\-Game\-Object\-::\-Get\-Global\-World (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_game_object_a5231499fc5be4d31391d91b5182aae10}
+
+
+Definition at line 123 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a50205a28ddada11ebe9845a74102608d}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Get\-Local\-World@{Get\-Local\-World}}
+\index{Get\-Local\-World@{Get\-Local\-World}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Get\-Local\-World}]{\setlength{\rightskip}{0pt plus 5cm}glm\-::mat4 \& gl\-::\-Game\-Object\-::\-Get\-Local\-World (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a50205a28ddada11ebe9845a74102608d}
+
+
+Definition at line 118 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a3d04c8aa54ff7ed474163d104ae8245f}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Render@{Render}}
+\index{Render@{Render}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Game\-Object\-::\-Render (
+\begin{DoxyParamCaption}
+\item[{const glm\-::mat4 \&}]{camera}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a3d04c8aa54ff7ed474163d104ae8245f}
+
+
+Definition at line 133 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a21baa7622c55cb7f517e7135aac10340}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Set\-Local\-World@{Set\-Local\-World}}
+\index{Set\-Local\-World@{Set\-Local\-World}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Set\-Local\-World}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Game\-Object\-::\-Set\-Local\-World (
+\begin{DoxyParamCaption}
+\item[{const glm\-::mat4 \&}]{local\-World}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a21baa7622c55cb7f517e7135aac10340}
+
+
+Definition at line 128 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a470ffd663dd64d99d8e0620ee145c6be}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Set\-Parent@{Set\-Parent}}
+\index{Set\-Parent@{Set\-Parent}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Set\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Game\-Object\-::\-Set\-Parent (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\-Object} $\ast$}]{p\-Parent}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a470ffd663dd64d99d8e0620ee145c6be}
+
+
+Definition at line 113 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a26bcf5fae15ac65b82b4f6e9a8acfe82}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Type\-I\-D\-Get@{Type\-I\-D\-Get}}
+\index{Type\-I\-D\-Get@{Type\-I\-D\-Get}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Type\-I\-D\-Get}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Game\-Object\-::\-Type\-I\-D} \& gl\-::\-Game\-Object\-::\-Type\-I\-D\-Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_game_object_a26bcf5fae15ac65b82b4f6e9a8acfe82}
+
+
+Definition at line 28 of file Game\-Object.\-cpp.
+
+\hypertarget{classgl_1_1_game_object_a5793cf8e0b53314435982cba0c98eebd}{\index{gl\-::\-Game\-Object@{gl\-::\-Game\-Object}!Type\-I\-D\-Set@{Type\-I\-D\-Set}}
+\index{Type\-I\-D\-Set@{Type\-I\-D\-Set}!gl::GameObject@{gl\-::\-Game\-Object}}
+\subsubsection[{Type\-I\-D\-Set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-Game\-Object\-::\-Type\-I\-D\-Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type\-I\-D} \&}]{id}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_game_object_a5793cf8e0b53314435982cba0c98eebd}
+
+
+Definition at line 23 of file Game\-Object.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_game_object_8hpp}{Game\-Object.\-hpp}\item 
+Glide/\hyperlink{_game_object_8cpp}{Game\-Object.\-cpp}\end{DoxyCompactItemize}

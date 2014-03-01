@@ -1,0 +1,251 @@
+\hypertarget{classgl_1_1_r_shader}{\section{gl\-:\-:R\-Shader Class Reference}
+\label{classgl_1_1_r_shader}\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}}
+}
+
+
+{\ttfamily \#include $<$R\-Shader.\-hpp$>$}
+
+Inheritance diagram for gl\-:\-:R\-Shader\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgl_1_1_r_shader}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classgl_1_1_r_shader_1_1_configuration}{Configuration}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classgl_1_1_r_shader_1_1_configuration}{R\-Shader\-::\-Configuration} \hyperlink{classgl_1_1_r_shader_a737d7ce7dc0057760c6ff971aebdb3ff}{Config\-Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_r_shader_a8ed3d356636aa22d0d88679aa1ae1318}{R\-Shader} (const \hyperlink{classgl_1_1_r_shader_1_1_configuration}{R\-Shader\-::\-Configuration} \&config)
+\item 
+virtual \hyperlink{classgl_1_1_r_shader_ad3263f03a21e05a6f21f748aea8bbea5}{$\sim$\-R\-Shader} ()
+\item 
+std\-::string \hyperlink{classgl_1_1_r_shader_a058ce8e2bdbe39a1b76d677b188cd26a}{Get\-Vertex\-File} () const 
+\item 
+std\-::string \hyperlink{classgl_1_1_r_shader_add834ab6c12435ce12e857b31f2fd8b4}{Get\-Frag\-File} () const 
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_shader_a339447b0d43a51a40774c9ac66717d20}{Set\-Uniform} (const char $\ast$p\-Uniform\-Name, const glm\-::mat4 \&mat)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_shader_ac8bc1b4975b08ece9a2b9ffc43d8e5f1}{Set\-Uniform} (const char $\ast$p\-Uniform\-Name, const glm\-::vec3 \&vec3)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_shader_a6abdc89ac6a89c0a78faa43018e3d1ad}{Set\-Uniform} (const char $\ast$p\-Uniform\-Name, const G\-Lfloat f)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_shader_a908a3cbe2bb85bff5e50eff0d0d9670f}{Set\-Uniform} (const char $\ast$p\-Uniform\-Name, const G\-Lint i)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_shader_ab45639a1ede87dfc0f4a8458dd5d00e8}{Set\-Uniform} (const char $\ast$p\-Uniform\-Name, const G\-Lboolean b)
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_shader_a1a003461d4856a855a3a07f26daf1cb3}{Bind} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_shader_a61530fe10eb2f39469a706ca42f07336}{Bind\-Null} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_shader_a2935e72e2bb4b93b61af39c998000b4c}{Load\-Shaders} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classgl_1_1_r_shader_a2285ac811c39bd59866a0239e04932b2}{m\-Vertex\-File}
+\item 
+std\-::string \hyperlink{classgl_1_1_r_shader_a6ce293498749d93a4fbc991b17a4cf70}{m\-Frag\-File}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_shader_a61ad380e879e29f8c052cad73158c54e}{m\-Program\-I\-D}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_shader_ab0996603afd00f5ce3a6b20479103083}{m\-Vert\-I\-D}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_shader_a0e077d5a150093c7af3c9ce047fcbe8d}{m\-Frag\-I\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classgl_1_1_r_shader}{R\-Shader} class represents a shader program. A shader program is made of two files at least. There must be a vertex shader and a fragment shader.
+
+T\-O\-D\-O\-: write a function that loads vertex and fragment independantly. This way you can write a virtual Load\-Shader and have it load other shader like geometry and tesselation. 
+
+Definition at line 22 of file R\-Shader.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classgl_1_1_r_shader_a737d7ce7dc0057760c6ff971aebdb3ff}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Config\-Type@{Config\-Type}}
+\index{Config\-Type@{Config\-Type}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Config\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf R\-Shader\-::\-Configuration} {\bf gl\-::\-R\-Shader\-::\-Config\-Type}}}\label{classgl_1_1_r_shader_a737d7ce7dc0057760c6ff971aebdb3ff}
+
+
+Definition at line 25 of file R\-Shader.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_r_shader_a8ed3d356636aa22d0d88679aa1ae1318}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!R\-Shader@{R\-Shader}}
+\index{R\-Shader@{R\-Shader}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{R\-Shader}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-R\-Shader\-::\-R\-Shader (
+\begin{DoxyParamCaption}
+\item[{const {\bf R\-Shader\-::\-Configuration} \&}]{config}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_r_shader_a8ed3d356636aa22d0d88679aa1ae1318}
+
+
+Definition at line 10 of file R\-Shader.\-cpp.
+
+\hypertarget{classgl_1_1_r_shader_ad3263f03a21e05a6f21f748aea8bbea5}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!$\sim$\-R\-Shader@{$\sim$\-R\-Shader}}
+\index{$\sim$\-R\-Shader@{$\sim$\-R\-Shader}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{$\sim$\-R\-Shader}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-R\-Shader\-::$\sim$\-R\-Shader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgl_1_1_r_shader_ad3263f03a21e05a6f21f748aea8bbea5}
+
+
+Definition at line 22 of file R\-Shader.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_r_shader_a1a003461d4856a855a3a07f26daf1cb3}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Bind@{Bind}}
+\index{Bind@{Bind}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Bind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Shader\-::\-Bind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_r_shader_a1a003461d4856a855a3a07f26daf1cb3}
+Binds this shader program to open\-G\-L rendering system. 
+
+Definition at line 208 of file R\-Shader.\-cpp.
+
+\hypertarget{classgl_1_1_r_shader_a61530fe10eb2f39469a706ca42f07336}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Bind\-Null@{Bind\-Null}}
+\index{Bind\-Null@{Bind\-Null}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Bind\-Null}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Shader\-::\-Bind\-Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classgl_1_1_r_shader_a61530fe10eb2f39469a706ca42f07336}
+Binds null program to open\-G\-L rendering system. 
+
+Definition at line 213 of file R\-Shader.\-cpp.
+
+\hypertarget{classgl_1_1_r_shader_add834ab6c12435ce12e857b31f2fd8b4}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Get\-Frag\-File@{Get\-Frag\-File}}
+\index{Get\-Frag\-File@{Get\-Frag\-File}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Get\-Frag\-File}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string gl\-::\-R\-Shader\-::\-Get\-Frag\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_r_shader_add834ab6c12435ce12e857b31f2fd8b4}
+\hypertarget{classgl_1_1_r_shader_a058ce8e2bdbe39a1b76d677b188cd26a}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Get\-Vertex\-File@{Get\-Vertex\-File}}
+\index{Get\-Vertex\-File@{Get\-Vertex\-File}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Get\-Vertex\-File}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string gl\-::\-R\-Shader\-::\-Get\-Vertex\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_r_shader_a058ce8e2bdbe39a1b76d677b188cd26a}
+\hypertarget{classgl_1_1_r_shader_a2935e72e2bb4b93b61af39c998000b4c}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Load\-Shaders@{Load\-Shaders}}
+\index{Load\-Shaders@{Load\-Shaders}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Load\-Shaders}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Shader\-::\-Load\-Shaders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_shader_a2935e72e2bb4b93b61af39c998000b4c}
+
+
+Definition at line 28 of file R\-Shader.\-cpp.
+
+\hypertarget{classgl_1_1_r_shader_a339447b0d43a51a40774c9ac66717d20}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Set\-Uniform@{Set\-Uniform}}
+\index{Set\-Uniform@{Set\-Uniform}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Set\-Uniform}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Shader\-::\-Set\-Uniform (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Uniform\-Name, }
+\item[{const glm\-::mat4 \&}]{mat}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_r_shader_a339447b0d43a51a40774c9ac66717d20}
+
+
+Definition at line 197 of file R\-Shader.\-cpp.
+
+\hypertarget{classgl_1_1_r_shader_ac8bc1b4975b08ece9a2b9ffc43d8e5f1}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Set\-Uniform@{Set\-Uniform}}
+\index{Set\-Uniform@{Set\-Uniform}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Set\-Uniform}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Shader\-::\-Set\-Uniform (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Uniform\-Name, }
+\item[{const glm\-::vec3 \&}]{vec3}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_r_shader_ac8bc1b4975b08ece9a2b9ffc43d8e5f1}
+\hypertarget{classgl_1_1_r_shader_a6abdc89ac6a89c0a78faa43018e3d1ad}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Set\-Uniform@{Set\-Uniform}}
+\index{Set\-Uniform@{Set\-Uniform}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Set\-Uniform}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Shader\-::\-Set\-Uniform (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Uniform\-Name, }
+\item[{const G\-Lfloat}]{f}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_r_shader_a6abdc89ac6a89c0a78faa43018e3d1ad}
+\hypertarget{classgl_1_1_r_shader_a908a3cbe2bb85bff5e50eff0d0d9670f}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Set\-Uniform@{Set\-Uniform}}
+\index{Set\-Uniform@{Set\-Uniform}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Set\-Uniform}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Shader\-::\-Set\-Uniform (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Uniform\-Name, }
+\item[{const G\-Lint}]{i}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_r_shader_a908a3cbe2bb85bff5e50eff0d0d9670f}
+\hypertarget{classgl_1_1_r_shader_ab45639a1ede87dfc0f4a8458dd5d00e8}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!Set\-Uniform@{Set\-Uniform}}
+\index{Set\-Uniform@{Set\-Uniform}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{Set\-Uniform}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Shader\-::\-Set\-Uniform (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Uniform\-Name, }
+\item[{const G\-Lboolean}]{b}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_r_shader_ab45639a1ede87dfc0f4a8458dd5d00e8}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classgl_1_1_r_shader_a6ce293498749d93a4fbc991b17a4cf70}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!m\-Frag\-File@{m\-Frag\-File}}
+\index{m\-Frag\-File@{m\-Frag\-File}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{m\-Frag\-File}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string gl\-::\-R\-Shader\-::m\-Frag\-File\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_shader_a6ce293498749d93a4fbc991b17a4cf70}
+
+
+Definition at line 53 of file R\-Shader.\-hpp.
+
+\hypertarget{classgl_1_1_r_shader_a0e077d5a150093c7af3c9ce047fcbe8d}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!m\-Frag\-I\-D@{m\-Frag\-I\-D}}
+\index{m\-Frag\-I\-D@{m\-Frag\-I\-D}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{m\-Frag\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Shader\-::m\-Frag\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_shader_a0e077d5a150093c7af3c9ce047fcbe8d}
+
+
+Definition at line 57 of file R\-Shader.\-hpp.
+
+\hypertarget{classgl_1_1_r_shader_a61ad380e879e29f8c052cad73158c54e}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!m\-Program\-I\-D@{m\-Program\-I\-D}}
+\index{m\-Program\-I\-D@{m\-Program\-I\-D}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{m\-Program\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Shader\-::m\-Program\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_shader_a61ad380e879e29f8c052cad73158c54e}
+
+
+Definition at line 55 of file R\-Shader.\-hpp.
+
+\hypertarget{classgl_1_1_r_shader_a2285ac811c39bd59866a0239e04932b2}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!m\-Vertex\-File@{m\-Vertex\-File}}
+\index{m\-Vertex\-File@{m\-Vertex\-File}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{m\-Vertex\-File}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string gl\-::\-R\-Shader\-::m\-Vertex\-File\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_shader_a2285ac811c39bd59866a0239e04932b2}
+
+
+Definition at line 52 of file R\-Shader.\-hpp.
+
+\hypertarget{classgl_1_1_r_shader_ab0996603afd00f5ce3a6b20479103083}{\index{gl\-::\-R\-Shader@{gl\-::\-R\-Shader}!m\-Vert\-I\-D@{m\-Vert\-I\-D}}
+\index{m\-Vert\-I\-D@{m\-Vert\-I\-D}!gl::RShader@{gl\-::\-R\-Shader}}
+\subsubsection[{m\-Vert\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Shader\-::m\-Vert\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_shader_ab0996603afd00f5ce3a6b20479103083}
+
+
+Definition at line 56 of file R\-Shader.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_r_shader_8hpp}{R\-Shader.\-hpp}\item 
+Glide/\hyperlink{_r_shader_8cpp}{R\-Shader.\-cpp}\end{DoxyCompactItemize}

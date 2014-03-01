@@ -1,0 +1,112 @@
+\hypertarget{classgl_1_1_resource_manager}{\section{gl\-:\-:Resource\-Manager$<$ Res\-Type, Key\-Type $>$ Class Template Reference}
+\label{classgl_1_1_resource_manager}\index{gl\-::\-Resource\-Manager$<$ Res\-Type, Key\-Type $>$@{gl\-::\-Resource\-Manager$<$ Res\-Type, Key\-Type $>$}}
+}
+
+
+{\ttfamily \#include $<$Resource\-Manager.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_resource_manager_a8a03114e394305bea3cd67a611f3100c}{Resource\-Manager} ()
+\item 
+\hyperlink{classgl_1_1_resource_manager_a98923a7788170cdf6e3eb06f16c9c728}{$\sim$\-Resource\-Manager} ()
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_resource_manager_acd4a15d51a31ff7871260bfe9d133b19}{Resource\-Add} (const typename Res\-Type\-::\-Config\-Type \&config, const Key\-Type \&key)
+\item 
+Res\-Type $\ast$ \hyperlink{classgl_1_1_resource_manager_a76295508c8e6d50a829898ee55a10b68}{Resource\-Get} (const Key\-Type \&key)
+\item 
+\hyperlink{_basic_types_8hpp_a11c112f01a7ad8f767fd48bc916463a3}{U\-Int} \hyperlink{classgl_1_1_resource_manager_ad0a49cad4c53ec3a44b348b7fa200729}{Size} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ Key\-Type, \\*
+std\-::unique\-\_\-ptr$<$ Res\-Type $>$ $>$ \hyperlink{classgl_1_1_resource_manager_a1e9a623c449cb5a99362f02058a60ae2}{m\-Resources}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Res\-Type, class Key\-Type$>$class gl\-::\-Resource\-Manager$<$ Res\-Type, Key\-Type $>$}
+
+template class for managing resources. Simple manages resources, by a template key type and the tempate resource type. You can use any type that can be compaired as a key. Resources are stored internally in a map. To create and load a resource call Resource\-Add with the configuration type of your resource and the key you wish to use for that resource. You can get the resource pointer by calling Resource\-Get with the key. 
+
+Definition at line 24 of file Resource\-Manager.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_resource_manager_a8a03114e394305bea3cd67a611f3100c}{\index{gl\-::\-Resource\-Manager@{gl\-::\-Resource\-Manager}!Resource\-Manager@{Resource\-Manager}}
+\index{Resource\-Manager@{Resource\-Manager}!gl::ResourceManager@{gl\-::\-Resource\-Manager}}
+\subsubsection[{Resource\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Res\-Type , class Key\-Type $>$ {\bf gl\-::\-Resource\-Manager}$<$ Res\-Type, Key\-Type $>$\-::{\bf Resource\-Manager} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classgl_1_1_resource_manager_a8a03114e394305bea3cd67a611f3100c}
+
+
+Definition at line 49 of file Resource\-Manager.\-hpp.
+
+\hypertarget{classgl_1_1_resource_manager_a98923a7788170cdf6e3eb06f16c9c728}{\index{gl\-::\-Resource\-Manager@{gl\-::\-Resource\-Manager}!$\sim$\-Resource\-Manager@{$\sim$\-Resource\-Manager}}
+\index{$\sim$\-Resource\-Manager@{$\sim$\-Resource\-Manager}!gl::ResourceManager@{gl\-::\-Resource\-Manager}}
+\subsubsection[{$\sim$\-Resource\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Res\-Type , class Key\-Type $>$ {\bf gl\-::\-Resource\-Manager}$<$ Res\-Type, Key\-Type $>$\-::$\sim${\bf Resource\-Manager} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classgl_1_1_resource_manager_a98923a7788170cdf6e3eb06f16c9c728}
+
+
+Definition at line 55 of file Resource\-Manager.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_resource_manager_acd4a15d51a31ff7871260bfe9d133b19}{\index{gl\-::\-Resource\-Manager@{gl\-::\-Resource\-Manager}!Resource\-Add@{Resource\-Add}}
+\index{Resource\-Add@{Resource\-Add}!gl::ResourceManager@{gl\-::\-Resource\-Manager}}
+\subsubsection[{Resource\-Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Res\-Type, class Key\-Type$>$ {\bf Void} {\bf gl\-::\-Resource\-Manager}$<$ Res\-Type, Key\-Type $>$\-::Resource\-Add (
+\begin{DoxyParamCaption}
+\item[{const typename Res\-Type\-::\-Config\-Type \&}]{config, }
+\item[{const Key\-Type \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classgl_1_1_resource_manager_acd4a15d51a31ff7871260bfe9d133b19}
+Resource\-Add adds resource to the map. Will create the resource internally. The Key is the template paramter on Resource\-Config. The manager will grab the key from the config. 
+
+Definition at line 61 of file Resource\-Manager.\-hpp.
+
+\hypertarget{classgl_1_1_resource_manager_a76295508c8e6d50a829898ee55a10b68}{\index{gl\-::\-Resource\-Manager@{gl\-::\-Resource\-Manager}!Resource\-Get@{Resource\-Get}}
+\index{Resource\-Get@{Resource\-Get}!gl::ResourceManager@{gl\-::\-Resource\-Manager}}
+\subsubsection[{Resource\-Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Res\-Type , class Key\-Type$>$ Res\-Type $\ast$ {\bf gl\-::\-Resource\-Manager}$<$ Res\-Type, Key\-Type $>$\-::Resource\-Get (
+\begin{DoxyParamCaption}
+\item[{const Key\-Type \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classgl_1_1_resource_manager_a76295508c8e6d50a829898ee55a10b68}
+Resource\-Get returns a resource pointer by the map key, which is the Comparer template argument of the resource. 
+
+Definition at line 72 of file Resource\-Manager.\-hpp.
+
+\hypertarget{classgl_1_1_resource_manager_ad0a49cad4c53ec3a44b348b7fa200729}{\index{gl\-::\-Resource\-Manager@{gl\-::\-Resource\-Manager}!Size@{Size}}
+\index{Size@{Size}!gl::ResourceManager@{gl\-::\-Resource\-Manager}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Res\-Type , class Key\-Type $>$ {\bf U\-Int} {\bf gl\-::\-Resource\-Manager}$<$ Res\-Type, Key\-Type $>$\-::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classgl_1_1_resource_manager_ad0a49cad4c53ec3a44b348b7fa200729}
+
+
+Definition at line 85 of file Resource\-Manager.\-hpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classgl_1_1_resource_manager_a1e9a623c449cb5a99362f02058a60ae2}{\index{gl\-::\-Resource\-Manager@{gl\-::\-Resource\-Manager}!m\-Resources@{m\-Resources}}
+\index{m\-Resources@{m\-Resources}!gl::ResourceManager@{gl\-::\-Resource\-Manager}}
+\subsubsection[{m\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Res\-Type, class Key\-Type$>$ std\-::map$<$ Key\-Type, std\-::unique\-\_\-ptr$<$ Res\-Type $>$ $>$ {\bf gl\-::\-Resource\-Manager}$<$ Res\-Type, Key\-Type $>$\-::m\-Resources\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_resource_manager_a1e9a623c449cb5a99362f02058a60ae2}
+
+
+Definition at line 45 of file Resource\-Manager.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_resource_manager_8hpp}{Resource\-Manager.\-hpp}\end{DoxyCompactItemize}

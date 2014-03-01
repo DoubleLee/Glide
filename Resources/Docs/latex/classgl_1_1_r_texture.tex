@@ -1,0 +1,173 @@
+\hypertarget{classgl_1_1_r_texture}{\section{gl\-:\-:R\-Texture Class Reference}
+\label{classgl_1_1_r_texture}\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}}
+}
+
+
+{\ttfamily \#include $<$R\-Texture.\-hpp$>$}
+
+Inheritance diagram for gl\-:\-:R\-Texture\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgl_1_1_r_texture}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classgl_1_1_resource_1_1_configuration}{Resource\-::\-Configuration} \hyperlink{classgl_1_1_r_texture_af5e0de4fdd4b9bd003f8979a07324f0b}{Config\-Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgl_1_1_r_texture_af684b7ee8b937f87938fc3bd211c8345}{R\-Texture} (const \hyperlink{classgl_1_1_resource_1_1_configuration}{Resource\-::\-Configuration} \&config)
+\item 
+\hyperlink{classgl_1_1_r_texture_a3e1fcfd479e042799893e50b20c2952e}{R\-Texture} (\hyperlink{classgl_1_1_r_texture}{R\-Texture} \&\&other)
+\item 
+\hyperlink{classgl_1_1_r_texture_a234993b3dfb21867ef249647e233a602}{R\-Texture} (const \hyperlink{classgl_1_1_r_texture}{R\-Texture} \&other)=delete
+\item 
+\hyperlink{classgl_1_1_r_texture}{R\-Texture} \& \hyperlink{classgl_1_1_r_texture_a6eae2f7e17ebd821d0d3d3b9b2f665f3}{operator=} (const \hyperlink{classgl_1_1_r_texture}{R\-Texture} \&other)=delete
+\item 
+virtual \hyperlink{classgl_1_1_r_texture_a392daeb25c1bc9fe5d61b8efab97ec42}{$\sim$\-R\-Texture} ()
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_texture_affea3581b93032c28456eb7a7fe9ffd0}{Get\-Texture\-I\-D} () const 
+\item 
+\hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_texture_a62e2b26cad95a159430c3f61998ac572}{Bind} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_basic_types_8hpp_afdf0f22c576e6ee1b982f64b839c4bea}{Void} \hyperlink{classgl_1_1_r_texture_ab6db1d3aaa5a91ad3cf1fb62348f2a7b}{Bind\-Null} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\-Luint \hyperlink{classgl_1_1_r_texture_ac09f29aa4942ab525d65c98217be05ac}{m\-Texture\-I\-D}
+\item 
+G\-Lenum \hyperlink{classgl_1_1_r_texture_a0442b6e57cd493fa02b2167658785fe4}{m\-Color\-Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classgl_1_1_r_texture}{R\-Texture} represents a texture for open\-G\-L. Currently it only supports png, more format support in bound. Since \hyperlink{classgl_1_1_r_texture}{R\-Texture} loads the resource itself we need a file name. the default Resource\-Config stores enough info for this. 
+
+Definition at line 25 of file R\-Texture.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classgl_1_1_r_texture_af5e0de4fdd4b9bd003f8979a07324f0b}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!Config\-Type@{Config\-Type}}
+\index{Config\-Type@{Config\-Type}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{Config\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Resource\-::\-Configuration} {\bf gl\-::\-R\-Texture\-::\-Config\-Type}}}\label{classgl_1_1_r_texture_af5e0de4fdd4b9bd003f8979a07324f0b}
+
+
+Definition at line 28 of file R\-Texture.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgl_1_1_r_texture_af684b7ee8b937f87938fc3bd211c8345}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!R\-Texture@{R\-Texture}}
+\index{R\-Texture@{R\-Texture}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{R\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-R\-Texture\-::\-R\-Texture (
+\begin{DoxyParamCaption}
+\item[{const {\bf Resource\-::\-Configuration} \&}]{config}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_r_texture_af684b7ee8b937f87938fc3bd211c8345}
+
+
+Definition at line 22 of file R\-Texture.\-cpp.
+
+\hypertarget{classgl_1_1_r_texture_a3e1fcfd479e042799893e50b20c2952e}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!R\-Texture@{R\-Texture}}
+\index{R\-Texture@{R\-Texture}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{R\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-R\-Texture\-::\-R\-Texture (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-Texture} \&\&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classgl_1_1_r_texture_a3e1fcfd479e042799893e50b20c2952e}
+
+
+Definition at line 181 of file R\-Texture.\-cpp.
+
+\hypertarget{classgl_1_1_r_texture_a234993b3dfb21867ef249647e233a602}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!R\-Texture@{R\-Texture}}
+\index{R\-Texture@{R\-Texture}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{R\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-R\-Texture\-::\-R\-Texture (
+\begin{DoxyParamCaption}
+\item[{const {\bf R\-Texture} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classgl_1_1_r_texture_a234993b3dfb21867ef249647e233a602}
+\hypertarget{classgl_1_1_r_texture_a392daeb25c1bc9fe5d61b8efab97ec42}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!$\sim$\-R\-Texture@{$\sim$\-R\-Texture}}
+\index{$\sim$\-R\-Texture@{$\sim$\-R\-Texture}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{$\sim$\-R\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}gl\-::\-R\-Texture\-::$\sim$\-R\-Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgl_1_1_r_texture_a392daeb25c1bc9fe5d61b8efab97ec42}
+
+
+Definition at line 192 of file R\-Texture.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgl_1_1_r_texture_a62e2b26cad95a159430c3f61998ac572}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!Bind@{Bind}}
+\index{Bind@{Bind}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{Bind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Texture\-::\-Bind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_r_texture_a62e2b26cad95a159430c3f61998ac572}
+
+
+Definition at line 207 of file R\-Texture.\-cpp.
+
+\hypertarget{classgl_1_1_r_texture_ab6db1d3aaa5a91ad3cf1fb62348f2a7b}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!Bind\-Null@{Bind\-Null}}
+\index{Bind\-Null@{Bind\-Null}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{Bind\-Null}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Void} gl\-::\-R\-Texture\-::\-Bind\-Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classgl_1_1_r_texture_ab6db1d3aaa5a91ad3cf1fb62348f2a7b}
+
+
+Definition at line 212 of file R\-Texture.\-cpp.
+
+\hypertarget{classgl_1_1_r_texture_affea3581b93032c28456eb7a7fe9ffd0}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!Get\-Texture\-I\-D@{Get\-Texture\-I\-D}}
+\index{Get\-Texture\-I\-D@{Get\-Texture\-I\-D}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{Get\-Texture\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Texture\-::\-Get\-Texture\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgl_1_1_r_texture_affea3581b93032c28456eb7a7fe9ffd0}
+
+
+Definition at line 202 of file R\-Texture.\-cpp.
+
+\hypertarget{classgl_1_1_r_texture_a6eae2f7e17ebd821d0d3d3b9b2f665f3}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!operator=@{operator=}}
+\index{operator=@{operator=}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-Texture}\& gl\-::\-R\-Texture\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf R\-Texture} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classgl_1_1_r_texture_a6eae2f7e17ebd821d0d3d3b9b2f665f3}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classgl_1_1_r_texture_a0442b6e57cd493fa02b2167658785fe4}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!m\-Color\-Type@{m\-Color\-Type}}
+\index{m\-Color\-Type@{m\-Color\-Type}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{m\-Color\-Type}]{\setlength{\rightskip}{0pt plus 5cm}G\-Lenum gl\-::\-R\-Texture\-::m\-Color\-Type\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_texture_a0442b6e57cd493fa02b2167658785fe4}
+
+
+Definition at line 54 of file R\-Texture.\-hpp.
+
+\hypertarget{classgl_1_1_r_texture_ac09f29aa4942ab525d65c98217be05ac}{\index{gl\-::\-R\-Texture@{gl\-::\-R\-Texture}!m\-Texture\-I\-D@{m\-Texture\-I\-D}}
+\index{m\-Texture\-I\-D@{m\-Texture\-I\-D}!gl::RTexture@{gl\-::\-R\-Texture}}
+\subsubsection[{m\-Texture\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}G\-Luint gl\-::\-R\-Texture\-::m\-Texture\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{classgl_1_1_r_texture_ac09f29aa4942ab525d65c98217be05ac}
+
+
+Definition at line 53 of file R\-Texture.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Glide/\hyperlink{_r_texture_8hpp}{R\-Texture.\-hpp}\item 
+Glide/\hyperlink{_r_texture_8cpp}{R\-Texture.\-cpp}\end{DoxyCompactItemize}
