@@ -5,31 +5,6 @@
 
 namespace XML
 {
-
-void XML::GetIntAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, int* num)
-	{
-	CheckError(element->QueryIntAttribute(attributeName.c_str(), num));
-	}
-
-void XML::GetFloatAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, float* num)
-	{
-	CheckError(element->QueryFloatAttribute(attributeName.c_str(), num));
-	}
-
-void XML::GetDoubleAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, double* num)
-	{
-	CheckError(element->QueryDoubleAttribute(attributeName.c_str(), num));
-	}
-
-void XML::GetAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, const char* str)
-	{
-	//TODO: awesome code here
-	}
-void XML::GetUnsignedAttribute(tinyxml2::XMLElement* element, const std::string & attributeName, const char* str)
-	{
-	 //TODO: awesome code here
-	}
-
 void XML::CheckError(const tinyxml2::XMLError error)
 	{
 	switch (error)

@@ -66,7 +66,7 @@ Component * GameObject::ComponentGet( const Component::FamilyID & familyID )
 		return nullptr;
 	}
 
-Void GameObject::CalculateWorlds( glm::mat4 & globalWorld )
+Void GameObject::CalculateWorlds( const glm::mat4 & globalWorld )
 	{
 	mGlobalWorld = globalWorld * mLocalWorld;
 
@@ -89,19 +89,20 @@ Void GameObject::ChildAdd( GameObjectPtr && pChild )
 		}
 	}
 
-Void GameObject::ChildRelease( GameObject * pChild )
+GameObjectPtr && GameObject::ChildRelease( GameObject * pChild )
 	{
 	for ( auto iter = mChildren.begin(); iter != mChildren.end(); ++iter )
 		{
 		if ( (*iter).get() == pChild )
 			{
-			(*iter).release();
+			GameObjectPtr pObject(std::move(*iter));
 			mChildren.erase( iter );
-			return;
+			return std::move(pObject);
 			}
 		}
 
 	gLogger.LogTime() << "GameObject requested to remove child that didn't exist. address: " << pChild << std::endl;
+	return nullptr;
 	}
 
 UInt GameObject::ChildCount() const

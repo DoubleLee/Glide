@@ -30,10 +30,10 @@ public:
 	Void ComponentAdd( ComponentPtr && pComp );
 	Component * ComponentGet( const Component::FamilyID & familyID );
 
-	Void CalculateWorlds( glm::mat4 & globalWorld );
+	Void CalculateWorlds( const glm::mat4 & globalWorld );
 
 	Void ChildAdd( GameObjectPtr && pChild ); // may need & not && we'll see
-	Void ChildRelease( GameObject * pChild );
+	GameObjectPtr && ChildRelease( GameObject * pChild );
 
 	UInt ChildCount() const;
 

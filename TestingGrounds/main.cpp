@@ -7,37 +7,21 @@
 #include "GlideException.hpp"
 #include "FilePaths.hpp"
 
+#include "Matrix4.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+
 #include <string>
 
 #define GLM_FORCE_RADIANS
 
-enum class TexturesEnum
-	{
-	Wall,
-	Couch,
-	Table
-	};
-
-enum Texs
-	{
-	Trash,
-	Crash,
-	Rash
-	};
-
 int main()
 	{
-
 	gl::GraphicsManager graphics;
 
-	gl::Scene scene("../Resources/Scenes/testScene.3ds");
-
-	// Intentional error, with thrown exception
-	//GLCHECKERROR(glBindTexture(GL_TEXTURE_2D, 900) )
+	gl::Scene scene("../Resources/Scenes/forestScene1.dae");
 	
 	while(graphics.WindowOpen())
 		{
-		gl::GameObject * pLamp = scene.FindObjectByID("Lamp");
 		scene.Render();
 		graphics.Update();
 		}

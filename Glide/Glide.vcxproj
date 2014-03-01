@@ -84,7 +84,7 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;GLEW_STATIC;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\ProgLibsVS\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicTypes.hpp" />
+    <ClInclude Include="CCamera.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="CRender.hpp" />
     <ClInclude Include="CRenderGL.hpp" />
@@ -143,6 +144,7 @@
     <ClInclude Include="GlideException.hpp" />
     <ClInclude Include="GraphicsManager.hpp" />
     <ClInclude Include="Logger.hpp" />
+    <ClInclude Include="Matrix4.hpp" />
     <ClInclude Include="Resource.hpp" />
     <ClInclude Include="ResourceConfig.hpp" />
     <ClInclude Include="ResourceManager.hpp" />
@@ -155,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicTypes.cpp" />
+    <ClCompile Include="CCamera.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="CRender.cpp" />
     <ClCompile Include="CRenderGL.cpp" />
@@ -164,6 +167,7 @@
     <ClCompile Include="GlideException.cpp" />
     <ClCompile Include="GraphicsManager.cpp" />
     <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="Matrix4.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceConfig.cpp" />
     <ClCompile Include="RMesh.cpp" />

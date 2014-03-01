@@ -11,6 +11,15 @@
 namespace gl
 {
 
+/**
+template class for managing resources.
+Simple manages resources, by a template key type and the tempate resource type.
+You can use any type that can be compaired as a key.
+Resources are stored internally in a map.
+To create and load a resource call ResourceAdd with the configuration type of your resource and the
+key you wish to use for that resource.
+You can get the resource pointer by calling ResourceGet with the key.
+*/
 template< class ResType, class KeyType >
 class ResourceManager
 {
@@ -18,14 +27,14 @@ public:
 	inline ResourceManager();
 	inline ~ResourceManager();
 
-	/*
+	/**
 	ResourceAdd adds resource to the map.  Will create the resource internally.
 	The Key is the template paramter on ResourceConfig.  The manager will grab the key from the 
 	config.
 	*/
 	inline Void ResourceAdd( const typename ResType::ConfigType & config, const KeyType & key );
 
-	/*
+	/**
 	ResourceGet returns a resource pointer by the map key, which is the Comparer template argument of the resource.
 	*/
 	inline ResType * ResourceGet(const KeyType & key);

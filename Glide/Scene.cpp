@@ -15,7 +15,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 
-
 using namespace Assimp;
 using namespace std;
 namespace gl

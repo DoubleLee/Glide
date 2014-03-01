@@ -21,6 +21,8 @@ public:
 	~Scene();
 
 	GameObject * FindObjectByID( const std::string & id, GameObject * pStartObject = nullptr );
+	
+	// temporary call, shaders will be managed by a resource.
 	RShader * GetShader();
 
 	Void Render();

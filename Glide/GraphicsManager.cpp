@@ -33,22 +33,8 @@ GraphicsManager::GraphicsManager()
 
 	XMLElement * pGraphics = config.RootElement();
 
-	/*if ( pGraphics->QueryIntAttribute("width", &width) != XML_NO_ERROR )
-		{
-		throw GlideException("Failed to find width attribute in, " + file);
-		}*/
-
-	// TODO: discuss this with CommanderKeen
-	//XML::CheckError( pGraphics->QueryIntAttribute("width", &width) );
-	//XML::CheckError( pGraphics->QueryIntAttribute("height", &height) );
-
-	XML::GetIntAttribute(pGraphics, "width", &width);
-	XML::GetIntAttribute(pGraphics, "height", &height);
-
-	/*if ( pGraphics->QueryIntAttribute("height", &height) != XML_NO_ERROR )
-		{
-		throw GlideException("Failed to find height attribute in, " + file);
-		}*/
+	XML::CheckError( pGraphics->QueryIntAttribute("width", &width) );
+	XML::CheckError( pGraphics->QueryIntAttribute("height", &height) );
 
 	const char * pWindowTitle = nullptr;
 
